@@ -4,6 +4,7 @@ Marvyn Mylk's link-in-bio site. `index.html` is the whole page; photos and cover
 
 ## Rules
 
+- **Always show Marvyn a preview before anything goes live.** Screenshot the changed sections at phone size and send them; push to `main` only after he approves. Pushing publishes the live site immediately.
 - **Keep the link preview in sync.** `images/share.jpg` is built from `images/profile.webp`, `images/purple-south-cover.jpg` and `images/monster-on-tv-cover.jpg`. Whenever any of those three change (or the headline changes), rebuild it with `python3 tools/make_share_image.py`, check it, and commit it in the same change.
 - **The preview image is profile + both covers + headline only.** No subline, labels, handles or footer text.
 - **Keep Tyler (Marvyn's partner) out of every image.** He doesn't want to be public. Crop or edit him out of any photo before it goes on the site.
