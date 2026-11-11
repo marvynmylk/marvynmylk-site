@@ -183,19 +183,6 @@ form button:hover{transform:translateY(-2px)}
 .finale form button{background:var(--ember);color:#1b1004;animation:pulse 2.6s ease-in-out infinite}
 .finale .note{min-height:24px;margin-top:12px;font-weight:700;color:var(--ember-glow)}
 
-
-/* what I make */
-.posts{padding-block:64px 8px;text-align:center}
-.posts h2{margin:0;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(30px,8vw,42px);line-height:1.08}
-.posts .wrap p{margin:12px auto 0;max-width:34ch;color:#e3ddcf}
-.reel-row{list-style:none;margin:28px 0 0;padding:6px max(20px,calc((100vw - 520px)/2)) 18px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(20px,calc((100vw - 520px)/2));scrollbar-width:none}
-.reel-row::-webkit-scrollbar{display:none}
-.reel-row li{flex:0 0 min(70vw,260px);scroll-snap-align:start;text-align:left}
-.reel-row img{display:block;width:100%;height:auto;aspect-ratio:1/1;border-radius:14px;box-shadow:0 18px 28px -14px rgba(0,0,0,.75)}
-.reel-row span{display:block;margin-top:10px;font-size:15px;font-weight:500;color:#e3ddcf}
-.reel-row:focus-visible{outline:3px solid var(--ember);outline-offset:-3px}
-.swipe-note{margin:0 auto;max-width:34ch;font-size:14px;color:var(--muted)}
-
 /* voter check */
 .vote{margin-top:76px;padding:48px 0 52px;background:var(--ink-2);border-top:1px solid var(--line)}
 .vote .kicker{text-align:center;color:var(--ember)}
@@ -213,24 +200,9 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
   <div class="avatar"><img src="images/profile.webp" alt="Marvyn Mylk with his dog Ali" width="480" height="480"></div>
   <div class="mid">
     <h1><span>Talking</span><span>politics</span><span>with logic</span><span>&amp; empathy</span><span>in the</span><em>purple South.</em></h1>
-    <a class="herocta" href="#posts" id="herocta">See what I make ↓</a>
+    <a class="herocta" href="#join" id="herocta">Don't miss the release ↓</a>
   </div>
 </header>
-
-<section class="posts" id="posts" aria-labelledby="posts-h">
-  <div class="wrap narrow">
-    <h2 id="posts-h">What I make</h2>
-    <p>The closest races in the South, the people who ran them, and the history of your hometown. Free, always.</p>
-  </div>
-  <ul class="reel-row" tabindex="0" aria-label="Recent posts, scroll sideways">
-    <li><img src="images/posts/sluss-577-votes.jpg" alt="Post: 577 votes, the margin that flipped Alabama Senate District 7" width="600" height="600" loading="lazy"><span>577 votes flipped a state Senate seat</span></li>
-    <li><img src="images/posts/nell-brown-526.jpg" alt="Post: 526 votes, how Nell Brown flipped Alabama House District 15" width="600" height="600" loading="lazy"><span>How Nell Brown flipped her district</span></li>
-    <li><img src="images/posts/stone-46-percent.jpg" alt="Post: Spencer Stone lost with 46 percent, and Republicans should still be nervous" width="600" height="600" loading="lazy"><span>Why a 46% loss is good news</span></li>
-    <li><img src="images/posts/allison-montgomery-1527.jpg" alt="Post: 1,527 votes, how Allison Montgomery flipped Alabama House District 25" width="600" height="600" loading="lazy"><span>Alabama's first transgender lawmaker</span></li>
-    <li><img src="images/posts/strong-sneed-17317.jpg" alt="Post: 17,317 votes, how close Alabama's 5th District came to flipping" width="600" height="600" loading="lazy"><span>How close the 5th District came</span></li>
-  </ul>
-  <p class="swipe-note">Swipe to see more. New posts every week on TikTok, Instagram and Threads.</p>
-</section>
 
 <section class="band ps" aria-labelledby="ps-h">
   <div class="wrap book">
@@ -260,9 +232,9 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
   <div class="sun" aria-hidden="true"></div>
   <div class="wrap narrow">
     <div class="minis" aria-hidden="true"><img alt="" class="m1"><img alt="" class="m2"></div>
-    <span class="kicker">No pitches, ever</span>
-    <h2 id="join-h">Hear it from me first</h2>
-    <p>When a book comes out, I'll send you one email. That's the only thing I'll ever email you about. Everything else I make stays free, here and on my socials.</p>
+    <span class="kicker">Two books coming soon</span>
+    <h2 id="join-h">Don't miss the book release!</h2>
+    <p>Be one of the first to read them. Drop your email and I'll let you know the second they're out.</p>
     <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="top">
       <p hidden><label>Leave this empty <input name="bot-field"></label></p>
@@ -311,7 +283,7 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
 </section>
 <section class="finale" aria-labelledby="fin-h">
   <div class="wrap narrow">
-    <h2 id="fin-h">If you want to go deeper</h2>
+    <h2 id="fin-h">Two books are coming.<br>Be first in line.</h2>
     <div class="duo">
       <div class="pick">
         <p class="tag">The plan to flip the South, with the numbers to back it up</p>
@@ -326,7 +298,7 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
         <span class="genre">Sci-fi thriller</span>
       </div>
     </div>
-    <p class="sub">Two books are on the way. One email when each one is out. That's it.</p>
+    <p class="sub">One email the day they're out. No spam, ever.</p>
     <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="bottom">
       <p hidden><label>Leave this empty <input name="bot-field"></label></p>
@@ -354,7 +326,7 @@ document.querySelectorAll('form.signup').forEach(f=>{
   });
 });
 const cov=document.querySelectorAll('.book img');document.querySelector('.minis .m1').src=cov[0].src;document.querySelector('.minis .m2').src=cov[1].src;document.querySelector('.fc1').src=cov[0].src;document.querySelector('.fc2').src=cov[1].src;
-document.getElementById('herocta').addEventListener('click',e=>{e.preventDefault();document.getElementById('posts').scrollIntoView({behavior:'smooth'})});
+document.getElementById('herocta').addEventListener('click',e=>{e.preventDefault();document.getElementById('join').scrollIntoView({behavior:'smooth'})});
 document.documentElement.dataset.font='b';const reel=[...document.querySelectorAll('.reel img')];let ri=0;
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{reel.forEach(x=>x.classList.remove('was'));reel[ri].classList.replace('on','was');ri=(ri+1)%reel.length;reel[ri].classList.add('on')},3200);
 </script>
