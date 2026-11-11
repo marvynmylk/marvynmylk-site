@@ -59,10 +59,9 @@ a{color:inherit}
 .narrow{max-width:520px}
 
 /* hero */
-.hero{position:relative;padding-block:40px 72px;text-align:left}
+.hero{position:relative;padding-block:40px 24px;text-align:left}
 .byline{font-family:var(--f-sc);text-transform:var(--sc-tt);font-weight:var(--sc-w);font-size:14px;letter-spacing:.22em;color:var(--muted);margin:0}
 h1{margin:0;font-family:var(--f-display);font-weight:var(--hw);font-size:var(--h1-size);line-height:var(--h1-lh);letter-spacing:var(--h1-ls);text-transform:var(--h-tt)}
-.herocta{display:inline-block;margin-top:34px;padding:15px 26px;border-radius:999px;background:var(--ember);color:#1b1004;text-decoration:none;font:700 17px var(--f-body);box-shadow:0 0 0 6px rgba(240,161,42,.14)}
 h1 span{display:block}
 h1 em{font-style:normal;display:block;margin-top:.12em;padding-bottom:.18em;margin-bottom:-.18em;color:var(--lav-deep);background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero .mid{margin-top:24px}
@@ -72,71 +71,8 @@ h1 em{font-style:normal;display:block;margin-top:.12em;padding-bottom:.18em;marg
 .cue{font-size:15px;color:var(--muted);margin:22px 0 0;letter-spacing:.02em}
 .soon{display:inline-block;margin-top:0;padding:8px 18px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-sc);font-size:14px;letter-spacing:.2em;color:var(--ember-glow)}
 
-/* book bands */
-.band{padding:60px 0}
-.band.ps{background:linear-gradient(170deg,var(--lav) 0%,var(--lav-deep) 100%);color:var(--text-dark)}
-.band.mo{background:linear-gradient(170deg,var(--teal) 0%,var(--teal-deep) 100%)}
-.book{display:grid;grid-template-columns:1fr;gap:34px;align-items:center;text-align:center}
-.book figure{margin:0 auto;width:min(62%,250px)}
-.book img{display:block;width:100%;height:auto;aspect-ratio:1253/2001;border-radius:2px;
-  box-shadow:0 2px 0 rgba(0,0,0,.08),0 24px 30px -12px rgba(10,8,20,.6),0 50px 70px -34px rgba(10,8,20,.55)}
-.ps figure{transform:rotate(-2.5deg);animation:drift 7s ease-in-out infinite}
-.mo figure{transform:rotate(2deg);animation:drift 8s ease-in-out -2s infinite}
-@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
-.kicker{display:block;font-family:var(--f-sc);text-transform:var(--sc-tt);font-weight:var(--sc-w);font-size:13px;letter-spacing:.2em;margin-bottom:8px}
-.book h2{margin:0;font-family:var(--f-display);font-weight:var(--hw);text-transform:var(--h-tt);font-size:clamp(30px,7vw,38px);line-height:1.08}
-.hook{margin:14px 0 0;font-family:var(--f-hook);font-weight:var(--hook-w);font-size:22px;line-height:1.3}
-.blurb{margin:12px 0 0;font-size:16.5px}
-.ps .kicker{color:var(--plum)} .ps h2{color:var(--wine)} .ps .blurb{color:#2b2440}
-.mo .kicker{color:var(--ember)} .mo h2{color:var(--ember-glow)} .mo .blurb{color:#e3ddcf}
-@media (min-width:640px){
-  .book{grid-template-columns:240px 1fr;gap:48px;text-align:left}
-  .book figure{width:100%}
-  .mo .book{grid-template-columns:1fr 240px}
-  .mo figure{order:2}
-}
-
-/* sign up: loud gold band */
-.join{position:relative;overflow:hidden;background:linear-gradient(120deg,#f8bd4f,#ee9a1f,#f6a8b8,#f8bd4f);background-size:300% 300%;animation:glow 12s ease-in-out infinite;color:#1b1004;padding:56px 0 54px;text-align:center}
-@keyframes glow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.join{contain:paint}
-.join .sun{position:absolute;width:100%;aspect-ratio:1;left:0;top:-50%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,250,235,.55),transparent);animation:breathe 6s ease-in-out infinite;pointer-events:none}
-@keyframes breathe{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.08);opacity:1}}
-.join .wrap{position:relative}
-.minis{display:flex;justify-content:center;gap:18px;margin-bottom:26px}
-.minis img{width:78px;aspect-ratio:1253/2001;border-radius:2px;box-shadow:0 14px 22px -10px rgba(27,16,4,.6)}
-.minis .m1{rotate:-8deg;animation:drift 5s ease-in-out infinite}
-.minis .m2{rotate:7deg;animation:drift 6s ease-in-out -2.5s infinite}
-.join form button{animation:pulse 2.6s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 14px 26px -12px rgba(27,16,4,.7),0 0 0 0 rgba(27,16,4,.25)}50%{box-shadow:0 14px 26px -12px rgba(27,16,4,.7),0 0 0 10px rgba(27,16,4,0)}}
-.join .kicker{color:#5a2d00;font-size:14px}
-.join h2{margin:0;font-family:var(--f-display);font-weight:var(--hw);text-transform:var(--h-tt);font-size:clamp(38px,10.5vw,58px);line-height:1.02}
-.join p{margin:12px auto 0;max-width:30ch;color:#3b2203;font-size:18px}
-form{margin-top:26px;display:grid;gap:12px}
-form input{width:100%;height:64px;padding:0 22px;border-radius:16px;border:2px solid #1b1004;background:#fffaf0;color:#1b1004;font:inherit;font-size:19px;text-align:center}
-form input::placeholder{color:#8a7a62}
-form input:focus{outline:3px solid #1b1004;outline-offset:2px}
-form button{height:64px;border:0;border-radius:16px;background:var(--ink);color:var(--cream);font:700 19px var(--f-body);letter-spacing:.02em;cursor:pointer;box-shadow:0 14px 26px -12px rgba(27,16,4,.7);transition:transform .2s ease}
-form button:hover{transform:translateY(-2px)}
-.join .note{min-height:24px;margin-top:12px;font-size:16px;font-weight:700;color:#5a1a00}
-
-/* follow */
-.follow{padding-block:56px 0}
-.follow h2,.about h2,.vote h2{margin:0 0 18px;text-align:center;font-family:var(--f-display);font-weight:var(--hw);text-transform:var(--h-tt);font-size:clamp(28px,7vw,36px);line-height:1.1}
-.links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:30px;padding:0 14px}
-.links a{min-width:0}
-.links a{aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-radius:24px;text-decoration:none;color:var(--ink);
-  font:700 15px var(--f-body);box-shadow:0 22px 30px -14px rgba(0,0,0,.75);animation:drift 6s ease-in-out infinite;transition:scale .2s ease}
-.links a:nth-child(1){background:var(--lav);rotate:-3deg}
-.links a:nth-child(2){background:var(--cream);rotate:3deg;animation-duration:7s;animation-delay:-2s;margin-top:14px}
-.links a:nth-child(3){background:var(--ember-glow);rotate:-1.5deg;animation-duration:6.5s;animation-delay:-4s}
-.links a:hover{scale:1.06}
-.links svg{width:36px;height:36px;fill:currentColor}
-.links .nm{font-size:15px;line-height:1}
-.links .hd{font:500 clamp(8.5px,2.3vw,11px) var(--f-body);opacity:.8;max-width:94%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:-4px}
-.handle{margin:34px 0 0;text-align:center;color:var(--muted);font-size:15px}
-
 /* about */
+.about h2,.vote h2,.follow h2{margin:0 0 18px;text-align:center;font-family:var(--f-display);font-weight:var(--hw);text-transform:var(--h-tt);font-size:clamp(28px,7vw,36px);line-height:1.1}
 .about{position:relative;padding-block:70px 0;text-align:center}
 .about > *:not(.collage){position:relative;z-index:1}
 .collage{position:absolute;z-index:0;top:46px;left:50%;transform:translateX(-50%);width:100vw;max-width:1200px;height:min(84vw,340px);overflow:hidden;pointer-events:none;
@@ -149,10 +85,6 @@ form button:hover{transform:translateY(-2px)}
 .track.a .belt img:nth-child(odd){rotate:-3deg}.track.a .belt img:nth-child(even){rotate:2deg}
 .track.b .belt img:nth-child(odd){rotate:3deg}.track.b .belt img:nth-child(even){rotate:-2deg}
 @keyframes belt{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.find{margin-top:40px}
-.find h3{margin:0 0 14px;font-family:var(--f-display);font-weight:var(--hw);font-size:22px;color:var(--cream)}
-.find ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.find li{font-family:var(--f-display);font-weight:var(--hw);font-size:20px;line-height:1.3;color:var(--lav-deep)}
 .reel{position:relative;width:min(78vw,300px);aspect-ratio:1/1;margin:0 auto 40px}
 .reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:18px;border:7px solid #f6efe3;
   box-shadow:0 22px 40px -14px rgba(0,0,0,.7);opacity:0;transform:rotate(var(--r,0deg)) scale(.94);transition:opacity .9s ease,transform .9s ease}
@@ -162,44 +94,65 @@ form button:hover{transform:translateY(-2px)}
 .about p{margin:0 auto;max-width:36ch;color:#e3ddcf}
 
 
-/* book recommendations */
-.reads{padding-block:76px 0}
-.reads .kicker{text-align:center;color:var(--ember)}
-.reads h2{margin:0;text-align:center;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(28px,7vw,36px);line-height:1.1}
-.reads .lede{margin:12px auto 0;max-width:34ch;text-align:center;color:#e3ddcf}
-.shelf{list-style:none;margin:30px 0 0;padding:6px max(20px,calc((100vw - 520px)/2)) 22px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(20px,calc((100vw - 520px)/2));scrollbar-width:none}
-.shelf::-webkit-scrollbar{display:none}
-.bk{flex:0 0 172px;scroll-snap-align:start}
-.spine{aspect-ratio:2/3;background:var(--bg);color:var(--fg);border-radius:4px 10px 10px 4px;padding:20px 16px 16px 22px;display:flex;flex-direction:column;position:relative;
-  box-shadow:inset 6px 0 0 rgba(0,0,0,.18),0 18px 26px -14px rgba(0,0,0,.75)}
-.spine b{font-family:var(--f-display);font-weight:var(--hw);font-size:21px;line-height:1.08}
-.spine small{display:block;margin-top:8px;font-size:12px;line-height:1.3;opacity:.8}
-.spine i{margin-top:auto;font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.9}
-.bk p{margin:12px 2px 0;font-size:15px;line-height:1.45;color:#d9d1e2}
-.swipe{margin:0;text-align:center;font-size:14px;color:var(--muted)}
+@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
+.kicker{display:block;font-family:var(--f-sc);text-transform:var(--sc-tt);font-weight:var(--sc-w);font-size:13px;letter-spacing:.2em;margin-bottom:8px}
+.hook{margin:12px 0 0;font-family:var(--f-hook);font-weight:var(--hook-w);font-size:20px;line-height:1.3}
+.blurb{margin:10px 0 0;font-size:16px}
 
+/* what you'll find */
+.find{padding-block:56px 0;text-align:center}
+.find h2{margin:0 auto 22px;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(26px,6.5vw,34px);line-height:1.1}
+.cards{list-style:none;margin:0 auto;padding:4px max(20px,calc((100vw - 720px)/2)) 12px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:100%}
+.cards::-webkit-scrollbar{display:none}
+.cards li{flex:0 0 min(62vw,210px);scroll-snap-align:center}
+.cards img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:16px;box-shadow:0 18px 28px -14px rgba(0,0,0,.75)}
+.cards span{display:block;margin-top:12px;text-align:left;font-family:var(--f-display);font-weight:var(--hw);font-size:19px;line-height:1.2;color:var(--cream)}
+@media (min-width:760px){.cards{justify-content:center}}
 
-/* closing email capture */
-.finale{padding:72px 0 64px;background:radial-gradient(120% 70% at 50% 0%,#3a2350 0%,var(--ink) 70%);text-align:center}
-.finale h2{margin:0;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(32px,8.6vw,46px);line-height:1.06}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;align-items:end}
-.pick{display:flex;flex-direction:column;align-items:center}
-.tag{margin:0;width:100%;min-height:4.2em;display:flex;align-items:flex-end;justify-content:center;text-align:center;font-family:var(--f-display);font-weight:var(--hw);font-size:15.5px;line-height:1.3;color:var(--ember-glow)}
-.arrow{display:block;width:28px;height:40px;margin:10px auto 12px;fill:none;stroke:var(--ember-glow);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation:nudge 2.4s ease-in-out infinite}
-.pick:nth-child(2) .arrow{animation-delay:-1.2s}
-@keyframes nudge{0%,100%{translate:0 0}50%{translate:0 5px}}
-.pick img{width:min(100%,170px);aspect-ratio:1253/2001;border-radius:2px;box-shadow:0 22px 30px -12px rgba(0,0,0,.8)}
-.pick:nth-child(1) img{rotate:-3deg;animation:drift 7s ease-in-out infinite}
-.pick:nth-child(2) img{rotate:3deg;animation:drift 8s ease-in-out -3s infinite}
-.genre{margin-top:14px;font-family:var(--f-sc);text-transform:var(--sc-tt);font-weight:var(--sc-w);font-size:12px;letter-spacing:.18em;color:var(--muted)}
-.finale .sub{margin:30px auto 0;color:#e3ddcf;font-size:17px}
-.finale form{margin-top:18px}
-.finale form input{border-color:rgba(251,239,216,.5);background:#fffaf0}
-.finale form button{background:var(--ember);color:#1b1004;animation:pulse 2.6s ease-in-out infinite}
-.finale .note{min-height:24px;margin-top:12px;font-weight:700;color:var(--ember-glow)}
+/* find me on */
+.follow{padding-block:56px 0;text-align:center}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.pills a{display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:999px;background:var(--ink-2);border:1px solid var(--line);text-decoration:none;color:var(--cream);transition:border-color .2s ease}
+.pills a:hover{border-color:var(--ember)}
+.pills svg{width:26px;height:26px;fill:currentColor;flex:0 0 auto}
+.pills b{display:block;font-size:15px;line-height:1.1}
+.pills small{display:block;font-size:12.5px;color:var(--muted)}
+
+/* books */
+.books{margin-top:0;padding-block:64px 24px;text-align:center}
+.books h2{margin:0 0 26px;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(34px,9vw,48px);line-height:1.05;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.1em}
+.shelf2{display:grid;gap:18px}
+.bk{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:28px 22px;border-radius:20px;text-align:center}
+.bk img{width:min(46%,170px);height:auto;aspect-ratio:1253/2001;margin:0 auto;border-radius:2px;box-shadow:0 22px 30px -12px rgba(0,0,0,.7);animation:drift 7s ease-in-out infinite}
+.bk.mo{background:linear-gradient(160deg,var(--teal),var(--teal-deep))}
+.bk.ps{background:linear-gradient(160deg,var(--lav),var(--lav-deep));color:var(--text-dark)}
+.bk.mo img{rotate:2deg}.bk.ps img{rotate:-2deg;animation-delay:-3s}
+.bk h3{margin:0;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(26px,6.5vw,32px);line-height:1.08}
+.bk .kicker{letter-spacing:.12em;font-size:12px}
+.bk.mo .kicker{color:var(--ember)}.bk.mo h3{color:var(--ember-glow)}.bk.mo .blurb{color:#e3ddcf}
+.bk.ps .kicker{color:var(--plum)}.bk.ps h3{color:var(--wine)}.bk.ps .blurb{color:#2b2440}
+@media (min-width:700px){.shelf2{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.bk{grid-template-columns:150px 1fr;text-align:left}.bk img{width:100%}}
+
+/* sign up (calm) */
+.join{padding:44px 0 64px;text-align:center}
+.join h2{margin:0;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(30px,8vw,40px);line-height:1.1}
+.join p{margin:10px auto 0;max-width:34ch;color:#e3ddcf}
+.join form{margin-top:22px;display:grid;gap:10px}
+.join form input{width:100%;height:58px;padding:0 20px;border-radius:14px;border:1px solid rgba(251,239,216,.4);background:#fffaf0;color:#1b1004;font:inherit;font-size:18px;text-align:center}
+.join form input::placeholder{color:#8a7a62}
+.join form input:focus{outline:3px solid var(--ember);outline-offset:2px}
+.join form button{height:58px;border:0;border-radius:14px;background:var(--ember);color:#1b1004;font:700 18px var(--f-body);cursor:pointer}
+.join .note{min-height:24px;margin-top:12px;font-weight:700;color:var(--ember-glow)}
+
+footer{padding-block:34px 40px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));text-align:center;background:var(--ink-2);border-top:1px solid var(--line)}
+footer .tag-line{margin:0 auto;max-width:28ch;font-family:var(--f-display);font-weight:var(--hw);font-size:22px;line-height:1.3;color:var(--cream)}
+footer .tag-line b{color:var(--ember-glow);font-weight:inherit}
+footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
+.vote{margin-top:64px}
 
 /* voter check */
-.vote{margin-top:76px;padding:48px 0 52px;background:var(--ink-2);border-top:1px solid var(--line)}
+.vote{padding:48px 0 52px;background:var(--ink-2);border-top:1px solid var(--line)}
 .vote .kicker{text-align:center;color:var(--ember)}
 .vote ul{margin:0 auto;padding:0;list-style:none;display:grid;gap:12px;max-width:440px}
 .vote li{padding-left:28px;position:relative;color:#e3ddcf}
@@ -207,69 +160,15 @@ form button:hover{transform:translateY(-2px)}
 .vote .go{display:block;margin:28px auto 0;max-width:440px;padding:18px 24px;border-radius:999px;background:var(--cream);color:var(--ink);text-align:center;text-decoration:none;font-family:var(--f-sc);text-transform:var(--sc-tt);font-weight:var(--sc-w);font-size:17px;letter-spacing:.12em;transition:transform .2s ease}
 .vote .go:hover{transform:translateY(-1px)}
 .vote .small{margin:12px auto 0;text-align:center;font-size:14px;color:var(--muted)}
-footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;background:var(--ink-2)}
-@media (prefers-reduced-motion:reduce){.belt,.avatar,.arrow,.pick img,.finale form button,.book figure,.links a,.join,.join .sun,.minis img,.join form button{animation:none}}
+@media (prefers-reduced-motion:reduce){.belt,.avatar,.bk img{animation:none}}
 </style>
 
 <header class="hero wrap">
   <div class="avatar"><img src="images/profile.webp" alt="Marvyn Mylk with his dog Ali" width="480" height="480"></div>
   <div class="mid">
     <h1><span>Talking</span><span>politics</span><span>with logic</span><span>&amp; empathy</span><span>in the</span><em>purple South.</em></h1>
-    <a class="herocta" href="#join" id="herocta">Don't miss the release ↓</a>
   </div>
 </header>
-
-<section class="band ps" aria-labelledby="ps-h">
-  <div class="wrap book">
-    <figure><img src="images/purple-south-cover.jpg" alt="Cover of The Purple South: How to Flip a State by Marvyn Mylk" width="520" height="830"></figure>
-    <div>
-      <span class="kicker">Political nonfiction · Coming soon</span>
-      <h2 id="ps-h">The Purple South</h2>
-      <p class="hook">In 2024, 21 million registered voters in the South stayed home.</p>
-      <p class="blurb">Somebody told them their vote didn't matter. This book is the receipt that says otherwise: the numbers, the history and a plan for flipping the South with the one thing nobody can take from you.</p>
-    </div>
-  </div>
-</section>
-
-<section class="band mo" aria-labelledby="mo-h">
-  <div class="wrap book">
-    <figure><img src="images/monster-on-tv-cover.jpg" alt="Cover of The Monster on TV by Marvyn Mylk" width="520" height="830"></figure>
-    <div>
-      <span class="kicker">Sci-fi thriller · Coming soon</span>
-      <h2 id="mo-h">The Monster on TV</h2>
-      <p class="hook">Lose the vote, and you fall back to Earth on fire.</p>
-      <p class="blurb">Eight players. A flying saucer in orbit. $10 million. Lora is Novus, one of the people America has decided to blame for everything, and she's hiding her glowing eyes on live TV. The other team is supposed to be the enemy. So why is one of them the only person who really sees her?</p>
-    </div>
-  </div>
-</section>
-
-<section class="join" id="join" aria-labelledby="join-h">
-  <div class="sun" aria-hidden="true"></div>
-  <div class="wrap narrow">
-    <div class="minis" aria-hidden="true"><img alt="" class="m1"><img alt="" class="m2"></div>
-    <span class="kicker">Two books coming soon</span>
-    <h2 id="join-h">Don't miss the book release!</h2>
-    <p>Be one of the first to read them. Drop your email and I'll let you know the second they're out.</p>
-    <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="top">
-      <p hidden><label>Leave this empty <input name="bot-field"></label></p>
-      <label for="email1" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-      <input id="email1" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-      <button type="submit">Count me in</button>
-    </form>
-    <p class="note" role="status"></p>
-  </div>
-</section>
-
-<section class="follow wrap narrow" aria-labelledby="follow-h">
-  <h2 id="follow-h">Follow me for more</h2>
-  <div class="links">
-    <a href="https://www.tiktok.com/@betterargument" target="_blank" rel="noopener" aria-label="TikTok @betterargument"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.2v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.6a5.8 5.8 0 1 0 5 5.8V9.1a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span class="nm">TikTok</span><span class="hd">@betterargument</span></a>
-    <a href="https://www.threads.net/@marvynmylk" target="_blank" rel="noopener" aria-label="Threads @marvynmylk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22h-.1c-3 0-5.3-1-6.8-2.9C3.9 17.4 3.2 15 3.2 12c0-3 .7-5.4 2.1-7.1C6.8 3 9.1 2 12.1 2c2.3 0 4.2.6 5.6 1.8 1.3 1.1 2.3 2.700 2.8 4.7l-1.8.5c-.9-3.4-3.2-5.1-6.7-5.1-2.4 0-4.2.7-5.3 2.2-1.1 1.4-1.6 3.4-1.6 6s.5 4.6 1.6 6c1.1 1.5 2.9 2.2 5.3 2.2 2.1 0 3.6-.5 4.7-1.6 1.3-1.3 1.3-2.8.9-3.8-.3-.6-.7-1.1-1.3-1.5-.2 1.2-.6 2.2-1.2 2.9-.8 1-2 1.6-3.5 1.7-1.1.1-2.2-.2-3-.8-1-.6-1.5-1.6-1.6-2.7-.1-2.2 1.7-3.8 4.5-4 1-.1 1.9 0 2.8.1-.1-.7-.3-1.2-.7-1.6-.5-.5-1.2-.8-2.2-.8-1.3 0-2.1.4-2.6 1.2l-1.6-1c.8-1.2 2.1-1.9 4.2-1.9 1.6 0 2.8.5 3.600 1.4.8.8 1.2 2 1.3 3.5.5.2 1 .5 1.4.9.9.7 1.5 1.6 1.8 2.6.6 1.6.6 4-1.4 6-1.5 1.5-3.4 2.2-6 2.2zm.6-9.1h-.6c-1.6.1-2.8.8-2.7 1.9.1.9 1.1 1.5 2.4 1.4 1.4-.1 2.5-.8 2.8-3.1-.6-.1-1.2-.2-1.9-.2z"/></svg><span class="nm">Threads</span><span class="hd">@marvynmylk</span></a>
-    <a href="https://www.instagram.com/authormarvynmylk" target="_blank" rel="noopener" aria-label="Instagram @authormarvynmylk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8.1c-.1-1.6-.4-3-1.6-4.2S17.6 2.3 16 2.2C14.3 2.1 9.7 2.1 8 2.2c-1.6.1-3 .4-4.2 1.6S2.3 6.4 2.2 8C2.1 9.7 2.1 14.3 2.2 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.3.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.700.1-6.3.1-7.9zM19.900 18a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.2.4s-4.1.1-5.2-.4A3 3 0 0 1 6.1 18c-.5-1.2-.4-4-.4-5.200s-.1-4.1.4-5.2A3 3 0 0 1 7.8 6c1.2-.5 4-.4 5.2-.4s4.1-.1 5.2.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.2s.1 4-.4 5.1z"/></svg><span class="nm">Instagram</span><span class="hd">@authormarvynmylk</span></a>
-  </div>
-  <p class="handle">Tap a square to follow</p>
-</section>
 
 <section class="about wrap narrow" aria-labelledby="about-h">
   <div class="collage" aria-hidden="true">
@@ -283,15 +182,25 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
     <img src="images/backyard-dogs.jpg" alt="Marvyn in the backyard with both dogs" width="600" height="600">
     <img src="images/beanie.jpg" alt="Marvyn laughing on the couch in a beanie" width="600" height="600">
   </div>
-  <h2 id="about-h">About Marvyn</h2>
-  <p>Marvyn Mylk lives in North Alabama with his partner and their two fur babies. He's a nerd with ten years of therapy behind him, reads about fifty books a year, and spends his nights volunteering for local campaigns and writing. He believes the South is already purple. It just needs everyone who was told their vote doesn't matter to show up.</p>
-  <div class="find">
-    <h3>What you'll find here</h3>
-    <ul>
-      <li>The races nobody saw coming.</li>
-      <li>Neighbors who ran, and won.</li>
-      <li>The history they skipped in school.</li>
-    </ul>
+  <h2 id="about-h">Hi, I'm Marvyn.</h2>
+  <p>I live in North Alabama with my partner and our two dogs. I've spent almost a decade in marketing here in the South, I have a degree in public relations, and I've published four novels under another name. Now I'm writing about the South I actually know, the one that's a lot more purple than people think. I read about fifty books a year, I have ten years of therapy under my belt, and I volunteer for local campaigns whenever I can.</p>
+</section>
+
+<section class="find" aria-labelledby="find-h">
+  <h2 id="find-h" class="wrap narrow">What you'll find here</h2>
+  <ul class="cards">
+    <li><img src="images/collage/nell-526.jpg" alt="" width="360" height="360" loading="lazy"><span>Neighbors who ran, and won.</span></li>
+    <li><img src="images/collage/sluss-577.jpg" alt="" width="360" height="360" loading="lazy"><span>The races nobody saw coming.</span></li>
+    <li><img src="images/collage/alabama.jpg" alt="" width="600" height="600" loading="lazy"><span>The history they skipped in school.</span></li>
+  </ul>
+</section>
+
+<section class="follow wrap narrow" aria-labelledby="follow-h">
+  <h2 id="follow-h">Find me on</h2>
+  <div class="pills">
+    <a href="https://www.tiktok.com/@betterargument" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.2v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.6a5.8 5.8 0 1 0 5 5.8V9.1a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span><b>TikTok</b><small>@betterargument</small></span></a>
+    <a href="https://www.instagram.com/authormarvynmylk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8.1c-.1-1.6-.4-3-1.6-4.2S17.6 2.3 16 2.2C14.3 2.1 9.7 2.1 8 2.2c-1.6.1-3 .4-4.2 1.6S2.3 6.4 2.2 8C2.1 9.7 2.1 14.3 2.2 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.3.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.700.1-6.3.1-7.9zM19.900 18a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.2.4s-4.1.1-5.2-.4A3 3 0 0 1 6.1 18c-.5-1.2-.4-4-.4-5.200s-.1-4.1.4-5.2A3 3 0 0 1 7.8 6c1.2-.5 4-.4 5.2-.4s4.1-.1 5.2.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.2s.1 4-.4 5.1z"/></svg><span><b>Instagram</b><small>@authormarvynmylk</small></span></a>
+    <a href="https://www.threads.net/@marvynmylk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.2 22h-.1c-3 0-5.3-1-6.8-2.9C3.9 17.4 3.2 15 3.2 12c0-3 .7-5.4 2.1-7.1C6.8 3 9.1 2 12.1 2c2.3 0 4.2.6 5.6 1.8 1.3 1.1 2.3 2.700 2.8 4.7l-1.8.5c-.9-3.4-3.2-5.1-6.7-5.1-2.4 0-4.2.7-5.3 2.2-1.1 1.4-1.6 3.4-1.6 6s.5 4.6 1.6 6c1.1 1.5 2.9 2.2 5.3 2.2 2.1 0 3.6-.5 4.7-1.6 1.3-1.3 1.3-2.8.9-3.8-.3-.6-.7-1.1-1.3-1.5-.2 1.2-.6 2.2-1.2 2.9-.8 1-2 1.6-3.5 1.7-1.1.1-2.2-.2-3-.8-1-.6-1.5-1.6-1.6-2.7-.1-2.2 1.7-3.8 4.5-4 1-.1 1.9 0 2.8.1-.1-.7-.3-1.2-.7-1.6-.5-.5-1.2-.8-2.2-.8-1.3 0-2.1.4-2.6 1.2l-1.6-1c.8-1.2 2.1-1.9 4.2-1.9 1.6 0 2.8.5 3.600 1.4.8.8 1.2 2 1.3 3.5.5.2 1 .5 1.4.9.9.7 1.5 1.6 1.8 2.6.6 1.6.6 4-1.4 6-1.5 1.5-3.4 2.2-6 2.2zm.6-9.1h-.6c-1.6.1-2.8.8-2.7 1.9.1.9 1.1 1.5 2.4 1.4 1.4-.1 2.5-.8 2.8-3.1-.6-.1-1.2-.2-1.9-.2z"/></svg><span><b>Threads</b><small>@marvynmylk</small></span></a>
   </div>
 </section>
 
@@ -308,35 +217,52 @@ footer{padding:26px 0 34px;text-align:center;font-size:13px;color:#7d7489;backgr
     <p class="small">Official Alabama Secretary of State lookup</p>
   </div>
 </section>
-<section class="finale" aria-labelledby="fin-h">
-  <div class="wrap narrow">
-    <h2 id="fin-h">Two books are coming.<br>Be first in line.</h2>
-    <div class="duo">
-      <div class="pick">
-        <p class="tag">The plan to flip the South, with the numbers to back it up</p>
-        <svg class="arrow" viewBox="0 0 40 56" aria-hidden="true"><path d="M20 3 V48" /><path d="M9 38 L20 50 L31 38" /></svg>
-        <img class="fc1" alt="The Purple South cover">
-        <span class="genre">Political nonfiction</span>
-      </div>
-      <div class="pick">
-        <p class="tag">A reality show in orbit, and a country looking for someone to blame</p>
-        <svg class="arrow" viewBox="0 0 40 56" aria-hidden="true"><path d="M20 3 V48" /><path d="M9 38 L20 50 L31 38" /></svg>
-        <img class="fc2" alt="The Monster on TV cover">
-        <span class="genre">Sci-fi thriller</span>
-      </div>
+
+<section class="books" aria-labelledby="books-h">
+  <div class="wrap">
+    <h2 id="books-h">Almost here.</h2>
+    <div class="shelf2">
+      <article class="bk mo">
+        <img src="images/monster-on-tv-cover.jpg" alt="Cover of The Monster on TV by Marvyn Mylk" width="520" height="830">
+        <div>
+          <span class="kicker">Sci-fi thriller · Coming soon</span>
+          <h3>The Monster on TV</h3>
+          <p class="hook">Lose the vote, and you fall back to Earth on fire.</p>
+          <p class="blurb">Eight players. A flying saucer in orbit. $10 million. Lora is Novus, one of the people America has decided to blame for everything, and she's hiding her glowing eyes on live TV. The other team is supposed to be the enemy. So why is one of them the only person who really sees her?</p>
+        </div>
+      </article>
+      <article class="bk ps">
+        <img src="images/purple-south-cover.jpg" alt="Cover of The Purple South: How to Flip a State by Marvyn Mylk" width="520" height="830">
+        <div>
+          <span class="kicker">Political nonfiction · Coming soon</span>
+          <h3>The Purple South</h3>
+          <p class="hook">In 2024, 21 million registered voters in the South stayed home.</p>
+          <p class="blurb">Somebody told them their vote didn't matter. This book is the receipt that says otherwise: the numbers, the history and a plan for flipping the South with the one thing nobody can take from you.</p>
+        </div>
+      </article>
     </div>
-    <p class="sub">One email the day they're out. No spam, ever.</p>
+  </div>
+</section>
+
+<section class="join" id="join" aria-labelledby="join-h">
+  <div class="wrap narrow">
+    <h2 id="join-h">Want a heads-up?</h2>
+    <p>I'll email you when a book comes out. I'll never sell your email. This is just a way to stay connected.</p>
     <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="bottom">
+      <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="end">
       <p hidden><label>Leave this empty <input name="bot-field"></label></p>
-      <label for="email2" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-      <input id="email2" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+      <label for="email1" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+      <input id="email1" name="email" type="email" placeholder="Your email" autocomplete="email" required>
       <button type="submit">Count me in</button>
     </form>
     <p class="note" role="status"></p>
   </div>
 </section>
-<footer>© 2026 Marvyn Mylk · Be a voter.</footer>
+
+<footer>
+  <p class="tag-line">Elections are decided by a handful of votes. <b>Be a voter.</b></p>
+  <small>© 2026 Marvyn Mylk</small>
+</footer>
 
 <script>
 /* Sign-ups are collected by Netlify Forms (see the site's Forms tab in Netlify). */
@@ -347,13 +273,11 @@ document.querySelectorAll('form.signup').forEach(f=>{
     try {
       const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()});
       if (!r.ok) throw new Error(r.status);
-      note.textContent = "You're on the list. Thank you!"; f.reset();
+      note.textContent = "You're in. Talk soon."; f.reset();
     } catch (err) { note.textContent = "Something went wrong. Please try again."; }
     btn.disabled = false;
   });
 });
-const cov=document.querySelectorAll('.book img');document.querySelector('.minis .m1').src=cov[0].src;document.querySelector('.minis .m2').src=cov[1].src;document.querySelector('.fc1').src=cov[0].src;document.querySelector('.fc2').src=cov[1].src;
-document.getElementById('herocta').addEventListener('click',e=>{e.preventDefault();document.getElementById('join').scrollIntoView({behavior:'smooth'})});
 document.documentElement.dataset.font='b';const reel=[...document.querySelectorAll('.reel img')];let ri=0;
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{reel.forEach(x=>x.classList.remove('was'));reel[ri].classList.replace('on','was');ri=(ri+1)%reel.length;reel[ri].classList.add('on')},3200);
 </script>
