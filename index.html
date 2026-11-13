@@ -109,6 +109,18 @@ h1 em{font-style:normal;display:block;margin-top:.12em;padding-bottom:.18em;marg
 .cards span{display:block;margin-top:12px;text-align:left;font-family:var(--f-display);font-weight:var(--hw);font-size:19px;line-height:1.2;color:var(--cream)}
 @media (min-width:760px){.cards{justify-content:center}}
 
+/* worth a read */
+.read{padding-block:56px 0;text-align:center}
+.read h2{margin:0 0 18px;font-family:var(--f-display);font-weight:var(--hw);font-size:clamp(26px,6.5vw,34px);line-height:1.1}
+.article-card{display:block;text-align:left;padding:22px 20px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none;transition:border-color .2s ease}
+.article-card:hover{border-color:var(--ember)}
+.article-card .ppl{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:260px;margin:0 0 16px}
+.article-card .ppl svg{width:100%;height:auto}
+.article-card .on{fill:#e8a3c3}.article-card .off{fill:rgba(251,239,216,.16)}
+.article-card b{display:block;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:22px;line-height:1.2}
+.article-card .dek{display:block;margin-top:8px;color:var(--muted);font-size:16px}
+.article-card .go{display:inline-block;margin-top:12px;font-weight:700;color:var(--ember-glow)}
+
 /* find me on */
 .follow{padding-block:56px 0;text-align:center}
 .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -193,6 +205,16 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
     <li><img src="images/collage/allison-swing.jpg" alt="" width="360" height="360" loading="lazy"><span>The races nobody saw coming.</span></li>
     <li><img src="images/collage/alabama.jpg" alt="" width="600" height="600" loading="lazy"><span>The history they skipped in school.</span></li>
   </ul>
+</section>
+
+<section class="read wrap narrow" aria-labelledby="read-h">
+  <h2 id="read-h">Worth a read</h2>
+  <a class="article-card" href="articles/alabama-voters-who-stayed-home-2024.html">
+    <span class="ppl"><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span>
+    <b>How many Alabamians didn't vote in 2024?</b>
+    <span class="dek">About 1.6 million registered voters stayed home. Here's what the numbers say.</span>
+    <span class="go">Read it &rarr;</span>
+  </a>
 </section>
 
 <section class="follow wrap narrow" aria-labelledby="follow-h">
