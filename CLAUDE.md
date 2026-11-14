@@ -10,4 +10,4 @@ Marvyn Mylk's link-in-bio site. `index.html` is the whole page; photos and cover
 - **Keep Tyler (Marvyn's partner) out of every image.** He doesn't want to be public. Crop or edit him out of any photo before it goes on the site.
 - **No "AI tells" in design:** no small eyebrow labels, source footers, handle footers or page numbers.
 - **Sign-up forms** post to Netlify Forms (form name `book-news`). Keep `data-netlify="true"`, the hidden `form-name` input and the `bot-field` honeypot on the sign-up form (one form, at the end of the page).
-- The `og:url` and `og:image` tags use the absolute address `https://marvynmylk.netlify.app`. Update them if the site's address changes.
+- The `og:url` and `og:image` tags use the absolute address `https://marvynmylk.com`. Update them if the site's address changes.
