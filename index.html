@@ -121,6 +121,9 @@ h1 em{font-style:normal;display:block;margin-top:.12em;padding-bottom:.18em;marg
 .article-card .ppl{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:260px;margin:0 0 16px}
 .article-card .ppl svg{width:100%;height:auto}
 .article-card .on{fill:#e8a3c3}.article-card .off{fill:rgba(251,239,216,.16)}
+.article-card .mbars{display:grid;gap:7px;max-width:260px;margin:0 0 16px}
+.article-card .mbars i{display:block;height:12px;border-radius:6px;position:relative;background:linear-gradient(90deg,#e24854 var(--r),#2d6eff var(--r))}
+.article-card .mbars i::after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:#fff}
 .article-card b{display:block;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:22px;line-height:1.2}
 .article-card .dek{display:block;margin-top:8px;color:var(--muted);font-size:16px}
 .article-card .go{display:inline-block;margin-top:12px;font-weight:700;color:var(--ember-glow)}
@@ -279,6 +282,12 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
 <section class="read" aria-labelledby="read-h">
   <h2 id="read-h" class="wrap narrow">Dig into the data</h2>
   <div class="stories">
+  <a class="article-card" href="articles/madison-county-precinct-shifts-2026.html">
+    <span class="mbars" aria-hidden="true"><i style="--r:53%"></i><i style="--r:42%"></i></span>
+    <b>Every precinct in Madison County moved left</b>
+    <span class="dek">From 2024 to 2026, 26 precincts flipped. See Meridianville, Madison, New Market and more.</span>
+    <span class="go">Read it &rarr;</span>
+  </a>
   <a class="article-card" href="articles/alabama-voters-who-stayed-home-2024.html">
     <span class="ppl"><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg><svg viewBox="0 0 24 40" class="off" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span>
     <b>How many Alabamians didn't vote in 2024?</b>
