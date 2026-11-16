@@ -114,6 +114,20 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .fine{font-size:12.5px;line-height:1.5;color:var(--muted);margin:0 0 10px}
 .fine a{color:var(--muted)}
 .slope svg{width:100%;height:auto;display:block}
+.cty{position:relative}
+.cb{margin:0 0 26px}
+.ct2{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.race{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+.win{font-size:14px;font-weight:700;padding:5px 11px;border-radius:999px;white-space:nowrap}
+.win.r{background:rgba(226,72,84,.2);color:#ff9aa2}.win.d{background:rgba(45,110,255,.22);color:#a9c2ff}
+.cbar{position:relative;display:flex;height:40px;border-radius:10px;overflow:visible}
+.cbar i{display:block;height:100%}
+.cbar .r{background:#e24854;border-radius:10px 0 0 10px}.cbar .d{background:#2d6eff;border-radius:0 10px 10px 0}.cbar .o{background:#5c5a70}
+.cbar b{position:absolute;left:50%;top:-6px;bottom:-6px;width:3px;margin-left:-1.5px;background:#fff;border-radius:2px}
+.cn{display:flex;justify-content:space-between;margin-top:8px;font-size:15px}
+.cn strong{font-size:20px;font-weight:700}
+.cn .r{color:#ff8a94}.cn .d{color:#8fb0ff}
+.c50{position:absolute;left:50%;top:6px;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--muted)}
 .pcard:empty{display:none}
 .pcard{padding:16px;border-radius:14px;background:var(--ink);border:1px solid var(--line)}
 .pcard h3{font:600 22px/1.2 "Fraunces",Georgia,serif;margin:0 0 2px}
@@ -129,13 +143,14 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 <h1>Every precinct in Madison County <span>moved left</span></h1>
 <p class="lede">In 2024, Donald Trump carried Madison County by 17,606 votes. In 2026, Doug Jones carried it by 26,115. Of the 74 precincts I could compare, <b>all 74 moved toward Democrats</b>, and 26 flipped.</p>
 
-<div class="chart" role="img" aria-label="Madison County. 2024 president: Trump 53.4%, Harris 44.4%. 2026 governor: Tuberville 41.7%, Jones 57.9%.">
-<div class="push"><div class="ph"><span>2024 · President</span><span>Trump +9.0</span></div>
-<div class="pb"><i class="r" style="width:53.4%">53.4%</i><i class="o" style="width:2.2%"></i><i class="d" style="width:44.4%">44.4%</i></div>
-<div class="pf"><span>Trump (R)</span><span>Harris (D)</span></div></div>
-<div class="push"><div class="ph"><span>2026 · Governor</span><span>Jones +16.2</span></div>
-<div class="pb"><i class="r" style="width:41.7%">41.7%</i><i class="o" style="width:0.4%"></i><i class="d" style="width:57.9%">57.9%</i></div>
-<div class="pf"><span>Tuberville (R)</span><span>Jones (D)</span></div></div>
+<div class="chart cty" role="img" aria-label="Madison County. 2024 president: Trump 53.4%, Harris 44.4%. 2026 governor: Tuberville 41.7%, Jones 57.9%.">
+<div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump won by 9.0 pts</span></div>
+<div class="cbar"><i class="r" style="width:53.4%"></i><i class="o" style="width:2.2%"></i><i class="d" style="width:44.4%"></i><b></b></div>
+<div class="cn"><span class="r"><strong>53.4%</strong> Trump</span><span class="d">Harris <strong>44.4%</strong></span></div></div>
+<div class="cb"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones won by 16.2 pts</span></div>
+<div class="cbar"><i class="r" style="width:41.7%"></i><i class="o" style="width:0.4%"></i><i class="d" style="width:57.9%"></i><b></b></div>
+<div class="cn"><span class="r"><strong>41.7%</strong> Tuberville</span><span class="d">Jones <strong>57.9%</strong></span></div></div>
+
 <p class="note">Madison County totals, including absentee ballots. 2026 results are unofficial until certified.</p>
 </div>
 
