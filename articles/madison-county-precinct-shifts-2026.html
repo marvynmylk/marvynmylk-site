@@ -110,6 +110,10 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .mapw.fl .p.dim{opacity:.18}
 .pick span{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
 .pick select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--cream);font:500 16px Karla,sans-serif}
+.fineprint{margin-top:48px;padding-top:18px;border-top:1px solid var(--line)}
+.fine{font-size:12.5px;line-height:1.5;color:var(--muted);margin:0 0 10px}
+.fine a{color:var(--muted)}
+.slope svg{width:100%;height:auto;display:block}
 .pcard:empty{display:none}
 .pcard{padding:16px;border-radius:14px;background:var(--ink);border:1px solid var(--line)}
 .pcard h3{font:600 22px/1.2 "Fraunces",Georgia,serif;margin:0 0 2px}
@@ -153,11 +157,8 @@ var MC={"data": {"12": {"id": 12, "name": "Hampton Cove Church of Christ", "town
 </script>
 
 <h2>Even the reddest places moved</h2>
-<p>New Hope City Hall went from 84.0% Republican to 73.7%. The New Market VFD went from 87.5% to 77.9%. Those are still deep red, but a 10-point move in two years means a lot of neighbors changed their minds, or a lot of new people showed up.</p>
-
-<h2>About these numbers</h2>
-<p>All results come from the <a href="https://www.sos.alabama.gov/alabama-votes/voter/election-data" target="_blank" rel="noopener">Alabama Secretary of State's precinct files</a>. Precinct percentages count votes cast at the polling place and leave out absentee and provisional ballots, which are reported for the county as a whole. A few polling places were renamed between elections; I matched them by name and location, and five 2026 precincts with no clear 2024 match are listed without a change. The 2026 results are unofficial until certified.</p>
-<p>These are two different races with different candidates, so this isn't a perfect apples-to-apples comparison. But the direction is the same in every precinct I could compare.</p>
+<p>The five most Republican precincts in the county all dropped about 10 points or more.</p>
+<div class="chart slope"><svg viewBox="0 0 360 510" role="img" aria-label="Slope chart: the five most Republican precincts all moved toward Democrats from 2024 to 2026."><defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#e24854"/><stop offset="1" stop-color="#b061e0"/></linearGradient></defs><line x1="42" x2="178" y1="420" y2="420" stroke="rgba(251,239,216,.08)"/><text x="36" y="424" fill="#bdb4c7" font-size="11" text-anchor="end" font-family="Karla">60%</text><line x1="42" x2="178" y1="297" y2="297" stroke="rgba(251,239,216,.08)"/><text x="36" y="301" fill="#bdb4c7" font-size="11" text-anchor="end" font-family="Karla">70%</text><line x1="42" x2="178" y1="173" y2="173" stroke="rgba(251,239,216,.08)"/><text x="36" y="177" fill="#bdb4c7" font-size="11" text-anchor="end" font-family="Karla">80%</text><line x1="42" x2="178" y1="49" y2="49" stroke="rgba(251,239,216,.08)"/><text x="36" y="53" fill="#bdb4c7" font-size="11" text-anchor="end" font-family="Karla">90%</text><text x="50" y="496" fill="#fbefd8" font-size="17" font-weight="700" text-anchor="middle" font-family="Karla">2024</text><text x="170" y="496" fill="#fbefd8" font-size="17" font-weight="700" text-anchor="middle" font-family="Karla">2026</text><line x1="50" y1="79.8" x2="170" y2="198.7" stroke="url(#sg)" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="79.8" r="5" fill="#e24854"/><circle cx="170" cy="198.7" r="6" fill="#b061e0"/><text x="184" y="199.7" fill="#fbefd8" font-size="17" font-weight="700" font-family="Karla">New Market VFD</text><text x="184" y="217.7" fill="#cdb8ff" font-size="14.5" font-family="Karla">87.5% → 77.9%</text><line x1="50" y1="123.1" x2="170" y2="250.7" stroke="url(#sg)" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="123.1" r="5" fill="#e24854"/><circle cx="170" cy="250.7" r="6" fill="#b061e0"/><text x="184" y="251.7" fill="#fbefd8" font-size="17" font-weight="700" font-family="Karla">New Hope</text><text x="184" y="269.7" fill="#cdb8ff" font-size="14.5" font-family="Karla">84.0% → 73.7%</text><line x1="50" y1="186.3" x2="170" y2="304.0" stroke="url(#sg)" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="186.3" r="5" fill="#e24854"/><circle cx="170" cy="304.0" r="6" fill="#b061e0"/><text x="184" y="305.0" fill="#fbefd8" font-size="17" font-weight="700" font-family="Karla">Gurley</text><text x="184" y="323.0" fill="#cdb8ff" font-size="14.5" font-family="Karla">78.9% → 69.4%</text><line x1="50" y1="195.0" x2="170" y2="344.9" stroke="url(#sg)" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="195.0" r="5" fill="#e24854"/><circle cx="170" cy="344.9" r="6" fill="#b061e0"/><text x="184" y="345.9" fill="#fbefd8" font-size="17" font-weight="700" font-family="Karla">New Market Rec</text><text x="184" y="363.9" fill="#cdb8ff" font-size="14.5" font-family="Karla">78.2% → 66.1%</text><line x1="50" y1="250.7" x2="170" y2="404.3" stroke="url(#sg)" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="250.7" r="5" fill="#e24854"/><circle cx="170" cy="404.3" r="6" fill="#b061e0"/><text x="184" y="405.3" fill="#fbefd8" font-size="17" font-weight="700" font-family="Karla">Owens Cross Roads</text><text x="184" y="423.3" fill="#cdb8ff" font-size="14.5" font-family="Karla">73.7% → 61.3%</text></svg><p class="note">Republican share of the vote: 2024 president, 2026 governor.</p></div>
 
 <h2>What this means</h2>
 <p>Madison County didn't change overnight. People ran for office, knocked doors, and showed up. Every one of those precinct numbers is a group of neighbors who decided their vote was worth casting.</p>
@@ -166,6 +167,10 @@ var MC={"data": {"12": {"id": 12, "name": "Hampton Cove Church of Christ", "town
 <div class="book">
   <img src="../images/purple-south-cover.jpg" alt="The Purple South book cover">
   <p>Stories like Madison County's are what my upcoming book, <i>The Purple South</i>, is about: how Southern places flip, and what changes when we show up. <a href="../#join-h">Get a heads-up when it's out.</a></p>
+</div>
+<div class="fineprint"><p class="fine">All results come from the <a href="https://www.sos.alabama.gov/alabama-votes/voter/election-data" target="_blank" rel="noopener">Alabama Secretary of State's precinct files</a>. Precinct percentages count votes cast at the polling place and leave out absentee and provisional ballots, which are reported for the county as a whole. A few polling places were renamed between elections; I matched them by name and location, and five 2026 precincts with no clear 2024 match are listed without a change. The 2026 results are unofficial until certified.</p>
+<p class="fine">These are two different races with different candidates, so this isn't a perfect apples-to-apples comparison. But the direction is the same in every precinct I could compare.</p>
+
 </div>
 </article>
 </main>
