@@ -4,7 +4,7 @@ Pages in subfolders (articles/, play/, madison-county/) link back with ../; the 
 import sys, os, re, json, subprocess
 T=os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0,T)
-import orbit, footer, storymap
+import orbit, footer, storymap, chrome
 ns={}; exec(open(T+'/signup.py').read(),ns)
 p=sys.argv[1]; landing=os.path.basename(p)=='index.html' and os.path.dirname(os.path.abspath(p))==os.path.dirname(T)
 root='' if landing else '../'
@@ -29,8 +29,14 @@ s=s.replace('</style>',storymap.CSS+'</style>',1)
 cur=os.path.relpath(os.path.abspath(p),os.path.dirname(T)).replace(os.sep,'/')
 blk=storymap.block(cur,root)
 if landing: blk='<!--storymap--><div class="wrap narrow">'+blk.replace('<!--storymap-->','',1).replace('<!--/storymap-->','',1)+'</div><!--/storymap-->\n'
-i=s.index('<section class="join"'); s=s[:i]+blk+s[i:]
+if 'data-hub="1"' not in s:
+    i=s.index('<section class="join"'); s=s[:i]+blk+s[i:]
+# 4. menu + FAQ styles
+s=re.sub(r'\n?/\*chrome\*/.*?/\*/chrome\*/','',s,flags=re.S)
+s=s.replace('</style>',chrome.CSS+'</style>',1)
+s=re.sub(r'<!--menu-->.*?<!--/menu-->\n?','',s,flags=re.S)
+s=s.replace('<body>','<body>\n'+chrome.menu(root),1)
 open(p,'w').write(s)
-# 4. footer
+# 5. footer
 subprocess.run([sys.executable,T+'/footer.py',p,'#read-h' if landing else '../'],check=True)
 print('page end ok',p)
