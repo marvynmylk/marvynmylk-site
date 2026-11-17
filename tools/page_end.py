@@ -27,7 +27,7 @@ s=re.sub(r'<!--storymap-->.*?<!--/storymap-->\n?','',s,flags=re.S)
 s=re.sub(r'\n?(/\*smx\*/)?\.smx\{.*?(\.smx \.here\{animation:none\}\}(/\*/smx\*/)?)','',s,count=1,flags=re.S)
 s=s.replace('</style>',storymap.CSS+'</style>',1)
 cur=os.path.relpath(os.path.abspath(p),os.path.dirname(T)).replace(os.sep,'/')
-blk=storymap.block(cur,root)
+blk=storymap.block(cur,root,home=(cur=='index.html'))
 if landing: blk='<!--storymap--><div class="wrap narrow">'+blk.replace('<!--storymap-->','',1).replace('<!--/storymap-->','',1)+'</div><!--/storymap-->\n'
 if 'data-hub="1"' not in s:
     i=s.index('<section class="join"'); s=s[:i]+blk+s[i:]
