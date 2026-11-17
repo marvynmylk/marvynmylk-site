@@ -36,6 +36,18 @@
   "img": "share-hd25.jpg"
  },
  {
+  "path": "districts/alabama-senate-district-7.html",
+  "kind": "point",
+  "pin": [
+   278.5,
+   58.5
+  ],
+  "label": "Senate District 7",
+  "title": "Jared Sluss won by 646 votes",
+  "blurb": "Senate District 7 flipped blue.",
+  "img": "share-sd7.jpg"
+ },
+ {
   "path": "articles/is-huntsville-turning-blue.html",
   "kind": "point",
   "pin": [
