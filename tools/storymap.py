@@ -10,7 +10,10 @@ CSS='''
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
-.smx .mapbox{position:relative;border-radius:18px;overflow:hidden;background:#1a1526;border:1px solid var(--line)}
+.smx .mapbox{position:relative;border-radius:18px;overflow:hidden;background:#1a1526;border:1px solid var(--line);touch-action:pan-y}
+.smx .mapbox.zoomed{touch-action:none}.smx .mapbox svg{cursor:grab}
+.smx .zm{position:absolute;right:8px;bottom:8px;display:flex;flex-direction:column;gap:6px}
+.smx .zm button{width:34px;height:34px;border-radius:10px;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.85);color:#fbefd8;font:700 18px/1 Karla,sans-serif;cursor:pointer}
 .smx svg{display:block;width:100%;height:auto}
 .smx .cty{fill:#2a2438;stroke:#16121f;stroke-width:.6;transition:fill .5s ease}
 .smx .cty.home{fill:#342c47}.smx .cty.hl{fill:#4b3b7a}
@@ -59,11 +62,28 @@ def block(cur, root):
 function show(i){var d=D[i];pins.forEach(function(p){p.classList.toggle('sel',p.dataset.i==i)});s.querySelectorAll('.cty').forEach(function(c){c.classList.toggle('hl',d.c.indexOf(c.dataset.c)>-1)});
 card.href=d.u;card.innerHTML='<img src="'+d.img+'" alt=""><span><b>'+d.t+'</b><small>'+d.b+'</small><em>'+(d.here?'You\\u2019re on this page':'Read it \\u2192')+'</em></span>';card.style.animation='none';card.offsetHeight;card.style.animation=''}
 pins.forEach(function(p){p.addEventListener('click',function(){show(+p.dataset.i)});p.addEventListener('keydown',function(e){if(e.key==='Enter')show(+p.dataset.i)})});
+
+var box=s.querySelector('.mapbox'),sv=box.querySelector('svg'),V0=sv.getAttribute('viewBox').split(' ').map(Number),V=V0.slice();
+function apply(){var mw=V0[2]/6;V[2]=Math.min(V0[2],Math.max(mw,V[2]));V[3]=V[2]*V0[3]/V0[2];V[0]=Math.min(V0[0]+V0[2]-V[2],Math.max(V0[0],V[0]));V[1]=Math.min(V0[1]+V0[3]-V[3],Math.max(V0[1],V[1]));sv.setAttribute('viewBox',V.join(' '));box.classList.toggle('zoomed',V[2]<V0[2]-0.5);
+var k=V[2]/V0[2];s.querySelectorAll('.pin').forEach(function(p){p.parentNode.setAttribute('transform',p.parentNode.dataset.t+' scale('+(1.5*Math.max(k,.35))+')')})}
+s.querySelectorAll('.pin').forEach(function(p){var t=p.parentNode.getAttribute('transform');p.parentNode.dataset.t=t.replace(/ scale\\([^)]*\\)/,'')});
+function zoom(f,cx,cy){var r=sv.getBoundingClientRect();var px=cx==null?.5:(cx-r.left)/r.width,py=cy==null?.5:(cy-r.top)/r.height;var x=V[0]+V[2]*px,y=V[1]+V[3]*py;V[2]*=f;V[3]*=f;V[0]=x-V[2]*px;V[1]=y-V[3]*py;apply()}
+function selc(){var p=s.querySelector('.pin.sel');if(!p)return[null,null];var r=p.getBoundingClientRect();return[r.left+r.width/2,r.bottom]}
+box.querySelector('[data-z=in]').addEventListener('click',function(){var c=selc();zoom(.6,c[0],c[1])});box.querySelector('[data-z=out]').addEventListener('click',function(){zoom(1/.6)});
+sv.addEventListener('wheel',function(e){if(!e.ctrlKey&&!e.metaKey&&V[2]>=V0[2]-.5&&e.deltaY>0)return;e.preventDefault();zoom(e.deltaY<0?.85:1/.85,e.clientX,e.clientY)},{passive:false});
+var pts={},last=null,pd=null,moved=false;
+sv.addEventListener('pointerdown',function(e){pts[e.pointerId]=e;moved=false;if(Object.keys(pts).length===1)last={x:e.clientX,y:e.clientY}});
+sv.addEventListener('pointermove',function(e){if(!pts[e.pointerId])return;pts[e.pointerId]=e;var a=Object.values(pts),r=sv.getBoundingClientRect();
+if(a.length===2){var d=Math.hypot(a[0].clientX-a[1].clientX,a[0].clientY-a[1].clientY);if(pd){zoom(pd/d,(a[0].clientX+a[1].clientX)/2,(a[0].clientY+a[1].clientY)/2);moved=true}pd=d;return}
+if(last&&box.classList.contains('zoomed')){var dx=e.clientX-last.x,dy=e.clientY-last.y;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;V[0]-=dx*V[2]/r.width;V[1]-=dy*V[3]/r.height;apply();last={x:e.clientX,y:e.clientY}}});
+function up(e){delete pts[e.pointerId];pd=null;if(!Object.keys(pts).length)last=null}
+sv.addEventListener('pointerup',up);sv.addEventListener('pointercancel',up);sv.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault()}},true);
+sv.addEventListener('dblclick',function(e){e.preventDefault();zoom(.6,e.clientX,e.clientY)});
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(%d)})();</script>'''%(json.dumps(data),sel)
     return f'''<!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
 <p class="sub2">Nearby towns and districts. Tap a pin.</p>
-<div class="mapbox">{svg}</div>
+<div class="mapbox">{svg}<div class="zm"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button></div></div>
 <a class="card" href="#"></a>
 <div class="state">{states}</div>
 </section>
