@@ -4,7 +4,7 @@ Pages in subfolders (articles/, play/, madison-county/) link back with ../; the 
 import sys, os, re, json, subprocess
 T=os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0,T)
-import orbit, footer, storymap, chrome, candcolor
+import orbit, footer, storymap, chrome, candcolor, bookstrip
 ns={}; exec(open(T+'/signup.py').read(),ns)
 p=sys.argv[1]; landing=os.path.basename(p)=='index.html' and os.path.dirname(os.path.abspath(p))==os.path.dirname(T)
 root='' if landing else '../'
@@ -36,6 +36,13 @@ s=re.sub(r'\n?/\*chrome\*/.*?/\*/chrome\*/','',s,flags=re.S)
 s=s.replace('</style>',chrome.CSS+'</style>',1)
 s=re.sub(r'<!--menu-->.*?<!--/menu-->\n?','',s,flags=re.S)
 s=s.replace('<body>','<body>\n'+chrome.menu(root),1)
+open(p,'w').write(s)
+# 4b. book strip above the email box
+s=open(p).read()
+s=re.sub(r'/\*bks\*/.*?/\*/bks\*/\n?','',s,flags=re.S); s=s.replace('</style>',bookstrip.CSS+'</style>',1)
+s=re.sub(r'<!--bks-->.*?<!--/bks-->','',s,flags=re.S)
+j=s.index('<section class="join"'); k=s.index('<form class="signup"',j)
+s=s[:k]+bookstrip.block(root)+'\n'+s[k:]
 open(p,'w').write(s)
 # 5. party colors on candidate names in body copy
 s=open(p).read()
