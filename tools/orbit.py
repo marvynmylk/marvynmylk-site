@@ -3,7 +3,7 @@ YOU=["Grew up on a Tennessee gravel road","Editor, data nerd, therapy veteran","
      "No doom-scrolling required","Your new favorite Southern nerd","Hope, with receipts","Maps that make you gasp",
      "Small towns moving left","Neighbors who ran, and won","The history they skipped in school","The math they don't show you",
      "Races decided by a few hundred votes","Charts you'll screenshot","Good news from the South","Proof you're not the only one",
-     "The South, up close","Purple, not red","Logic and empathy, same sentence","Talks politics without yelling","Not giving up on the South",
+     "The South, up close","Purple, not red","Logic and empathy, same sentence","Not giving up on the South",
      "Author of two books, written by human hands","Southern, born and stubborn"]
 BOOKS=[("ps","The South is purple. Let me prove it."),("ps","Hope is the only thing stronger than fear."),("ps","Why 21 million Southern voters stayed home."),
        ("mo","Big Brother in orbit."),("mo","Her eyes glow with every feeling."),("mo","Who decides who the monster is?")]
