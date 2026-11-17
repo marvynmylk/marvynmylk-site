@@ -281,6 +281,19 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .dmap svg{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.pbar .bb i{transition:none}}
 
+.faceoff{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:8px;margin:22px 0;padding:18px 12px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line);text-align:center}
+.faceoff .fc img{display:block;width:92px;height:92px;margin:0 auto 10px;border-radius:50%;object-fit:cover;border:4px solid #5c5a70}
+.faceoff .fc.r img{border-color:#e24854}.faceoff .fc.d img{border-color:#2d6eff}
+.faceoff .fc.lost img{filter:grayscale(.55);opacity:.85}
+.faceoff .fc b{display:block;font:600 18px/1.2 "Fraunces",Georgia,serif}
+.faceoff .fc small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.faceoff .fc .v{display:block;font:700 20px Karla,sans-serif;margin-top:6px}
+.faceoff .fc.r .v{color:#ff8a94}.faceoff .fc.d .v{color:#8fb0ff}
+.faceoff .fc .won{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;font-size:12.5px;font-weight:700;background:rgba(232,163,195,.2);color:#f3c6da}
+.faceoff .vs{align-self:center;font:600 18px "Fraunces",Georgia,serif;color:var(--muted)}
+.dc .av{float:right;width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #5c5a70;margin:0 0 6px 10px}
+.dc .av.d{border-color:#2d6eff}.dc .av.r{border-color:#e24854}
+
 .join{position:relative;margin:48px 0 0;padding:30px 22px 26px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
 .join img{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
 .join h2{margin:0 0 14px;font:600 clamp(28px,7vw,36px)/1.1 "Fraunces",Georgia,serif}
@@ -343,6 +356,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 <h1>House District 25 <span>flipped blue.</span></h1>
 <p class="lede">Democrat Allison Montgomery beat Republican Rep. Phillip Rigsby by 1,556 votes in 2026, flipping a North Alabama seat Rigsby had held since 2022. The district covers parts of Madison, Monrovia and the area near Capshaw, in Madison and Limestone counties.</p>
 <div class="answer"><b class="k">Short answer</b><p>Alabama House District 25 is represented by <b>Allison Montgomery (D)</b>, who won it in November 2026, 12,505 votes to 10,949.</p></div>
+<div class="faceoff rv"><div class="fc d"><img src="../images/people/montgomery.webp" alt="Allison Montgomery" width="92" height="92" loading="lazy"><b>Allison Montgomery</b><small>Democrat</small><span class="v">12,505</span><span class="won">Won</span></div><span class="vs">vs.</span><div class="fc r lost"><img src="../images/people/rigsby.webp" alt="Phillip Rigsby" width="92" height="92" loading="lazy"><b>Phillip Rigsby</b><small>Republican, incumbent</small><span class="v">10,949</span></div></div>
 <div class="hero-n rv"><span class="cnt" data-to="1556">0</span><small>votes</small></div>
 <p class="hero-c">the margin that flipped District 25</p>
 <div class="chart cty rv" role="img" aria-label="2026 House District 25: Montgomery 53.3%, Rigsby 46.7%."><div class="cb"><div class="ct2"><span class="race">2026 · State House</span><span class="win d">Montgomery by 6.6 pts</span></div>
