@@ -36,6 +36,30 @@
   "img": "share-town-monrovia.jpg"
  },
  {
+  "path": "madison-county/hampton-cove.html",
+  "kind": "point",
+  "pin": [
+   288.0,
+   61.4
+  ],
+  "label": "Hampton Cove",
+  "title": "Even Hampton Cove moved left",
+  "blurb": "Trump +41 in 2024. Tuberville +20 in 2026.",
+  "img": "share-town-hampton-cove.jpg"
+ },
+ {
+  "path": "morgan-county/decatur.html",
+  "kind": "point",
+  "pin": [
+   216.8,
+   69.9
+  ],
+  "label": "Decatur",
+  "title": "Decatur voted for Doug Jones",
+  "blurb": "Jones won 8,074 to 7,286. Trump won here by 30 in 2024.",
+  "img": "share-town-decatur.jpg"
+ },
+ {
   "path": "districts/alabama-house-district-25.html",
   "kind": "point",
   "pin": [
