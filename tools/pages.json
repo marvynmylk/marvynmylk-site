@@ -36,6 +36,18 @@
   "img": "share-hd25.jpg"
  },
  {
+  "path": "districts/alabama-house-district-10.html",
+  "kind": "point",
+  "pin": [
+   262.0,
+   52.0
+  ],
+  "label": "House District 10",
+  "title": "Marilyn Lands didn't give up",
+  "blurb": "Lost by 973 in 2022. Won by 4,207 in 2026.",
+  "img": "share-hd10.jpg"
+ },
+ {
   "path": "districts/alabama-senate-district-7.html",
   "kind": "point",
   "pin": [
