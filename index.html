@@ -162,6 +162,12 @@ h1 em{font-style:normal;display:block;margin-top:.12em;padding-bottom:.18em;marg
 .join form input::placeholder{color:#8a7a62}
 .join form input:focus{outline:3px solid var(--ember);outline-offset:2px}
 .join form button{height:58px;border:0;border-radius:14px;background:var(--ember);color:#1b1004;font:700 18px var(--f-body);cursor:pointer}
+.join .wrap{background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);border-radius:22px;padding:30px 22px 24px;margin-inline:16px}
+@media (min-width:560px){.join .wrap{margin-inline:auto}}
+.join .jpic{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
+.join h2 em{font-style:normal;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.join form button{background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a)}
+.join .jfine{font-size:13px;color:var(--muted);margin-top:6px}
 .join .note{min-height:24px;margin-top:12px;font-weight:700;color:var(--ember-glow)}
 
 footer{padding-block:34px 40px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));text-align:center;background:var(--ink-2);border-top:1px solid var(--line)}
@@ -284,8 +290,9 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
 
 <section class="join" id="join" aria-labelledby="join-h">
   <div class="wrap narrow">
-    <h2 id="join-h">Want a heads-up?</h2>
-    <p>I'll email you when a book comes out, and now and then when I have something worth sharing. I'll never sell your email.</p>
+    <img class="jpic" src="images/profile.webp" alt="Marvyn Mylk" width="76" height="76" loading="lazy">
+    <h2 id="join-h">The South is <em>closer than you think.</em></h2>
+    <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story in your inbox, plus a heads-up when my book comes out.</p>
     <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="end">
       <p hidden><label>Leave this empty <input name="bot-field"></label></p>
@@ -294,6 +301,7 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
       <button type="submit">Count me in</button>
     </form>
     <p class="note" role="status"></p>
+    <p class="jfine">No spam. I'll never sell your email.</p>
   </div>
 </section>
 
