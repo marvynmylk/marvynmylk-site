@@ -145,6 +145,19 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .pcard .tw{color:var(--muted);font-size:14px;margin:0 0 12px}
 .pcard .badge{display:inline-block;margin:10px 0 0;padding:5px 12px;border-radius:999px;font-weight:700;font-size:14px;background:rgba(138,92,240,.25);color:#cdb8ff}
 .pcard .push .pb i{transition:width .7s ease}
+
+.join{position:relative;margin:48px 0 0;padding:30px 22px 26px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
+.join img{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
+.join h2{margin:0 0 14px;font:600 clamp(28px,7vw,36px)/1.1 "Fraunces",Georgia,serif}
+.join h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.join p{margin:0 auto 14px;max-width:34ch;font-size:17px;line-height:1.6}
+.join p.why{color:var(--muted)}
+.join form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px auto 0;max-width:440px}
+.join input[type=email]{flex:1 1 220px;min-width:0;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
+.join button{flex:0 0 auto;padding:15px 22px;border:0;border-radius:14px;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);color:#16121f;font:700 17px Karla,sans-serif;cursor:pointer;min-height:48px}
+.join button:disabled{opacity:.6}
+.join .fine2{margin:14px 0 0;font-size:13px;color:var(--muted)}
+.join .st{min-height:1.4em;margin:10px 0 0;font-weight:700;color:#e8a3c3}
 </style>
 </head>
 <body>
@@ -197,8 +210,23 @@ var MC={"data": {"12": {"id": 12, "name": "Hampton Cove Church of Christ", "town
 
 <div class="book">
   <img src="../images/purple-south-cover.jpg" alt="The Purple South book cover">
-  <p>Stories like Madison County's are what my upcoming book, <i>The Purple South</i>, is about: how Southern places flip, and what changes when we show up. <a href="../#join-h">Get a heads-up when it's out.</a></p>
+  <p>Stories like Madison County's are what my upcoming book, <i>The Purple South</i>, is about: how Southern places flip, and what changes when we show up. <a href="#join">Get a heads-up when it's out.</a></p>
 </div>
+<section class="join" id="join" aria-labelledby="join-h">
+  <img src="../images/profile.webp" alt="Marvyn Mylk" width="76" height="76" loading="lazy">
+  <h2 id="join-h">You're not <span>the only one.</span></h2>
+  <p>I grew up on a gravel road in Tennessee and live in North Alabama now. For years I thought I was the only person around here who felt this way. I wasn't. Neither are you.</p>
+  <p class="why">I dig up the races nobody's covering and the numbers that prove the South is closer than anyone admits. Get them in your inbox, plus a heads-up when my book comes out.</p>
+  <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="article-madison">
+    <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+    <label for="jemail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+    <input id="jemail" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+    <button type="submit">Count me in</button>
+  </form>
+  <p class="st" role="status"></p>
+  <p class="fine2">No spam. I'll never sell your email.</p>
+</section>
 <div class="fineprint"><p class="fine">All results come from the <a href="https://www.sos.alabama.gov/alabama-votes/voter/election-data" target="_blank" rel="noopener">Alabama Secretary of State's precinct files</a>. Precinct percentages count votes cast at the polling place and leave out absentee and provisional ballots, which are reported for the county as a whole. A few polling places were renamed between elections; I matched them by name and location, and five 2026 precincts with no clear 2024 match are listed without a change. The 2026 results are unofficial until certified.</p>
 <p class="fine">These are two different races with different candidates, so this isn't a perfect apples-to-apples comparison. But the direction is the same in every precinct I could compare.</p>
 
@@ -228,6 +256,12 @@ pick.addEventListener('change',function(){if(pick.value)show(pick.value)});
 paint();show(83);
 var sb=document.getElementById('shr');sb.addEventListener('click',function(){var u=location.href.split('#')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){document.getElementById('shrm').textContent='Link copied!'})}});
 })();
+</script>
+<script>
+document.querySelectorAll('form.signup').forEach(function(f){var st=f.parentNode.querySelector('.st'),b=f.querySelector('button');
+f.addEventListener('submit',async function(e){e.preventDefault();b.disabled=true;st.textContent='Adding you…';
+try{var r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;st.textContent="You're in. Talk soon.";f.reset();}
+catch(err){st.textContent='Something went wrong. Please try again.';}b.disabled=false;});});
 </script>
 <script data-goatcounter="https://marvynmylk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
