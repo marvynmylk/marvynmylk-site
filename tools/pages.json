@@ -24,6 +24,18 @@
   "img": "share-meridianville.jpg"
  },
  {
+  "path": "madison-county/monrovia.html",
+  "kind": "point",
+  "pin": [
+   255.0,
+   39.8
+  ],
+  "label": "Monrovia",
+  "title": "How Monrovia voted",
+  "blurb": "Both precincts flipped.",
+  "img": "share-town-monrovia.jpg"
+ },
+ {
   "path": "districts/alabama-house-district-25.html",
   "kind": "point",
   "pin": [
