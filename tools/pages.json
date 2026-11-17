@@ -63,6 +63,21 @@
   "img": "share-madison.jpg"
  },
  {
+  "path": "articles/morgan-county-dale-strong-andrew-sneed-2026.html",
+  "kind": "area",
+  "counties": [
+   "Morgan"
+  ],
+  "pin": [
+   237.0,
+   99.2
+  ],
+  "label": "Morgan County",
+  "title": "Morgan County moved toward Sneed",
+  "blurb": "Every comparable precinct moved left.",
+  "img": "share-morgan.jpg"
+ },
+ {
   "path": "articles/alabama-5th-congressional-district-2026.html",
   "kind": "area",
   "counties": [
