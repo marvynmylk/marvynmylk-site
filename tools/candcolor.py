@@ -5,6 +5,9 @@ R=['Tommy Tuberville','Tuberville','Donald Trump','Trump','Phillip Rigsby','Rigs
 NAMES=sorted([(n,'d') for n in D]+[(n,'r') for n in R],key=lambda x:-len(x[0]))
 RX=re.compile(r"(?<![\w-])("+'|'.join(re.escape(n) for n,_ in NAMES)+r")(?:'s)?(?![\w-])")
 PARTY=dict(NAMES)
+# Last names that are also places: only color them when used as a person (followed by a verb or vote count)
+PLACE={'Montgomery':'d'}
+RXP=re.compile(r"(?<![\w-])(?<!Allison )(Montgomery)(?:'s)?(?= (?:carried|won|beat|got|held|flipped|led|kept|took|\d))")
 CSS='''/*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
 '''
@@ -30,5 +33,7 @@ def color(html):
         skip=any(t in SKIPTAG or any(c in SKIPCLASS for c in cls) for t,cls in stack)
         inbody=any(t in ('p','li') for t,_ in stack)
         if skip or not inbody or not tok.strip(): out.append(tok); continue
-        out.append(RX.sub(lambda m:f'<span class="cand {PARTY[m.group(1)]}">{m.group(0)}</span>',tok))
+        t=RX.sub(lambda m:f'<span class="cand {PARTY[m.group(1)]}">{m.group(0)}</span>',tok)
+        t=RXP.sub(lambda m:f'<span class="cand {PLACE[m.group(1)]}">{m.group(0)}</span>',t)
+        out.append(t)
     return html[:a]+''.join(out)+html[b:]
