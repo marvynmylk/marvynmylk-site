@@ -36,6 +36,30 @@
   "img": "share-town-monrovia.jpg"
  },
  {
+  "path": "limestone-county/athens.html",
+  "kind": "point",
+  "pin": [
+   218.3,
+   35.6
+  ],
+  "label": "Athens",
+  "title": "Athens swung 29 points left",
+  "blurb": "Trump +35 in 2024. Tuberville +6 in 2026.",
+  "img": "share-town-athens.jpg"
+ },
+ {
+  "path": "madison-county/south-huntsville.html",
+  "kind": "point",
+  "pin": [
+   275.3,
+   59.6
+  ],
+  "label": "South Huntsville",
+  "title": "South Huntsville voted for Doug Jones",
+  "blurb": "Jones won 8,983 to 8,809. Trump won here by 22 in 2024.",
+  "img": "share-town-south-huntsville.jpg"
+ },
+ {
   "path": "madison-county/hampton-cove.html",
   "kind": "point",
   "pin": [

@@ -1,7 +1,7 @@
 """Color candidate names in body copy by party (blue/red gradient). Idempotent."""
 import re
-D=['Doug Jones','Jones','Kamala Harris','Harris','Joe Biden','Biden','Allison Montgomery','Andrew Sneed','Sneed','Jared Sluss','Sluss','Marilyn Lands','Lands','Forrest Satterfield','Satterfield','Everett Wess','Wess','Hanu Karlapalem','Karlapalem','John Dickey','Dickey','Phillip Ensler','Janine Jordan','James Linderholm','Linderholm']
-R=['Tommy Tuberville','Tuberville','Donald Trump','Trump','Phillip Rigsby','Rigsby','Dale Strong','Strong','Sam Givhan','Givhan','Rex Reynolds','Reynolds','Aaron Thomas','Barry Moore','Parker Duncan Moore','Arthur Orr','Wes Kitchens','Danny Crawford','James Lomax','Bob Riley','Patrick Johnson','Andy Whitt']
+D=['Doug Jones','Jones','Kamala Harris','Harris','Joe Biden','Biden','Allison Montgomery','Andrew Sneed','Sneed','Jared Sluss','Sluss','Marilyn Lands','Lands','Forrest Satterfield','Satterfield','Everett Wess','Wess','Hanu Karlapalem','Karlapalem','John Dickey','Dickey','Phillip Ensler','Janine Jordan','James Linderholm','Linderholm','Jessie Barcala','Barcala','Bobby Martin']
+R=['Tommy Tuberville','Tuberville','Donald Trump','Trump','Phillip Rigsby','Rigsby','Dale Strong','Strong','Sam Givhan','Givhan','Rex Reynolds','Reynolds','Aaron Thomas','Barry Moore','Parker Duncan Moore','Arthur Orr','Wes Kitchens','Danny Crawford','James Lomax','Bob Riley','Patrick Johnson','Andy Whitt','Danny Crawford','Danny F. Crawford','Larry Stutts','Stutts']
 NAMES=sorted([(n,'d') for n in D]+[(n,'r') for n in R],key=lambda x:-len(x[0]))
 RX=re.compile(r"(?<![\w-])("+'|'.join(re.escape(n) for n,_ in NAMES)+r")(?:'s)?(?![\w-])")
 PARTY=dict(NAMES)
