@@ -240,13 +240,6 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
 .sitefoot .smap a:hover{color:#e8a3c3}
 @media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
-.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
-.sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
-.sitefoot .smap ul{list-style:none;margin:0;padding:0}
-.sitefoot .smap li{margin:0 0 6px}
-.sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
-.sitefoot .smap a:hover{color:#e8a3c3}
-@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
 .sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px;max-width:640px;margin:34px auto 0;padding-top:28px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
 .sitefoot .smap h3{margin:0 0 10px;font:600 16px "Fraunces",Georgia,serif;color:#fbefd8}
 .sitefoot .smap ul{list-style:none;margin:0;padding:0}
@@ -287,6 +280,33 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .card2 span{color:var(--muted);font-size:14.5px}
 .dmap svg{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.pbar .bb i{transition:none}}
+
+.faceoff{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:8px;margin:22px 0;padding:18px 12px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line);text-align:center}
+.faceoff .fc img{display:block;width:92px;height:92px;margin:0 auto 10px;border-radius:50%;object-fit:cover;border:4px solid #5c5a70}
+.faceoff .fc.r img{border-color:#e24854}.faceoff .fc.d img{border-color:#2d6eff}
+.faceoff .fc.lose img{filter:grayscale(.55);opacity:.85}
+.faceoff .fc b{display:block;font:600 18px/1.2 "Fraunces",Georgia,serif}
+.faceoff .fc small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.faceoff .fc .v{display:block;font:700 20px Karla,sans-serif;margin-top:6px}
+.faceoff .fc.r .v{color:#ff8a94}.faceoff .fc.d .v{color:#8fb0ff}
+.faceoff .fc .won{display:inline-block;margin-top:8px;padding:4px 10px;border-radius:999px;font-size:12.5px;font-weight:700;background:rgba(232,163,195,.2);color:#f3c6da}
+.faceoff .vs{align-self:center;font:600 18px "Fraunces",Georgia,serif;color:var(--muted)}
+.dc .av{float:right;width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #5c5a70;margin:0 0 6px 10px}
+.dc .av.d{border-color:#2d6eff}.dc .av.r{border-color:#e24854}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 13px 13px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-align:left;font:inherit;cursor:pointer;opacity:0;transform:translateY(14px) scale(.97);transition:opacity .5s ease,transform .5s ease,border-color .2s;transition-delay:calc(var(--i)*90ms)}
+.on .tile{opacity:1;transform:none}
+.tile svg{width:38px;height:38px;padding:8px;border-radius:11px;background:var(--grad);fill:#16121f}
+.tile b{font-size:15.5px;line-height:1.25}
+.tile small{font-size:13.5px;line-height:1.35;color:var(--muted)}
+.tile .more{display:none;font-size:14px;line-height:1.45;color:#e9dfcf;margin-top:2px}
+.tile .more a{color:#e8a3c3}
+.tile .tap{position:absolute;right:11px;top:12px;font-size:18px;color:var(--muted);transition:transform .25s}
+.tile.open,.tile:last-child:nth-child(odd){grid-column:1/-1}.tile.open{border-color:#e8a3c3}
+.tile.open .more{display:block}.tile.open .tap{transform:rotate(45deg)}
+.tile .n{position:absolute;right:12px;bottom:10px;font:600 28px "Fraunces",Georgia,serif;color:rgba(251,239,216,.08)}
+@media (prefers-reduced-motion:reduce){.tile{opacity:1;transform:none;transition:none}}
 
 .join{position:relative;margin:48px 0 0;padding:30px 22px 26px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
 .join img{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
@@ -353,13 +373,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 <div class="callout"><p><b>Dates change every election.</b> For this year's deadlines and your polling place, always check the official site, <a href="https://www.alabamavotes.gov" target="_blank" rel="noopener">AlabamaVotes.gov</a>.</p></div>
 
 <h2>The steps</h2>
-<ol class="steps rv">
-<li><strong>Check that you're registered</strong><p>It takes a minute. Look yourself up on the <a href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener">state's voter lookup</a>. It also shows your polling place and districts. If you moved, update your address.</p></li>
-<li><strong>Register if you're not</strong><p>You can register online at <a href="https://www.alabamavotes.gov" target="_blank" rel="noopener">AlabamaVotes.gov</a> with an Alabama driver's license or non-driver ID, by mail, or in person at your county Board of Registrars. Registration closes 14 days before each election.</p></li>
-<li><strong>Get a photo ID ready</strong><p>You'll need one at the polls. If you don't have one, Alabama gives a free Photo Voter ID card. See the list below.</p></li>
-<li><strong>Know your polling place</strong><p>You vote at one assigned place, based on your address. It can change, so check before every election.</p></li>
-<li><strong>Vote on Election Day</strong><p>Polls are open 7 a.m. to 7 p.m. If you're in line by 7 p.m., you can still vote. Alabama has no early voting.</p></li>
-</ol>
+<p>Tap any step for details.</p>
+<div class="tiles rv"><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><b>Check you're registered</b><small>One minute online.</small><span class="more">Look yourself up on the <a href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener">state's voter lookup</a>. It shows your polling place and districts. Moved? Update your address.</span><span class="tap" aria-hidden="true">+</span><span class=n>1</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg><b>Register if you're not</b><small>Closes 14 days before.</small><span class="more">Register online at <a href="https://www.alabamavotes.gov" target="_blank" rel="noopener">AlabamaVotes.gov</a> with an Alabama driver's license or non-driver ID, by mail, or at your county Board of Registrars.</span><span class="tap" aria-hidden="true">+</span><span class=n>2</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM8 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm4 8H4v-1c0-1.3 2.7-2 4-2s4 .7 4 2v1zm8-3h-6v-2h6v2zm0-4h-6V7h6v2z"/></svg><b>Have a photo ID</b><small>Free ones are available.</small><span class="more">You need a photo ID at the polls. No ID? Get a free Alabama Photo Voter ID from your county Board of Registrars.</span><span class="tap" aria-hidden="true">+</span><span class=n>3</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><b>Find your polling place</b><small>It can change.</small><span class="more">You vote at one assigned place based on your address. Check it before every election.</span><span class="tap" aria-hidden="true">+</span><span class=n>4</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.5 2.1-.8 1.3L11 13V7h2v5.4z"/></svg><b>Vote on Election Day</b><small>7 a.m. to 7 p.m.</small><span class="more">In line by 7 p.m.? You can still vote. Alabama has no early voting.</span><span class="tap" aria-hidden="true">+</span><span class=n>5</span></div></div>
 
 <h2>Photo IDs you can use</h2>
 <div class="chips2 rv"><span>Alabama driver's license</span><span>Alabama non-driver ID</span><span>Free Alabama Photo Voter ID</span><span>U.S. passport</span><span>Military ID</span><span>Tribal ID</span><span>Government employee ID</span><span>Alabama college or university ID</span><span>Any state-issued ID</span></div>
@@ -372,12 +387,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 <p>Apply early. Applications are due about a week before the election, and mailed ballots must arrive by noon on Election Day. Your ballot envelope must be signed in front of a notary or two adult witnesses. Check <a href="https://www.alabamavotes.gov" target="_blank" rel="noopener">AlabamaVotes.gov</a> for the exact dates and the application.</p>
 
 <h2>Good to know</h2>
-<ol class="steps">
-<li><strong>No party registration</strong><p>You don't register as a Democrat or Republican in Alabama. In a primary, you pick a party's ballot at the polls.</p></li>
-<li><strong>Straight-party voting is allowed</strong><p>In general elections, you can vote one party's whole slate with a single mark, or pick race by race.</p></li>
-<li><strong>A past felony may not stop you</strong><p>Many people with felony convictions can vote, or can get their rights back by applying for a Certificate of Eligibility to Register to Vote (CERV) once their sentence is complete. The Alabama Bureau of Pardons and Paroles handles it.</p></li>
-<li><strong>Why it's worth it</strong><p>Alabama races are often decided by a few hundred votes. In 2026, a State Senate seat in Madison County was decided by 646.</p></li>
-</ol>
+<p>Tap any card for details.</p>
+<div class="tiles rv"><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13h-.7l-2 2h1.9L19 17H5l1.8-2h2l-2-2H6l-3 3v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4l-3-3zm-1-5-5 5-3.5-3.5L13.5 4.5 17 8z"/></svg><b>No party registration</b><small>Pick a ballot at the primary.</small><span class="more">You don't register as a Democrat or Republican in Alabama. In a primary, you choose a party's ballot at the polls.</span><span class="tap" aria-hidden="true">+</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg><b>Straight-party voting</b><small>One mark, whole slate.</small><span class="more">In general elections, you can vote one party's whole slate with a single mark, or pick race by race.</span><span class="tap" aria-hidden="true">+</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.6 10A6 6 0 1 0 12.6 14H17v4h4v-4h2v-4H12.6zM7 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><b>A felony may not stop you</b><small>Rights can be restored.</small><span class="more">Many people with felony convictions can vote, or can get their rights back with a Certificate of Eligibility to Register to Vote (CERV) once their sentence is done. The Alabama Bureau of Pardons and Paroles handles it.</span><span class="tap" aria-hidden="true">+</span></div><div class="tile" role="button" tabindex="0" aria-expanded="false" style="--i:3"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h3v11H5zm5.5-5h3v16h-3zM16 13h3v7h-3z"/></svg><b>It's worth it</b><small>Races come down to hundreds.</small><span class="more">In 2026, a Madison County State Senate seat was decided by 646 votes.</span><span class="tap" aria-hidden="true">+</span></div></div>
 
 <h2>Take the next step</h2>
 <div class="acts">
@@ -421,6 +432,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 var sb=document.getElementById('shr');if(sb)sb.addEventListener('click',function(){var u=location.href.split('#')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){document.getElementById('shrm').textContent='Link copied!'})}});
 })();
 </script>
+<script>document.querySelectorAll('.tile').forEach(function(t){t.addEventListener('click',function(e){if(e.target.closest('a'))return;var o=t.classList.toggle('open');t.setAttribute('aria-expanded',o)})});</script>
 <script>
 document.querySelectorAll('form.signup').forEach(function(f){var st=f.parentNode.querySelector('.st'),b=f.querySelector('button');
 f.addEventListener('submit',async function(e){e.preventDefault();b.disabled=true;st.textContent='Adding you…';

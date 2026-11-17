@@ -294,6 +294,20 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .dc .av{float:right;width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #5c5a70;margin:0 0 6px 10px}
 .dc .av.d{border-color:#2d6eff}.dc .av.r{border-color:#e24854}
 
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px 13px 13px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-align:left;font:inherit;cursor:pointer;opacity:0;transform:translateY(14px) scale(.97);transition:opacity .5s ease,transform .5s ease,border-color .2s;transition-delay:calc(var(--i)*90ms)}
+.on .tile{opacity:1;transform:none}
+.tile svg{width:38px;height:38px;padding:8px;border-radius:11px;background:var(--grad);fill:#16121f}
+.tile b{font-size:15.5px;line-height:1.25}
+.tile small{font-size:13.5px;line-height:1.35;color:var(--muted)}
+.tile .more{display:none;font-size:14px;line-height:1.45;color:#e9dfcf;margin-top:2px}
+.tile .more a{color:#e8a3c3}
+.tile .tap{position:absolute;right:11px;top:12px;font-size:18px;color:var(--muted);transition:transform .25s}
+.tile.open,.tile:last-child:nth-child(odd){grid-column:1/-1}.tile.open{border-color:#e8a3c3}
+.tile.open .more{display:block}.tile.open .tap{transform:rotate(45deg)}
+.tile .n{position:absolute;right:12px;bottom:10px;font:600 28px "Fraunces",Georgia,serif;color:rgba(251,239,216,.08)}
+@media (prefers-reduced-motion:reduce){.tile{opacity:1;transform:none;transition:none}}
+
 .join{position:relative;margin:48px 0 0;padding:30px 22px 26px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
 .join img{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
 .join h2{margin:0 0 14px;font:600 clamp(28px,7vw,36px)/1.1 "Fraunces",Georgia,serif}
@@ -418,6 +432,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 var sb=document.getElementById('shr');if(sb)sb.addEventListener('click',function(){var u=location.href.split('#')[0];if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){document.getElementById('shrm').textContent='Link copied!'})}});
 })();
 </script>
+<script>document.querySelectorAll('.tile').forEach(function(t){t.addEventListener('click',function(e){if(e.target.closest('a'))return;var o=t.classList.toggle('open');t.setAttribute('aria-expanded',o)})});</script>
 <script>
 document.querySelectorAll('form.signup').forEach(function(f){var st=f.parentNode.querySelector('.st'),b=f.querySelector('button');
 f.addEventListener('submit',async function(e){e.preventDefault();b.disabled=true;st.textContent='Adding you…';
