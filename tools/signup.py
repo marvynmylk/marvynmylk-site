@@ -1,10 +1,10 @@
 import sys,re
 CSS='''
-.join{position:relative;margin:48px 0 0;padding:30px 22px 26px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
+.join{position:relative;margin:36px 0 0;padding:22px 20px 20px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,rgba(150,90,220,.28),rgba(31,26,43,0) 70%),#1f1a2b;border:1px solid rgba(201,167,232,.28);text-align:center;overflow:hidden}
 .join img{width:76px;height:76px;border-radius:50%;border:3px solid #e8a3c3;display:block;margin:0 auto 14px}
-.join h2{margin:0 0 14px;font:600 clamp(28px,7vw,36px)/1.1 "Fraunces",Georgia,serif}
+.join h2{margin:0 0 10px;font:600 clamp(24px,6.4vw,30px)/1.1 "Fraunces",Georgia,serif}
 .join h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.join p{margin:0 auto 14px;max-width:34ch;font-size:17px;line-height:1.6}
+.join p{margin:0 auto 10px;max-width:34ch;font-size:15.5px;line-height:1.5}
 .join p.why{color:var(--muted)}
 .join form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px auto 0;max-width:440px}
 .join input[type=email]{flex:1 1 220px;min-width:0;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
@@ -23,7 +23,7 @@ CSS='''
 def block(spot): return f'''<section class="join" id="join" aria-labelledby="join-h">
   <img src="../images/profile.webp" alt="Marvyn Mylk" width="76" height="76" loading="lazy">
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
-  <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story in your inbox, plus a heads-up when my book comes out.</p>
+  <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="{spot}">
     <p hidden><label>Leave this empty <input name="bot-field"></label></p>

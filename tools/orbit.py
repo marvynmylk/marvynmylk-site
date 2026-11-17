@@ -8,20 +8,20 @@ YOU=["Grew up on a Tennessee gravel road","Editor, data nerd, therapy veteran","
 BOOKS=[("ps","The South is purple. Let me prove it."),("ps","Hope is the only thing stronger than fear."),("ps","Why 21 million Southern voters stayed home."),
        ("mo","Big Brother in orbit."),("mo","Her eyes glow with every feeling."),("mo","Who decides who the monster is?")]
 CSS='''
-.orb{position:relative;height:300px;margin:-6px -8px 10px}
-.orb .me{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;border:3px solid #e8a3c3;box-shadow:0 0 0 8px rgba(232,163,195,.08),0 0 40px rgba(201,167,232,.35);z-index:2}
+.orb{position:relative;height:250px;margin:-8px -8px 6px}
+.orb .me{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;border:3px solid #e8a3c3;box-shadow:0 0 0 8px rgba(232,163,195,.08),0 0 40px rgba(201,167,232,.35);z-index:2}
 .orb .chip{position:absolute;max-width:47%;display:flex;align-items:center;gap:8px;padding:8px 11px;border-radius:14px;font:700 13.5px/1.25 Karla,sans-serif;color:#fbefd8;text-align:left;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;
  background:linear-gradient(#1f1a2b,#1f1a2b) padding-box,linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a) border-box;border:1.5px solid transparent;box-shadow:0 10px 22px -10px rgba(0,0,0,.8);
  animation:cin .7s cubic-bezier(.3,1.4,.5,1) both,cfl 5s ease-in-out .7s infinite alternate}
 .orb .chip.bk{padding:7px 14px 7px 7px;gap:11px;font-size:14.5px}
 .orb .chip.wide{left:0;right:0;margin:0 auto;width:max-content;max-width:88%}.orb .chip.top{top:1%}.orb .chip.bot{bottom:1%}
-.orb .chip.bk img{flex:0 0 auto;width:34px;height:51px;object-fit:cover;border-radius:3px;box-shadow:0 4px 10px rgba(0,0,0,.5)}
+.orb .chip.bk img{flex:0 0 auto;width:28px;height:42px;object-fit:cover;border-radius:3px;box-shadow:0 4px 10px rgba(0,0,0,.5)}
 .orb .chip.ps{background:linear-gradient(#241a33,#241a33) padding-box,linear-gradient(135deg,#b07cff,#e8a3c3) border-box;box-shadow:0 0 18px -4px rgba(176,124,255,.6)}
 .orb .chip.mo{background:linear-gradient(#141c30,#141c30) padding-box,linear-gradient(135deg,#2f6fd6,#7fb0ff) border-box;box-shadow:0 0 18px -4px rgba(47,111,214,.7)}
 .orb .chip small{display:block;font-weight:500;font-size:11.5px;color:#bdb4c7;margin-top:2px}
 .orb .chip.out{animation:cout .9s ease forwards}
 .orb .chip.pop{animation:cpop .35s ease forwards}
-.orb .s0{left:0;top:2%}.orb .s1{right:0;top:6%}.orb .s2{left:0;top:38%;max-width:calc(50% - 60px)}.orb .s3{right:0;top:42%;max-width:calc(50% - 60px)}.orb .s4{left:2%;bottom:2%}.orb .s5{right:2%;bottom:4%}
+.orb .s0{left:0;top:2%}.orb .s1{right:0;top:6%}.orb .s2{left:0;top:36%;max-width:calc(50% - 52px)}.orb .s3{right:0;top:40%;max-width:calc(50% - 52px)}.orb .s4{left:2%;bottom:2%}.orb .s5{right:2%;bottom:4%}
 @keyframes cin{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
 @keyframes cfl{from{translate:0 -3px}to{translate:0 4px}}
 @keyframes cout{to{opacity:0;transform:scale(.85)}}

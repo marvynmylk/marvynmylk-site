@@ -5,7 +5,8 @@ MENU=[("Explore Alabama politics","explore/","The hub: maps, stories and news"),
       ("How close was your race?","play/how-close-alabama-2026.html","Every 2026 legislative race"),
       ("For media","about/#media","Interviews, data and photos")]
 CSS='''
-/*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;gap:8px;padding:9px 14px 9px 12px;border-radius:999px;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
+/*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
+.mnb.hide{transform:translateY(-70px);opacity:0}
 .mnb i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
 .mnv{position:fixed;inset:0;z-index:70;background:rgba(16,12,24,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:flex;flex-direction:column;padding:max(70px,env(safe-area-inset-top)) 22px 30px;opacity:0;pointer-events:none;transition:opacity .25s ease}
 .mnv.open{opacity:1;pointer-events:auto}
@@ -31,8 +32,8 @@ CSS='''
 '''
 def menu(root):
     items=''.join(f'<a class="it" href="{root}{u}" style="transition-delay:{60+i*50}ms"><b>{t}</b><small>{d}</small></a>' for i,(t,u,d) in enumerate(MENU))
-    return f'''<!--menu--><button class="mnb" type="button" aria-label="Open menu" aria-expanded="false"><i></i>Menu</button>
+    return f'''<!--menu--><button class="mnb" type="button" aria-label="Open menu" aria-expanded="false"><i></i></button>
 <nav class="mnv" aria-label="Main menu" hidden><button class="x" type="button" aria-label="Close menu">×</button><a class="home" href="{root or './'}"><img src="{root}images/profile.webp" alt="">Marvyn Mylk</a>{items}</nav>
 <script>(function(){{var b=document.querySelector('.mnb'),n=document.querySelector('.mnv');function set(o){{if(o)n.hidden=false;requestAnimationFrame(function(){{n.classList.toggle('open',o)}});b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':'';if(!o)setTimeout(function(){{if(!n.classList.contains('open'))n.hidden=true}},260)}}
-b.addEventListener('click',function(){{set(true)}});n.querySelector('.x').addEventListener('click',function(){{set(false)}});n.addEventListener('click',function(e){{if(e.target.closest('a'))set(false)}});document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}})}})();</script><!--/menu-->
+b.addEventListener('click',function(){{set(true)}});n.querySelector('.x').addEventListener('click',function(){{set(false)}});n.addEventListener('click',function(e){{if(e.target.closest('a'))set(false)}});document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});var ly=scrollY;addEventListener('scroll',function(){{var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y}},{{passive:true}})}})();</script><!--/menu-->
 '''

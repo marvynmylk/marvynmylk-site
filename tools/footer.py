@@ -5,19 +5,23 @@ W,H,D=open(SP+'/wordmark_path.txt').read().split(None,2)
 def mark(cls='wm'):
     return f'<svg class="{cls}" viewBox="0 0 {W} {H}" role="img" aria-label="Marvyn Mylk"><defs><linearGradient id="wmg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#c9a7e8"/><stop offset=".55" stop-color="#e8a3c3"/><stop offset="1" stop-color="#f3b37a"/></linearGradient></defs><path fill="url(#wmg)" fill-rule="evenodd" d="{D.strip()}"/></svg>'
 CSS='''
-.sitefoot{margin-top:56px;padding:44px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
-.sitefoot .wm{display:block;width:min(300px,78vw);height:auto;margin:0 auto 20px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
-.sitefoot .sl{margin:0 auto;max-width:26ch;font:600 21px/1.35 "Fraunces",Georgia,serif;color:#fbefd8}
+/*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
+.sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
+.sitefoot .sl{margin:0 auto;max-width:30ch;font:600 17px/1.35 "Fraunces",Georgia,serif;color:#fbefd8}
 .sitefoot .sl b{font-weight:600;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .sitefoot .vm{display:inline-block;margin-top:18px;font:700 16px Karla,sans-serif;color:#fbefd8;text-decoration:underline;text-decoration-color:#e8a3c3;text-decoration-thickness:2px;text-underline-offset:5px}
-.sitefoot small{display:block;margin-top:16px;font:12.5px Karla,sans-serif;color:#7d7489}
-.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot small{display:block;margin-top:12px;font:12.5px Karla,sans-serif;color:#7d7489}
+.sitefoot details.smw{max-width:600px;margin:16px auto 0}
+.sitefoot details.smw summary{list-style:none;cursor:pointer;display:inline-block;font:700 14px Karla,sans-serif;color:#bdb4c7;text-decoration:underline;text-decoration-color:#e8a3c3;text-underline-offset:4px}
+.sitefoot details.smw summary::-webkit-details-marker{display:none}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;margin:16px 0 0;padding-top:16px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
 .sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
 .sitefoot .smap ul{list-style:none;margin:0;padding:0}
 .sitefoot .smap li{margin:0 0 6px}
 .sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
 .sitefoot .smap a:hover{color:#e8a3c3}
 @media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+/*/foot*/
 '''
 
 MAP=[("Stories",[("Alabama almost elected a Democratic governor","articles/alabama-governor-2026-tuberville-jones-county-results.html"),("Every precinct in Madison County moved left","articles/madison-county-precinct-shifts-2026.html"),("How many Alabamians didn't vote in 2024?","articles/alabama-voters-who-stayed-home-2024.html"),("Is Huntsville turning blue?","articles/is-huntsville-turning-blue.html"),("Alabama's 5th District, 2026","articles/alabama-5th-congressional-district-2026.html")]),
@@ -38,8 +42,7 @@ def block(home, label='View more', root='../'):
     return f'''<footer class="sitefoot">
 <a href="{home}" aria-label="Marvyn Mylk home">{mark()}</a>
 <p class="sl">Elections are decided by a handful of votes. <b>Be a voter.</b></p>
-<a class="vm" href="{home}">{label}</a>
-{smap(root)}
+<details class="smw"><summary>Site map</summary>{smap(root)}</details>
 <small>© 2026 Marvyn Mylk</small>
 </footer>
 '''
@@ -49,7 +52,9 @@ if __name__=='__main__':
     import re
     if 'class="sitefoot"' in s:
         s=re.sub(r'<footer class="sitefoot">.*?</footer>\n',block(home,label,root),s,count=1,flags=re.S)
-        s=re.sub(r'\n\.sitefoot\{.*?\.sitefoot small\{[^}]*\}\n',CSS,s,count=1,flags=re.S)
+        s=re.sub(r'/\*foot\*/.*?/\*/foot\*/\n?','',s,flags=re.S)
+        s=re.sub(r'\n\.sitefoot\{.*?(@media \(min-width:700px\)\{\.sitefoot \.smap\{grid-template-columns:repeat\(4,1fr\)\}\}|\.sitefoot small\{[^}]*\})','',s,flags=re.S)
+        s=s.replace('</style>',CSS+'</style>',1)
         open(p,'w').write(s); print('updated',p); sys.exit()
     s=s.replace('</style>',CSS+'</style>',1)
     if '<footer>' in s:   # landing page: replace old footer

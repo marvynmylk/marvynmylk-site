@@ -7,7 +7,7 @@ B=json.load(open(T+'/storymap_base.json'))
 PAGES=json.load(open(T+'/pages.json'))
 VB=[120,-4,250,138]   # zoomed on the Huntsville area, Lawrence to Jackson
 CSS='''
-/*smx*/.smx{margin:48px 0 0}
+/*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 6px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
 .smx .mapbox{position:relative;border-radius:18px;overflow:hidden;background:#1a1526;border:1px solid var(--line)}
@@ -25,17 +25,17 @@ CSS='''
 .smx .here{fill:none;stroke:#f3b37a;stroke-width:.8;transform-box:fill-box;transform-origin:center;animation:smxp 1.8s ease-out infinite}
 @keyframes smxp{from{transform:scale(.6);opacity:1}to{transform:scale(2.2);opacity:0}}
 .smx .card{display:flex;gap:12px;align-items:center;margin:12px 0 0;padding:10px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none;animation:smxc .35s ease}
-.smx .card img{flex:0 0 auto;width:120px;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:10px}
-.smx .card b{display:block;font:600 16px/1.25 "Fraunces",Georgia,serif}
-.smx .card small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+.smx .card img{flex:0 0 auto;width:92px;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:10px}
+.smx .card b{display:block;font:600 15px/1.25 "Fraunces",Georgia,serif}
+.smx .card small{display:none}
 .smx .card em{display:block;font-style:normal;font-weight:700;font-size:13.5px;color:#e8a3c3;margin-top:5px}
 @keyframes smxc{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.smx .state{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:14px -20px 0;padding:2px 20px 8px}
+.smx .state{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:10px -20px 0;padding:2px 20px 6px}
 .smx .state::-webkit-scrollbar{display:none}
-.smx .state a{flex:0 0 62%;max-width:240px;border-radius:14px;overflow:hidden;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none}
+.smx .state a{flex:0 0 auto;padding:8px 13px;border-radius:999px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none}
 .smx .state a.cur{border-color:#f3b37a}
-.smx .state img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
-.smx .state b{display:block;padding:8px 10px 10px;font:600 14px/1.25 "Fraunces",Georgia,serif}
+.smx .state img{display:none}
+.smx .state b{display:block;white-space:nowrap;font:700 13px/1.2 Karla,sans-serif; "Fraunces",Georgia,serif}
 .smx .hint{font-size:12.5px;color:var(--muted);margin:8px 0 0;text-align:center}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 '''
@@ -62,7 +62,6 @@ pins.forEach(function(p){p.addEventListener('click',function(){show(+p.dataset.i
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(%d)})();</script>'''%(json.dumps(data),sel)
     return f'''<!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
-<p class="sub">Every local story so far. Tap a pin. New ones pop up as I add them.</p>
 <div class="mapbox">{svg}</div>
 <a class="card" href="#"></a>
 <div class="state">{states}</div>
