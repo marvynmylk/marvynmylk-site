@@ -1,0 +1,113 @@
+[
+ {
+  "path": "madison-county/madison.html",
+  "kind": "point",
+  "pin": [
+   249.7,
+   53.7
+  ],
+  "label": "Madison",
+  "title": "How Madison voted",
+  "blurb": "Trump won it in 2024. Jones won it in 2026.",
+  "img": "share-town-madison.jpg"
+ },
+ {
+  "path": "madison-county/meridianville.html",
+  "kind": "point",
+  "pin": [
+   274.3,
+   27.7
+  ],
+  "label": "Meridianville",
+  "title": "How Meridianville voted",
+  "blurb": "Both precincts flipped.",
+  "img": "share-meridianville.jpg"
+ },
+ {
+  "path": "districts/alabama-house-district-25.html",
+  "kind": "point",
+  "pin": [
+   243.7,
+   40.7
+  ],
+  "label": "District 25",
+  "title": "House District 25 flipped blue",
+  "blurb": "Allison Montgomery won by 1,556 votes.",
+  "img": "share-hd25.jpg"
+ },
+ {
+  "path": "articles/is-huntsville-turning-blue.html",
+  "kind": "point",
+  "pin": [
+   272.4,
+   48.3
+  ],
+  "label": "Huntsville",
+  "title": "Is Huntsville turning blue?",
+  "blurb": "Trump by 9 in 2024. Jones by 16 in 2026.",
+  "img": "share-huntsville-blue.jpg"
+ },
+ {
+  "path": "articles/madison-county-precinct-shifts-2026.html",
+  "kind": "area",
+  "counties": [
+   "Madison"
+  ],
+  "pin": [
+   286.3,
+   70.0
+  ],
+  "label": "Madison County",
+  "title": "Every precinct in Madison County moved left",
+  "blurb": "26 precincts flipped. Find yours.",
+  "img": "share-madison.jpg"
+ },
+ {
+  "path": "articles/alabama-5th-congressional-district-2026.html",
+  "kind": "area",
+  "counties": [
+   "Madison",
+   "Limestone",
+   "Morgan",
+   "Jackson",
+   "Lawrence",
+   "Lauderdale"
+  ],
+  "pin": [
+   347.8,
+   56.0
+  ],
+  "label": "5th District",
+  "title": "Alabama's 5th District was closer than you think",
+  "blurb": "Decided by 17,075 votes.",
+  "img": "share-al5.jpg"
+ },
+ {
+  "path": "articles/alabama-governor-2026-tuberville-jones-county-results.html",
+  "kind": "state",
+  "title": "Alabama almost elected a Democratic governor",
+  "blurb": "R+20 to R+4.",
+  "img": "share-tuberville-jones.jpg"
+ },
+ {
+  "path": "articles/alabama-voters-who-stayed-home-2024.html",
+  "kind": "state",
+  "title": "How many Alabamians didn't vote in 2024?",
+  "blurb": "About 1.6 million.",
+  "img": "share-turnout.jpg"
+ },
+ {
+  "path": "guides/how-to-vote-in-alabama.html",
+  "kind": "state",
+  "title": "How to vote in Alabama",
+  "blurb": "Explained simply.",
+  "img": "share-how-to-vote.jpg"
+ },
+ {
+  "path": "play/how-close-alabama-2026.html",
+  "kind": "state",
+  "title": "How close was your race?",
+  "blurb": "Every 2026 legislative race.",
+  "img": "share-howclose.jpg"
+ }
+]

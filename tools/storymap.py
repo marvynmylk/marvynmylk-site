@@ -1,0 +1,71 @@
+"""The 'Explore North Alabama' story map that sits above the sign-up on every page.
+Pins and cards come from tools/pages.json, so adding a page there puts it on every page's map
+(re-run tools/page_end.py on every page)."""
+import json, os, html
+T=os.path.dirname(os.path.abspath(__file__))
+B=json.load(open(T+'/storymap_base.json'))
+PAGES=json.load(open(T+'/pages.json'))
+VB=[120,-4,250,138]   # zoomed on the Huntsville area, Lawrence to Jackson
+CSS='''
+/*smx*/.smx{margin:48px 0 0}
+.smx h2{margin:0 0 6px}
+.smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
+.smx .mapbox{position:relative;border-radius:18px;overflow:hidden;background:#1a1526;border:1px solid var(--line)}
+.smx svg{display:block;width:100%;height:auto}
+.smx .cty{fill:#2a2438;stroke:#16121f;stroke-width:.6;transition:fill .5s ease}
+.smx .cty.home{fill:#342c47}.smx .cty.hl{fill:#4b3b7a}
+.smx .cl{font:700 5.2px Karla,sans-serif;fill:rgba(251,239,216,.35);text-anchor:middle;pointer-events:none}
+.smx .pin{cursor:pointer;transform-box:fill-box;transform-origin:50% 100%;opacity:0;transform:translateY(-6px) scale(.3);transition:opacity .45s ease,transform .55s cubic-bezier(.3,1.6,.5,1)}
+.smx.on .pin{opacity:1;transform:none}
+.smx .pin path{fill:url(#smg);stroke:#16121f;stroke-width:.7}
+.smx .pin circle{fill:#16121f}
+.smx .pin.sel path{fill:#fbefd8}
+.smx .pin text{font:700 4px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#16121f;stroke-width:1.4px;opacity:0;transition:opacity .2s}
+.smx .pin.sel text,.smx .pin:hover text{opacity:1}
+.smx .here{fill:none;stroke:#f3b37a;stroke-width:.8;transform-box:fill-box;transform-origin:center;animation:smxp 1.8s ease-out infinite}
+@keyframes smxp{from{transform:scale(.6);opacity:1}to{transform:scale(2.2);opacity:0}}
+.smx .card{display:flex;gap:12px;align-items:center;margin:12px 0 0;padding:10px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none;animation:smxc .35s ease}
+.smx .card img{flex:0 0 auto;width:120px;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:10px}
+.smx .card b{display:block;font:600 16px/1.25 "Fraunces",Georgia,serif}
+.smx .card small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+.smx .card em{display:block;font-style:normal;font-weight:700;font-size:13.5px;color:#e8a3c3;margin-top:5px}
+@keyframes smxc{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.smx .state{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:14px -20px 0;padding:2px 20px 8px}
+.smx .state::-webkit-scrollbar{display:none}
+.smx .state a{flex:0 0 62%;max-width:240px;border-radius:14px;overflow:hidden;background:var(--ink-2);border:1px solid var(--line);color:var(--cream);text-decoration:none}
+.smx .state a.cur{border-color:#f3b37a}
+.smx .state img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
+.smx .state b{display:block;padding:8px 10px 10px;font:600 14px/1.25 "Fraunces",Georgia,serif}
+.smx .hint{font-size:12.5px;color:var(--muted);margin:8px 0 0;text-align:center}
+@media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
+'''
+PIN='M0,0 C-1.2,-2.6 -4.2,-4.6 -4.2,-8 A4.2,4.2 0 1 1 4.2,-8 C4.2,-4.6 1.2,-2.6 0,0Z'
+def block(cur, root):
+    pts=[p for p in PAGES if p['kind'] in ('point','area')]
+    st=[p for p in PAGES if p['kind']=='state']
+    sel=next((i for i,p in enumerate(pts) if p['path']==cur),0)
+    svg=f'<svg viewBox="{" ".join(map(str,VB))}" role="img" aria-label="Map of North Alabama with pins for each local story"><defs><linearGradient id="smg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8a3c3"/><stop offset="1" stop-color="#c9a7e8"/></linearGradient></defs>'
+    svg+=''.join(f'<path class="cty{" home" if c["n"]=="Madison" else ""}" data-c="{html.escape(c["n"])}" d="{c["d"]}"/>' for c in B['counties'])
+    svg+=''.join(f'<text class="cl" x="{c["cx"]+(-14 if c["n"]=="Madison" else 0)}" y="{c["cy"]+ (26 if c["n"]=="Madison" else 0)}">{html.escape(c["n"])}</text>' for c in B['counties'])
+    for i,p in enumerate(pts):
+        x,y=p['pin']; here=p['path']==cur
+        svg+=f'<g transform="translate({x},{y}) scale(1.5)"><g class="pin{" sel" if i==sel else ""}" data-i="{i}" style="transition-delay:{120+i*140}ms" tabindex="0" role="button" aria-label="{html.escape(p["title"])}">'
+        if here: svg+='<circle class="here" cx="0" cy="-8" r="5"/>'
+        svg+=f'<path d="{PIN}"/><circle cx="0" cy="-8" r="1.6"/><text x="{-5.5 if x>VB[0]+VB[2]-70 else 5.5}" y="-6" text-anchor="{"end" if x>VB[0]+VB[2]-70 else "start"}">{html.escape(("You are here · " if here else "")+p["label"])}</text></g></g>'
+    svg+='</svg>'
+    data=[dict(t=p['title'],b=p['blurb'],u=root+p['path'],img=root+'images/'+p['img'],c=p.get('counties',[]),here=p['path']==cur) for p in pts]
+    states=''.join(f'<a href="{root}{p["path"]}"{" class=cur" if p["path"]==cur else ""}><img src="{root}images/{p["img"]}" alt="" loading="lazy" width="1200" height="630"><b>{html.escape(p["title"])}</b></a>' for p in st)
+    js='''<script>(function(){var s=document.getElementById('smx');if(!s)return;var D=%s,card=s.querySelector('.card'),pins=s.querySelectorAll('.pin');
+function show(i){var d=D[i];pins.forEach(function(p){p.classList.toggle('sel',p.dataset.i==i)});s.querySelectorAll('.cty').forEach(function(c){c.classList.toggle('hl',d.c.indexOf(c.dataset.c)>-1)});
+card.href=d.u;card.innerHTML='<img src="'+d.img+'" alt=""><span><b>'+d.t+'</b><small>'+d.b+'</small><em>'+(d.here?'You\\u2019re on this page':'Read it \\u2192')+'</em></span>';card.style.animation='none';card.offsetHeight;card.style.animation=''}
+pins.forEach(function(p){p.addEventListener('click',function(){show(+p.dataset.i)});p.addEventListener('keydown',function(e){if(e.key==='Enter')show(+p.dataset.i)})});
+new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(%d)})();</script>'''%(json.dumps(data),sel)
+    return f'''<!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
+<h2 id="smx-h">Explore North Alabama</h2>
+<p class="sub">Every local story so far. Tap a pin. New ones pop up as I add them.</p>
+<div class="mapbox">{svg}</div>
+<a class="card" href="#"></a>
+<div class="state">{states}</div>
+</section>
+{js}<!--/storymap-->
+'''
