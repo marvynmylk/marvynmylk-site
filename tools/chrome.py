@@ -29,6 +29,13 @@ CSS='''
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq details p{margin:0!important;padding:0 18px 16px 58px!important;font-size:15.5px!important;line-height:1.55;color:#d9cfe2!important;animation:fqin .3s ease}
 @keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}.acts{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}.act{flex-direction:column;justify-content:flex-start;gap:7px;padding:12px 4px 10px;border-radius:14px;text-align:center}.act svg{width:40px;height:40px;padding:9px;border-radius:50%}.act strong{font-size:12.5px;line-height:1.2}.act small{display:none}
+.dc.lock{border:1.5px solid rgba(226,72,84,.6)!important;box-shadow:0 0 26px rgba(226,72,84,.16)}.dc.lock.dlk{border-color:rgba(91,140,255,.6)!important;box-shadow:0 0 26px rgba(91,140,255,.16)}
+.lk{display:flex;align-items:center;gap:12px;margin:10px 0 8px}.lk svg{flex:0 0 auto;width:46px;height:46px;padding:11px;border-radius:50%;background:rgba(226,72,84,.16);fill:#ff6b76;animation:lkg 2.6s ease-in-out infinite}
+.lk b{font:600 26px/1.1 "Fraunces",Georgia,serif;color:#ff6b76}.dlk .lk svg{background:rgba(91,140,255,.16);fill:#8fb0ff;animation-name:lkb}.dlk .lk b{color:#8fb0ff}
+@keyframes lkg{0%,100%{box-shadow:0 0 10px rgba(226,72,84,.3)}50%{box-shadow:0 0 0 6px rgba(226,72,84,.1),0 0 26px rgba(226,72,84,.6)}}
+@keyframes lkb{0%,100%{box-shadow:0 0 10px rgba(91,140,255,.3)}50%{box-shadow:0 0 0 6px rgba(91,140,255,.1),0 0 26px rgba(91,140,255,.6)}}
+.keyl{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 14px;border-radius:999px;background:rgba(243,179,122,.12);border:1px solid rgba(243,179,122,.45);color:#f3b37a!important;font-weight:700;font-size:14px;text-decoration:none!important}.keyl svg{width:18px;height:18px;fill:#f3b37a}
+@media (prefers-reduced-motion:reduce){.lk svg{animation:none}}
 /*/chrome*/
 '''
 def menu(root):
