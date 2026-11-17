@@ -1,0 +1,60 @@
+import sys
+import os
+SP=os.path.dirname(os.path.abspath(__file__))
+W,H,D=open(SP+'/wordmark_path.txt').read().split(None,2)
+def mark(cls='wm'):
+    return f'<svg class="{cls}" viewBox="0 0 {W} {H}" role="img" aria-label="Marvyn Mylk"><defs><linearGradient id="wmg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#c9a7e8"/><stop offset=".55" stop-color="#e8a3c3"/><stop offset="1" stop-color="#f3b37a"/></linearGradient></defs><path fill="url(#wmg)" fill-rule="evenodd" d="{D.strip()}"/></svg>'
+CSS='''
+.sitefoot{margin-top:56px;padding:44px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
+.sitefoot .wm{display:block;width:min(300px,78vw);height:auto;margin:0 auto 20px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
+.sitefoot .sl{margin:0 auto;max-width:26ch;font:600 21px/1.35 "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .sl b{font-weight:600;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sitefoot .vm{display:inline-block;margin-top:18px;font:700 16px Karla,sans-serif;color:#fbefd8;text-decoration:underline;text-decoration-color:#e8a3c3;text-decoration-thickness:2px;text-underline-offset:5px}
+.sitefoot small{display:block;margin-top:16px;font:12.5px Karla,sans-serif;color:#7d7489}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px;max-width:640px;margin:34px auto 0;padding-top:28px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot .smap h3{margin:0 0 10px;font:600 16px "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .smap ul{list-style:none;margin:0;padding:0}
+.sitefoot .smap li{margin:0 0 8px}
+.sitefoot .smap a{font:500 14.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
+.sitefoot .smap a:hover{color:#e8a3c3}
+@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+'''
+
+MAP=[("Stories",[("Alabama almost elected a Democratic governor","articles/alabama-governor-2026-tuberville-jones-county-results.html"),("Every precinct in Madison County moved left","articles/madison-county-precinct-shifts-2026.html"),("How many Alabamians didn't vote in 2024?","articles/alabama-voters-who-stayed-home-2024.html")]),
+ ("Explore",[("How close was your race?","play/how-close-alabama-2026.html"),("Meridianville, town by town","madison-county/meridianville.html")]),
+ ("Books",[("The Purple South","#books-h"),("The Monster on TV","#books-h")]),
+ ("Follow",[("TikTok","https://www.tiktok.com/@betterargument"),("Instagram","https://www.instagram.com/authormarvynmylk"),("Threads","https://www.threads.net/@marvynmylk")])]
+def smap(root):
+    out='<nav class="smap" aria-label="Site map">'
+    for h,links in MAP:
+        out+=f'<div><h3>{h}</h3><ul>'
+        for t,u in links:
+            href=u if u.startswith('http') else (root+u if not u.startswith('#') else (root or '')+u)
+            ext=' target="_blank" rel="noopener"' if u.startswith('http') else ''
+            out+=f'<li><a href="{href}"{ext}>{t}</a></li>'
+        out+='</ul></div>'
+    return out+'</nav>'
+def block(home, label='View more', root='../'):
+    return f'''<footer class="sitefoot">
+<a href="{home}" aria-label="Marvyn Mylk home">{mark()}</a>
+<p class="sl">Elections are decided by a handful of votes. <b>Be a voter.</b></p>
+<a class="vm" href="{home}">{label}</a>
+{smap(root)}
+<small>© 2026 Marvyn Mylk</small>
+</footer>
+'''
+if __name__=='__main__':
+    p,home=sys.argv[1],sys.argv[2]; label=sys.argv[3] if len(sys.argv)>3 else 'View more'; root='' if home.startswith('#') else '../'
+    s=open(p).read()
+    import re
+    if 'class="sitefoot"' in s:
+        s=re.sub(r'<footer class="sitefoot">.*?</footer>\n',block(home,label,root),s,count=1,flags=re.S)
+        s=re.sub(r'\n\.sitefoot\{.*?\.sitefoot small\{[^}]*\}\n',CSS,s,count=1,flags=re.S)
+        open(p,'w').write(s); print('updated',p); sys.exit()
+    s=s.replace('</style>',CSS+'</style>',1)
+    if '<footer>' in s:   # landing page: replace old footer
+        a=s.index('<footer>'); b=s.index('</footer>')+len('</footer>')
+        s=s[:a]+block(home,label,root)+s[b:]
+    else:
+        s=s.replace('</main>','</main>\n'+block(home,label,root),1)
+    open(p,'w').write(s); print('ok',p)
