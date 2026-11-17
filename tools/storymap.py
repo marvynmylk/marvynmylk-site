@@ -40,12 +40,12 @@ CSS='''
 .smx .state img{display:none}
 .smx .state b{display:block;white-space:nowrap;font:700 13px/1.2 Karla,sans-serif; "Fraunces",Georgia,serif}
 .smx .hint{font-size:12.5px;color:var(--muted);margin:8px 0 0;text-align:center}
-.smx .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:12px -20px 0;padding:2px 20px 8px;scroll-padding:0 20px}
+.smx .strip{position:relative;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:12px -20px 0;padding:2px 20px 8px;scroll-padding:0 20px}
 .smx .strip::-webkit-scrollbar{display:none}
 .smx .sc{flex:0 0 148px;scroll-snap-align:start;color:var(--cream);text-decoration:none;border-radius:14px;padding:6px 6px 8px;background:var(--ink-2);border:1.5px solid var(--line);transition:border-color .3s,transform .3s}
 .smx .sc img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:9px}
 .smx .sc b{display:-webkit-box;-webkit-line-clamp:3;min-height:3.75em;-webkit-box-orient:vertical;overflow:hidden;margin:7px 2px 0;font:600 13.5px/1.25 "Fraunces",Georgia,serif}
-.smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}
+.smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 '''
@@ -87,14 +87,14 @@ function up(e){delete pts[e.pointerId];pd=null;if(!Object.keys(pts).length)last=
 sv.addEventListener('pointerup',up);sv.addEventListener('pointercancel',up);sv.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault()}},true);
 sv.addEventListener('dblclick',function(e){e.preventDefault();zoom(.6,e.clientX,e.clientY)});
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(%d)})();</script>'''%(json.dumps(data),sel)
-    if home:
+    if True:
         allp=pts+st
-        strip=''.join(f'<a class="sc" href="{root}{p["path"]}" data-i="{i if i<len(pts) else -1}"><img src="{root}images/{p["img"]}" alt="" loading="lazy" width="1200" height="630"><b>{html.escape(p["title"])}</b></a>' for i,p in enumerate(allp))
+        strip=''.join(f'<a class="sc{" me" if p["path"]==cur else ""}" href="{root}{p["path"]}" data-i="{i if i<len(pts) else -1}"><img src="{root}images/{p["img"]}" alt="" loading="lazy" width="1200" height="630"><b>{html.escape(p["title"])}</b></a>' for i,p in enumerate(allp))
         js=js.replace("card.href=d.u;card.innerHTML='<img src=\"'+d.img+'\" alt=\"\"><span><b>'+d.t+'</b><small>'+d.b+'</small><em>'+(d.here?'You\\u2019re on this page':'Read it \\u2192')+'</em></span>';card.style.animation='none';card.offsetHeight;card.style.animation=''","var st=s.querySelector('.strip'),sc=st.querySelector('.sc[data-i=\"'+i+'\"]');st.querySelectorAll('.sc').forEach(function(c){c.classList.toggle('cur',c===sc)});if(sc&&!quiet){lock=Date.now();st.scrollTo({left:sc.offsetLeft-20,behavior:'smooth'})}")
         js=js.replace("function show(i){","var lock=0,quiet=false;function show(i){")
-        js=js.replace("show(%d)})();</script>"%sel,"show(%d);var st=s.querySelector('.strip'),tm;st.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){if(Date.now()-lock<900)return;var best=null,bd=1e9;st.querySelectorAll('.sc').forEach(function(c){var d=Math.abs(c.offsetLeft-20-st.scrollLeft);if(d<bd){bd=d;best=c}});if(best&&best.dataset.i!=='-1'){quiet=true;show(+best.dataset.i);quiet=false}},120)},{passive:true})})();</script>"%sel)
+        js=js.replace("show(%d)})();</script>"%sel,"show(%d);var st=s.querySelector('.strip'),tm;var hh=st.querySelector('.sc.me');if(hh&&hh.dataset.i==='-1'){lock=Date.now();st.scrollLeft=hh.offsetLeft-20}st.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){if(Date.now()-lock<900)return;var best=null,bd=1e9;st.querySelectorAll('.sc').forEach(function(c){var d=Math.abs(c.offsetLeft-20-st.scrollLeft);if(d<bd){bd=d;best=c}});if(best&&best.dataset.i!=='-1'){quiet=true;show(+best.dataset.i);quiet=false}},120)},{passive:true})})();</script>"%sel)
         return f'''<!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
-<h2 id="smx-h">Dig into the data</h2>
+<h2 id="smx-h">{"Dig into the data" if home else "Explore North Alabama"}</h2>
 <p class="sub2">Tap a pin to find its story, or swipe through all {len(allp)}.</p>
 <div class="mapbox">{svg}<div class="zm"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button></div></div>
 <div class="strip">{strip}</div>

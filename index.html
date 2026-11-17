@@ -51,6 +51,10 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
+
+
 <script>document.documentElement.dataset.font="b"</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:opsz,wght@9..144,600&family=Anton&family=Barlow+Condensed:wght@600&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Caprasimo&display=swap">
 <style>
@@ -441,6 +445,14 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
 
 
 
+
+
+
+
+
+
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -474,12 +486,12 @@ footer small{display:block;margin-top:12px;font-size:12.5px;color:#7d7489}
 .smx .state img{display:none}
 .smx .state b{display:block;white-space:nowrap;font:700 13px/1.2 Karla,sans-serif; "Fraunces",Georgia,serif}
 .smx .hint{font-size:12.5px;color:var(--muted);margin:8px 0 0;text-align:center}
-.smx .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:12px -20px 0;padding:2px 20px 8px;scroll-padding:0 20px}
+.smx .strip{position:relative;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:12px -20px 0;padding:2px 20px 8px;scroll-padding:0 20px}
 .smx .strip::-webkit-scrollbar{display:none}
 .smx .sc{flex:0 0 148px;scroll-snap-align:start;color:var(--cream);text-decoration:none;border-radius:14px;padding:6px 6px 8px;background:var(--ink-2);border:1.5px solid var(--line);transition:border-color .3s,transform .3s}
 .smx .sc img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:9px}
 .smx .sc b{display:-webkit-box;-webkit-line-clamp:3;min-height:3.75em;-webkit-box-orient:vertical;overflow:hidden;margin:7px 2px 0;font:600 13.5px/1.25 "Fraunces",Georgia,serif}
-.smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}
+.smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 
@@ -649,7 +661,7 @@ if(last&&box.classList.contains('zoomed')){var dx=e.clientX-last.x,dy=e.clientY-
 function up(e){delete pts[e.pointerId];pd=null;if(!Object.keys(pts).length)last=null}
 sv.addEventListener('pointerup',up);sv.addEventListener('pointercancel',up);sv.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault()}},true);
 sv.addEventListener('dblclick',function(e){e.preventDefault();zoom(.6,e.clientX,e.clientY)});
-new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(0);var st=s.querySelector('.strip'),tm;st.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){if(Date.now()-lock<900)return;var best=null,bd=1e9;st.querySelectorAll('.sc').forEach(function(c){var d=Math.abs(c.offsetLeft-20-st.scrollLeft);if(d<bd){bd=d;best=c}});if(best&&best.dataset.i!=='-1'){quiet=true;show(+best.dataset.i);quiet=false}},120)},{passive:true})})();</script>
+new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(0);var st=s.querySelector('.strip'),tm;var hh=st.querySelector('.sc.me');if(hh&&hh.dataset.i==='-1'){lock=Date.now();st.scrollLeft=hh.offsetLeft-20}st.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){if(Date.now()-lock<900)return;var best=null,bd=1e9;st.querySelectorAll('.sc').forEach(function(c){var d=Math.abs(c.offsetLeft-20-st.scrollLeft);if(d<bd){bd=d;best=c}});if(best&&best.dataset.i!=='-1'){quiet=true;show(+best.dataset.i);quiet=false}},120)},{passive:true})})();</script>
 </div><!--/storymap-->
 <section class="join" id="join" aria-labelledby="join-h">
   <div class="wrap narrow">
@@ -657,6 +669,10 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
     <h2 id="join-h">The South is <em>closer than you think.</em></h2>
     <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
     
+
+
+
+
 
 
 
