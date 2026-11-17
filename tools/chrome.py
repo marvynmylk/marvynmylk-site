@@ -28,7 +28,7 @@ CSS='''
 .faq summary::after{content:"+"!important;position:absolute;right:16px;top:50%;transform:translateY(-50%);font:400 24px Karla,sans-serif;color:var(--fc)!important;transition:transform .25s}
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq details p{margin:0!important;padding:0 18px 16px 58px!important;font-size:15.5px!important;line-height:1.55;color:#d9cfe2!important;animation:fqin .3s ease}
-@keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.act{gap:9px;padding:9px 10px;border-radius:14px}.act:last-child:nth-child(odd){grid-column:1/-1}.act svg{width:30px;height:30px;padding:6px;border-radius:50%}.act strong{font-size:14px;line-height:1.25}.act small{display:none}
+@keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}.acts{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}.act{flex-direction:column;justify-content:flex-start;gap:7px;padding:12px 4px 10px;border-radius:14px;text-align:center}.act svg{width:40px;height:40px;padding:9px;border-radius:50%}.act strong{font-size:12.5px;line-height:1.2}.act small{display:none}
 /*/chrome*/
 '''
 def menu(root):

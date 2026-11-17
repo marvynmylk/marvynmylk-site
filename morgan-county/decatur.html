@@ -346,6 +346,10 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -404,7 +408,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .faq summary::after{content:"+"!important;position:absolute;right:16px;top:50%;transform:translateY(-50%);font:400 24px Karla,sans-serif;color:var(--fc)!important;transition:transform .25s}
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq details p{margin:0!important;padding:0 18px 16px 58px!important;font-size:15.5px!important;line-height:1.55;color:#d9cfe2!important;animation:fqin .3s ease}
-@keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.act{gap:9px;padding:9px 10px;border-radius:14px}.act:last-child:nth-child(odd){grid-column:1/-1}.act svg{width:30px;height:30px;padding:6px;border-radius:50%}.act strong{font-size:14px;line-height:1.25}.act small{display:none}
+@keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}.acts{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}.act{flex-direction:column;justify-content:flex-start;gap:7px;padding:12px 4px 10px;border-radius:14px;text-align:center}.act svg{width:40px;height:40px;padding:9px;border-radius:50%}.act strong{font-size:12.5px;line-height:1.2}.act small{display:none}
 /*/chrome*/
 /*bks*/.bks{display:flex;align-items:center;gap:12px;max-width:440px;margin:14px auto 4px;padding:10px 12px;border-radius:14px;background:rgba(22,18,31,.55);border:1px solid rgba(201,167,232,.25);text-decoration:none;color:#fbefd8;text-align:left}
 .bks .cv2{display:flex;flex:0 0 auto}
@@ -442,6 +446,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEventListener('click',function(){set(false)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});var ly=scrollY;addEventListener('scroll',function(){var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y},{passive:true})})();</script><!--/menu-->
 
 
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -476,9 +482,9 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 <h2>What you can do</h2>
 <div class="acts">
-<a class="act" href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Check your registration</strong><small>Confirm your district and polling place.</small></span></a>
-<a class="act" href="../guides/how-to-vote-in-alabama.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span><strong>How to vote in Alabama</strong><small>ID, absentee and polling hours.</small></span></a>
-<button class="act" type="button" id="shr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.4.1-.6s0-.4-.1-.6L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .4.1.6L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9S19.6 16 18 16z"/></svg><span><strong>Share this</strong><small id="shrm">Send it to someone in Decatur.</small></span></button>
+<a class="act" href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Registration</strong><small>Confirm your district and polling place.</small></span></a>
+<a class="act" href="../guides/how-to-vote-in-alabama.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span><strong>How to vote</strong><small>ID, absentee and polling hours.</small></span></a>
+<button class="act" type="button" id="shr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.4.1-.6s0-.4-.1-.6L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .4.1.6L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9S19.6 16 18 16z"/></svg><span><strong>Share</strong><small id="shrm">Send it to someone in Decatur.</small></span></button>
 </div>
 <h2>Questions people ask</h2>
 <div class="faq"><details><summary>How did Decatur, Alabama vote in 2026?</summary><p>Decatur&#x27;s precincts voted for Democrat <span class="cand d">Doug Jones</span> over Republican <span class="cand r">Tommy Tuberville</span> for governor, 8,074 to 7,286, according to unofficial results. In 2024, <span class="cand r">Donald Trump</span> won the same polling places by 24 points.</p></details><details><summary>Did any Decatur precincts flip?</summary><p>Yes. 6 Decatur precincts went from <span class="cand r">Trump</span> in 2024 to <span class="cand d">Jones</span> in 2026: First Baptist Austinville, American Legion Post 15, Decatur Utilities, Fort Decatur Rec Center, Macedonia C.P. Church and Westmeade Baptist.</p></details><details><summary>Who won Alabama House District 8?</summary><p>Republican <span class="cand r">Patrick Johnson</span> beat Democrat <span class="cand d">Janine Jordan</span> 6,630 to 6,028, a margin of 602 votes, according to unofficial results.</p></details><details><summary>Who represents Decatur in Congress?</summary><p>Decatur is in Alabama&#x27;s 5th Congressional District, represented by Republican <span class="cand r">Dale Strong</span>, who beat Democrat <span class="cand d">Andrew Sneed</span> in 2026.</p></details><details><summary>How many people in Decatur didn&#x27;t vote in 2026?</summary><p>About 21,317 registered voters in Decatur&#x27;s precincts didn&#x27;t cast a ballot in 2026.</p></details></div>
@@ -516,6 +522,8 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
+
 <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="decatur">
