@@ -515,7 +515,7 @@ document.querySelector('.hero-n').classList.add('rv');
 // map
 var svg=document.getElementById('tmap'),yl=document.getElementById('yl'),card=document.getElementById('card'),tm=null;
 function mix(a,b,t){return a.map(function(v,i){return Math.round(v+(b[i]-v)*t)})}
-function col(r){if(r==null)return'#2a2438';var B=[45,110,255],P=[138,92,240],R=[226,72,84];var t=Math.max(-1,Math.min(1,(r-50)/30));return'rgb('+(t<0?mix(P,B,-t):mix(P,R,t))+')'}
+function col(r){if(r==null)return'#2a2438';var B=[45,110,255],P=[138,92,240],R=[226,72,84];var t=(r-50)/18;t=Math.sign(t)*Math.pow(Math.min(1,Math.abs(t)),.55);return'rgb('+(t<0?mix(P,B,-t):mix(P,R,t))+')'}
 function paint(y){yl.textContent=y==='24'?'2024':'2026';[].forEach.call(svg.querySelectorAll('.p:not(.na)'),function(p){var d=MC[p.dataset.id];p.style.fill=col(d?(y==='24'?d.r24:d.r26):null)})}
 function play(){clearTimeout(tm);paint('24');tm=setTimeout(function(){paint('26')},rm?0:1300)}
 document.getElementById('replay').addEventListener('click',play);

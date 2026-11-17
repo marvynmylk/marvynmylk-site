@@ -575,7 +575,7 @@ q.addEventListener('input',function(){var v=q.value.toLowerCase();rows.forEach(f
 (function(){
 var y='26',sel=null,svg=document.getElementById('mcmap'),card=document.getElementById('card'),pick=document.getElementById('pick');
 function mix(a,b,t){return a.map(function(v,i){return Math.round(v+(b[i]-v)*t)})}
-function col(r){if(r==null)return'#2a2438';var B=[45,110,255],P=[138,92,240],R=[226,72,84];var t=Math.max(-1,Math.min(1,(r-50)/30));var c=t<0?mix(P,B,-t):mix(P,R,t);return'rgb('+c+')'}
+function col(r){if(r==null)return'#2a2438';var B=[45,110,255],P=[138,92,240],R=[226,72,84];var t=(r-50)/18;t=Math.sign(t)*Math.pow(Math.min(1,Math.abs(t)),.55);var c=t<0?mix(P,B,-t):mix(P,R,t);return'rgb('+c+')'}
 function isF(d){return d&&d.r24!=null&&d.r24>=50&&d.r26<50}
 function paint(){var w=document.querySelector('.mapw');w.classList.toggle('fl',y==='f');[].forEach.call(svg.querySelectorAll('.p:not(.na)'),function(p){var d=MC.data[p.dataset.id];p.style.fill=col(d?(y==='24'?d.r24:d.r26):null);p.classList.toggle('dim',y==='f'&&!isF(d))})}
 function bar(lbl,r,d,rn,dn){if(r==null)return'<p class="tw">'+lbl+': no matching 2024 precinct</p>';var o=Math.max(0,100-r-d);return'<div class="push"><div class="ph"><span>'+lbl+'</span><span>'+(r>=50?'R +':'D +')+Math.abs(r-d).toFixed(1)+'</span></div><div class="pb"><i class="r" style="width:'+r+'%">'+r.toFixed(1)+'%</i><i class="o" style="width:'+o+'%"></i><i class="d" style="width:'+d+'%">'+d.toFixed(1)+'%</i></div><div class="pf"><span>'+rn+'</span><span>'+dn+'</span></div></div>'}
