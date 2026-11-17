@@ -22,7 +22,7 @@ CSS='''
 
 MAP=[("Stories",[("Alabama almost elected a Democratic governor","articles/alabama-governor-2026-tuberville-jones-county-results.html"),("Every precinct in Madison County moved left","articles/madison-county-precinct-shifts-2026.html"),("How many Alabamians didn't vote in 2024?","articles/alabama-voters-who-stayed-home-2024.html"),("Is Huntsville turning blue?","articles/is-huntsville-turning-blue.html"),("Alabama's 5th District, 2026","articles/alabama-5th-congressional-district-2026.html")]),
  ("Explore",[("How close was your race?","play/how-close-alabama-2026.html"),("How to vote in Alabama","guides/how-to-vote-in-alabama.html"),("House District 25","districts/alabama-house-district-25.html"),("Madison, town by town","madison-county/madison.html"),("Meridianville, town by town","madison-county/meridianville.html")]),
- ("Books",[("The Purple South","#books-h"),("The Monster on TV","#books-h")]),
+ ("Books",[("About Marvyn","about/"),("The Purple South","about/"),("The Monster on TV","about/"),("For media","about/#media")]),
  ("Follow",[("TikTok","https://www.tiktok.com/@betterargument"),("Instagram","https://www.instagram.com/authormarvynmylk"),("Threads","https://www.threads.net/@marvynmylk")])]
 def smap(root):
     out='<nav class="smap" aria-label="Site map">'
