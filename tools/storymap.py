@@ -8,7 +8,7 @@ PAGES=json.load(open(T+'/pages.json'))
 VB=[120,-4,250,138]   # zoomed on the Huntsville area, Lawrence to Jackson
 CSS='''
 /*smx*/.smx{margin:36px 0 0}
-.smx h2{margin:0 0 6px}
+.smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
 .smx .mapbox{position:relative;border-radius:18px;overflow:hidden;background:#1a1526;border:1px solid var(--line)}
 .smx svg{display:block;width:100%;height:auto}
@@ -62,6 +62,7 @@ pins.forEach(function(p){p.addEventListener('click',function(){show(+p.dataset.i
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(%d)})();</script>'''%(json.dumps(data),sel)
     return f'''<!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
+<p class="sub2">Nearby towns and districts. Tap a pin.</p>
 <div class="mapbox">{svg}</div>
 <a class="card" href="#"></a>
 <div class="state">{states}</div>
