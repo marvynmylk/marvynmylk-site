@@ -249,6 +249,20 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
 .sitefoot .smap a:hover{color:#e8a3c3}
 @media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .smap ul{list-style:none;margin:0;padding:0}
+.sitefoot .smap li{margin:0 0 6px}
+.sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
+.sitefoot .smap a:hover{color:#e8a3c3}
+@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .smap ul{list-style:none;margin:0;padding:0}
+.sitefoot .smap li{margin:0 0 6px}
+.sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
+.sitefoot .smap a:hover{color:#e8a3c3}
+@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
 .sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:24px 18px;max-width:640px;margin:34px auto 0;padding-top:28px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
 .sitefoot .smap h3{margin:0 0 10px;font:600 16px "Fraunces",Georgia,serif;color:#fbefd8}
 .sitefoot .smap ul{list-style:none;margin:0;padding:0}
@@ -276,6 +290,9 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 @keyframes cout{to{opacity:0;transform:scale(.85)}}
 @keyframes cpop{50%{transform:scale(1.15)}to{opacity:0;transform:scale(1.4)}}
 @media (prefers-reduced-motion:reduce){.orb .chip{animation:none}}
+
+
+
 
 
 
@@ -340,6 +357,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq details p{margin:0!important;padding:0 18px 16px 58px!important;font-size:15.5px!important;line-height:1.55;color:#d9cfe2!important;animation:fqin .3s ease}
 @keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}/*/chrome*/
+/*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
 </style>
 </head>
 <body>
@@ -350,11 +369,13 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Every precinct in Madison County <span>moved left</span></h1>
-<p class="lede">In 2024, Donald Trump carried Madison County by 17,606 votes. In 2026, Doug Jones carried it by 26,115. Of the 74 precincts I could compare, <b>all 74 moved toward Democrats</b>, and 26 flipped.</p>
+<p class="lede">In 2024, <span class="cand r">Donald Trump</span> carried Madison County by 17,606 votes. In 2026, <span class="cand d">Doug Jones</span> carried it by 26,115. Of the 74 precincts I could compare, <b>all 74 moved toward Democrats</b>, and 26 flipped.</p>
 
 <div class="chart cty" role="img" aria-label="Madison County. 2024 president: Trump 53.4%, Harris 44.4%. 2026 governor: Tuberville 41.7%, Jones 57.9%.">
 <div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump won by 9.0 pts</span></div>
@@ -367,9 +388,9 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="note">Madison County totals, including absentee ballots. 2026 results are unofficial until certified.</p>
 </div>
 
-<p>That's a 25-point swing in two years, and it wasn't just one race. In the 2026 U.S. Senate race, Democrat Everett Wess also carried Madison County, 87,854 votes to Barry Moore's 71,817.</p>
+<p>That's a 25-point swing in two years, and it wasn't just one race. In the 2026 U.S. Senate race, Democrat <span class="cand d">Everett Wess</span> also carried Madison County, 87,854 votes to <span class="cand r">Barry Moore's</span> 71,817.</p>
 
-<div class="callout" style="margin:20px 0;padding:16px 18px;border-left:4px solid #e8a3c3;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b>Jones got more votes than Harris did.</b> In a midterm, with about 36,000 fewer ballots cast, Doug Jones won 92,997 votes in Madison County. Kamala Harris got 87,824 in the 2024 presidential race.</p></div>
+<div class="callout" style="margin:20px 0;padding:16px 18px;border-left:4px solid #e8a3c3;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b><span class="cand d">Jones</span> got more votes than <span class="cand d">Harris</span> did.</b> In a midterm, with about 36,000 fewer ballots cast, <span class="cand d">Doug Jones</span> won 92,997 votes in Madison County. <span class="cand d">Kamala Harris</span> got 87,824 in the 2024 presidential race.</p></div>
 <h2>26 precincts flipped</h2>
 <p>Tap the 2024 and 2026 buttons to watch the county change. Tap any precinct, or pick your town, to see how it voted.</p>
 <div class="chart mapw">

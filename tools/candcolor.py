@@ -1,0 +1,34 @@
+"""Color candidate names in body copy by party (blue/red gradient). Idempotent."""
+import re
+D=['Doug Jones','Jones','Kamala Harris','Harris','Joe Biden','Biden','Allison Montgomery','Andrew Sneed','Sneed','Jared Sluss','Sluss','Marilyn Lands','Lands','Forrest Satterfield','Satterfield','Everett Wess','Wess','Hanu Karlapalem','Karlapalem','John Dickey','Dickey','Phillip Ensler']
+R=['Tommy Tuberville','Tuberville','Donald Trump','Trump','Phillip Rigsby','Rigsby','Dale Strong','Strong','Sam Givhan','Givhan','Rex Reynolds','Reynolds','Aaron Thomas','Barry Moore','Parker Duncan Moore','Arthur Orr','Wes Kitchens','Danny Crawford','James Lomax','Bob Riley']
+NAMES=sorted([(n,'d') for n in D]+[(n,'r') for n in R],key=lambda x:-len(x[0]))
+RX=re.compile(r"(?<![\w-])("+'|'.join(re.escape(n) for n,_ in NAMES)+r")(?:'s)?(?![\w-])")
+PARTY=dict(NAMES)
+CSS='''/*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+'''
+SKIPTAG={'script','style','svg','a','h1','h2','h3','button','title','option','select','textarea','summary','head','em'}
+SKIPCLASS=('faceoff','dc','pcard','hc','card','nc','smx','join','sitefoot','mnv','orb','cbar','cn','pbar','bn','vb','pb','push','lost','stats','facts','who','tile','q','bk2','answer','hero','ahero','cty','win','race','tl','quotes','cand','nw','state','grow','gap','dl','connect','fv','flips','slope')
+VOID={'img','br','hr','input','meta','link','source','wbr','path','circle','line','rect','stop','use'}
+def color(html):
+    a=html.find('<article'); b=html.rfind('</article>')
+    if a<0 or b<0: return html
+    seg=html[a:b]; out=[]; stack=[]
+    for tok in re.split(r'(<[^>]+>)',seg):
+        if tok.startswith('<'):
+            m=re.match(r'<(/?)([a-zA-Z0-9]+)([^>]*)>',tok)
+            if m:
+                close,tag,attrs=m.group(1),m.group(2).lower(),m.group(3)
+                if close:
+                    while stack:
+                        t,_=stack.pop()
+                        if t==tag: break
+                elif tag not in VOID and not attrs.rstrip().endswith('/'):
+                    cl=re.search(r'class="([^"]*)"',attrs); stack.append((tag,cl.group(1).split() if cl else []))
+            out.append(tok); continue
+        skip=any(t in SKIPTAG or any(c in SKIPCLASS for c in cls) for t,cls in stack)
+        inbody=any(t in ('p','li') for t,_ in stack)
+        if skip or not inbody or not tok.strip(): out.append(tok); continue
+        out.append(RX.sub(lambda m:f'<span class="cand {PARTY[m.group(1)]}">{m.group(0)}</span>',tok))
+    return html[:a]+''.join(out)+html[b:]

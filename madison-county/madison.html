@@ -325,6 +325,23 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
 .sitefoot .smap a:hover{color:#e8a3c3}
 @media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .smap ul{list-style:none;margin:0;padding:0}
+.sitefoot .smap li{margin:0 0 6px}
+.sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
+.sitefoot .smap a:hover{color:#e8a3c3}
+@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+.sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
+.sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .smap ul{list-style:none;margin:0;padding:0}
+.sitefoot .smap li{margin:0 0 6px}
+.sitefoot .smap a{font:500 12.5px/1.35 Karla,sans-serif;color:#bdb4c7;text-decoration:none}
+.sitefoot .smap a:hover{color:#e8a3c3}
+@media (min-width:700px){.sitefoot .smap{grid-template-columns:repeat(4,1fr)}}
+
+
+
 
 
 
@@ -388,6 +405,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq details p{margin:0!important;padding:0 18px 16px 58px!important;font-size:15.5px!important;line-height:1.55;color:#d9cfe2!important;animation:fqin .3s ease}
 @keyframes fqin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}/*/chrome*/
+/*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
 </style>
 </head>
 <body>
@@ -398,11 +417,13 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Madison <span>flipped.</span></h1>
-<p class="lede">In 2024, Madison's precincts voted for Donald Trump by about 1,400 votes. In 2026, they went for Doug Jones by about 3,500. Here's your precinct, every race on your ballot, and who represents you in Montgomery.</p>
+<p class="lede">In 2024, Madison's precincts voted for <span class="cand r">Donald Trump</span> by about 1,400 votes. In 2026, they went for <span class="cand d">Doug Jones</span> by about 3,500. Here's your precinct, every race on your ballot, and who represents you in Montgomery.</p>
 <div class="hero-n"><span class="cnt" data-to="25">0</span><small>points</small></div>
 <p class="hero-c">toward Democrats in two years, R+6.7 to D+18.2</p>
 
@@ -416,7 +437,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="note">The 7 Madison precincts that voted in both years. Madison Community Center and Asbury Church are new since 2024, so they are left out of this comparison.</p>
 </div>
 
-<div class="callout rv" style="margin:20px 0;padding:16px 18px;border-left:4px solid #e8a3c3;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b>Jones got more votes here than Harris did.</b> In a midterm, with fewer people voting, Doug Jones won 11,258 votes in these precincts. Kamala Harris got 10,104 in the 2024 presidential race.</p></div>
+<div class="callout rv" style="margin:20px 0;padding:16px 18px;border-left:4px solid #e8a3c3;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b><span class="cand d">Jones</span> got more votes here than <span class="cand d">Harris</span> did.</b> In a midterm, with fewer people voting, <span class="cand d">Doug Jones</span> won 11,258 votes in these precincts. <span class="cand d">Kamala Harris</span> got 10,104 in the 2024 presidential race.</p></div>
 <h2>Watch it change</h2>
 <p>Madison's precincts are outlined in white. Tap any precinct for its numbers.</p>
 <div class="chart mapw rv">
@@ -445,7 +466,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <div class="ppl"><span class="pp" style="--i:0"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp" style="--i:1"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp" style="--i:2"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp" style="--i:3"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp" style="--i:4"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp st" style="--i:5"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp st" style="--i:6"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp st" style="--i:7"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp st" style="--i:8"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span><span class="pp st" style="--i:9"><svg viewBox="0 0 24 40" aria-hidden="true"><circle cx="12" cy="7" r="6"/><path d="M2 40V22a10 10 0 0 1 20 0v18z"/></svg></span></div>
 <p class="note">About 5 in 10 registered voters here sat it out.</p>
 </div>
-<p class="big">Jones won Madison by 3,857. <b>27,229 neighbors stayed home.</b></p><p>That's about 7 people at home for every vote in the margin.</p>
+<p class="big"><span class="cand d">Jones</span> won Madison by 3,857. <b>27,229 neighbors stayed home.</b></p><p>That's about 7 people at home for every vote in the margin.</p>
 
 
 
@@ -466,7 +487,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 </div>
 
 <h2>Questions about Madison</h2>
-<div class="faq"><details><summary>How did Madison vote in 2026?</summary><p>The 9 precincts that vote in Madison went for Democrat Doug Jones for governor, 14,361 votes to 10,504. In 2024, the precincts that existed then voted for Donald Trump, 11,552 to 10,104.</p></details><details><summary>Did Madison flip?</summary><p>Yes. Taken together, Madison&#x27;s precincts voted Republican for president in 2024 and Democratic for governor in 2026. 3 of its precincts flipped on their own.</p></details><details><summary>Who represents Madison in the Alabama Legislature?</summary><p>Depending on your address, Madison voters are in State House, District 4, State House, District 10, State House, District 25, State Senate, District 3, State Senate, District 9. Each card on this page shows the 2026 result districtwide and in Madison.</p></details><details><summary>How many people in Madison didn&#x27;t vote?</summary><p>About 27,229 registered voters in Madison&#x27;s precincts didn&#x27;t cast a ballot in 2026.</p></details><details><summary>Where do I vote in Madison?</summary><p>Madison voters are assigned to one of 9 polling places, depending on their address. Check your polling place on the Alabama Secretary of State&#x27;s site before every election, since assignments can change.</p></details></div>
+<div class="faq"><details><summary>How did Madison vote in 2026?</summary><p>The 9 precincts that vote in Madison went for Democrat <span class="cand d">Doug Jones</span> for governor, 14,361 votes to 10,504. In 2024, the precincts that existed then voted for <span class="cand r">Donald Trump</span>, 11,552 to 10,104.</p></details><details><summary>Did Madison flip?</summary><p>Yes. Taken together, Madison&#x27;s precincts voted Republican for president in 2024 and Democratic for governor in 2026. 3 of its precincts flipped on their own.</p></details><details><summary>Who represents Madison in the Alabama Legislature?</summary><p>Depending on your address, Madison voters are in State House, District 4, State House, District 10, State House, District 25, State Senate, District 3, State Senate, District 9. Each card on this page shows the 2026 result districtwide and in Madison.</p></details><details><summary>How many people in Madison didn&#x27;t vote?</summary><p>About 27,229 registered voters in Madison&#x27;s precincts didn&#x27;t cast a ballot in 2026.</p></details><details><summary>Where do I vote in Madison?</summary><p>Madison voters are assigned to one of 9 polling places, depending on their address. Check your polling place on the Alabama Secretary of State&#x27;s site before every election, since assignments can change.</p></details></div>
 <!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
 <p class="sub">Every local story so far. Tap a pin. New ones pop up as I add them.</p>
