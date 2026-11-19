@@ -120,6 +120,30 @@
   "img": "share-sd7.jpg"
  },
  {
+  "path": "districts/alabama-house-district-8.html",
+  "kind": "point",
+  "pin": [
+   218.3,
+   76.9
+  ],
+  "label": "House District 8",
+  "title": "Janine Jordan came within 602 votes",
+  "blurb": "Trump won it by 29%. Jones carried it.",
+  "img": "share-hd8.jpg"
+ },
+ {
+  "path": "districts/alabama-house-district-21.html",
+  "kind": "point",
+  "pin": [
+   277.0,
+   35.5
+  ],
+  "label": "House District 21",
+  "title": "Forrest Satterfield came within 654 votes",
+  "blurb": "Trump won it by 20%. Jones carried it.",
+  "img": "share-hd21.jpg"
+ },
+ {
   "path": "articles/is-huntsville-turning-blue.html",
   "kind": "point",
   "pin": [
