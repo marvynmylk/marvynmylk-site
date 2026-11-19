@@ -360,6 +360,10 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -468,6 +472,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 <nav class="mnv" aria-label="Main menu" hidden><button class="x" type="button" aria-label="Close menu">×</button><a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a><a class="it" href="../explore/" style="transition-delay:60ms"><b>Explore Alabama politics</b><small>The hub: maps, stories and news</small></a><a class="it" href="../about/" style="transition-delay:110ms"><b>Books & author</b><small>Meet Marvyn and his books</small></a><a class="it" href="../guides/how-to-vote-in-alabama.html" style="transition-delay:160ms"><b>How to vote in Alabama</b><small>ID, absentee and polling hours</small></a><a class="it" href="../play/how-close-alabama-2026.html" style="transition-delay:210ms"><b>How close was your race?</b><small>Every 2026 legislative race</small></a><a class="it" href="../about/#media" style="transition-delay:260ms"><b>For media</b><small>Interviews, data and photos</small></a></nav>
 <script>(function(){var b=document.querySelector('.mnb'),n=document.querySelector('.mnv');function set(o){if(o)n.hidden=false;requestAnimationFrame(function(){n.classList.toggle('open',o)});b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':'';if(!o)setTimeout(function(){if(!n.classList.contains('open'))n.hidden=true},260)}
 b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEventListener('click',function(){set(false)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});var ly=scrollY;addEventListener('scroll',function(){var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y},{passive:true})})();</script><!--/menu-->
+
+
 
 
 
@@ -605,6 +611,8 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
+
 
 
 

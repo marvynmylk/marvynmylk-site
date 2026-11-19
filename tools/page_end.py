@@ -4,7 +4,7 @@ Pages in subfolders (articles/, play/, madison-county/) link back with ../; the 
 import sys, os, re, json, subprocess
 T=os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0,T)
-import orbit, footer, storymap, chrome, candcolor, bookstrip
+import orbit, footer, storymap, chrome, candcolor, bookstrip, lockmap
 ns={}; exec(open(T+'/signup.py').read(),ns)
 p=sys.argv[1]; landing=os.path.basename(p)=='index.html' and os.path.dirname(os.path.abspath(p))==os.path.dirname(T)
 root='' if landing else '../'
@@ -27,6 +27,7 @@ s=re.sub(r'<!--storymap-->.*?<!--/storymap-->\n?','',s,flags=re.S)
 s=re.sub(r'\n?(/\*smx\*/)?\.smx\{.*?(\.smx \.here\{animation:none\}\}(/\*/smx\*/)?)','',s,count=1,flags=re.S)
 s=s.replace('</style>',storymap.CSS+'</style>',1)
 cur=os.path.relpath(os.path.abspath(p),os.path.dirname(T)).replace(os.sep,'/')
+s=lockmap.apply(s,cur)
 blk=storymap.block(cur,root,home=(cur=='index.html'))
 if landing: blk='<!--storymap--><div class="wrap narrow">'+blk.replace('<!--storymap-->','',1).replace('<!--/storymap-->','',1)+'</div><!--/storymap-->\n'
 if 'data-hub="1"' not in s:
