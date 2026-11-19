@@ -215,5 +215,29 @@
   "title": "How close was your race?",
   "blurb": "Every 2026 legislative race.",
   "img": "share-howclose.jpg"
+ },
+ {
+  "path": "lauderdale-county/florence.html",
+  "kind": "point",
+  "pin": [
+   116.5,
+   36.5
+  ],
+  "label": "Florence",
+  "title": "Florence voted for Doug Jones",
+  "blurb": "8 polling places flipped.",
+  "img": "share-town-florence.jpg"
+ },
+ {
+  "path": "colbert-county/muscle-shoals.html",
+  "kind": "point",
+  "pin": [
+   119.5,
+   46.5
+  ],
+  "label": "Muscle Shoals",
+  "title": "Muscle Shoals swung 32 points left",
+  "blurb": "389 votes from flipping.",
+  "img": "share-town-muscle-shoals.jpg"
  }
 ]

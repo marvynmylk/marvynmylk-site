@@ -5,7 +5,7 @@ import json, os, html
 T=os.path.dirname(os.path.abspath(__file__))
 B=json.load(open(T+'/storymap_base.json'))
 PAGES=json.load(open(T+'/pages.json'))
-VB=[120,-4,250,138]   # zoomed on the Huntsville area, Lawrence to Jackson
+VB=[100,-4,270,146]   # North Alabama, the Shoals to Jackson
 CSS='''
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
