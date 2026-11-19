@@ -109,6 +109,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .mapw.fl .p.dim{opacity:.18}
 .pick span{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
 .pick select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--ink);color:var(--cream);font:500 16px Karla,sans-serif}
+.facts.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.facts.tgrid span{display:flex;align-items:center;justify-content:center;text-align:center;margin:0;padding:10px 8px;border-radius:14px;font-size:14px;line-height:1.25}.facts.tgrid span:last-child:nth-child(odd){grid-column:1/-1}
 .fineprint{margin-top:48px;padding-top:18px;border-top:1px solid var(--line)}
 .fine{font-size:12.5px;line-height:1.5;color:var(--muted);margin:0 0 10px}
 .fine a{color:var(--muted)}
@@ -568,7 +569,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <section class="press" id="media">
 <h2>For media and podcasts</h2>
 <p>I'm available for interviews, podcasts and background on Southern politics and turnout. I can talk about:</p>
-<div class="facts" style="justify-content:flex-start"><span>Why the South stays home</span><span>Alabama and Tennessee races</span><span>Turnout math</span><span>Small towns moving left</span><span>How Southern states flip</span></div>
+<div class="facts tgrid"><span>Why the South stays home</span><span>Alabama and Tennessee races</span><span>Turnout math</span><span>Small towns moving left</span><span>How Southern states flip</span></div>
 <h3 class="sub" style="margin-top:22px">Findings you can use</h3>
 <div class="quotes">
 <div class="q"><b>R+20 → R+4</b><span>Tuberville beat Doug Jones by 20 points in 2020 and by 4 in the 2026 governor's race.</span><a href="../articles/alabama-governor-2026-tuberville-jones-county-results.html">Source and county data →</a></div>
@@ -639,7 +640,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <p class="st" role="status"></p>
   <p class="fine2">No spam. I'll never sell your email.</p>
 </section>
-<div class="fineprint"><p class="fine">Photo of Marvyn and his dog may be used with credit to Marvyn Mylk. Data on this site comes from the Alabama Secretary of State and is free to use with credit.</p></div>
+<div class="fineprint"><p class="fine">Data on this site comes from the Alabama Secretary of State.</p></div>
 </article>
 </main>
 <footer class="sitefoot">
