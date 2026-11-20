@@ -390,6 +390,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -431,7 +432,16 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
-/*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}.cbar .mv.rt{transform-origin:left;background:#ffd0d4}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}.cbar .ml{display:none}/*/shift*/
+/*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}.cbar .mv.rt{transform-origin:left;background:#ffd0d4}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}.cbar .ml{display:none}/*/shift*//*town*/.join input[name=town]{width:100%;text-align:center;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
+.townnudge{text-align:center;margin:6px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
+.tsheet{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:440px;margin:0 auto;padding:18px 16px 14px;border-radius:20px;background:rgba(31,26,43,.97);border:1px solid rgba(232,163,195,.45);box-shadow:0 20px 50px rgba(0,0,0,.55);transform:translateY(130%);transition:transform .45s cubic-bezier(.3,1.3,.5,1);color:#fbefd8}
+.tsheet.up{transform:none}.tsheet h3{margin:0 30px 4px 0;font:600 20px/1.2 Fraunces,Georgia,serif}.tsheet p{margin:0 0 12px;font-size:14.5px;color:var(--muted)}
+.tsheet .x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:#fbefd8;font-size:22px;cursor:pointer}
+.tsheet .row{display:grid;grid-template-columns:1fr;gap:8px}.tsheet input{padding:13px 14px;border-radius:12px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 16px Karla,sans-serif}
+.tsheet button.go{padding:13px;border:0;border-radius:12px;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);color:#16121f;font:800 16px Karla,sans-serif;cursor:pointer}
+.tsheet .st{margin:8px 0 0;font-weight:700;color:#e8a3c3;min-height:0}.tsheet .st:empty{display:none}
+@media (prefers-reduced-motion:reduce){.tsheet{transition:none}}/*/town*/
+
 /*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
 .mnb.hide{transform:translateY(-70px);opacity:0}
 .mnb i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
@@ -529,6 +539,8 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -536,7 +548,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="lede">In the four polling places that vote in Athens, <span class="cand r">Donald Trump</span> won by 35 points in 2024. Two years later, <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> won them by 6. Pincham-Lincoln flipped to <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span>, and the Athens Activity Center came down to 7 votes.</p>
 <div class="answer"><b class="k">Short answer</b><p>Athens's precincts voted for <b>Tommy Tuberville</b> over Doug Jones 3,540 to 3,162 in 2026. In 2024 the same polling places voted for Donald Trump 5,465 to 2,648. All four moved toward Democrats.</p></div>
 <div class="hero-n rv"><span class="cnt" data-to="29">0</span><small>points</small></div>
-<p class="hero-c">toward Democrats in two years, R+34.7 to R+5.6</p>
+<p class="hero-c">toward Democrats in two years, R+34.7 to R+5.6</p><p class="townnudge"><a href="#join" data-sheet>Want your town next? Tell me →</a></p>
 <div class="chart cty rv"><div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump by 34.7 pts</span></div>
 <div class="cbar"><i class="r" style="width:67.4%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:32.6%"></i><b></b></div>
 <div class="cn"><span class="r"><strong>67.4%</strong> Trump</span><span class="d">Harris <strong>32.6%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win r">Tuberville by 5.6 pts</span></div>
@@ -602,9 +614,11 @@ sv.addEventListener('dblclick',function(e){e.preventDefault();zoom(.6,e.clientX,
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){s.classList.add('on');o.disconnect()}})},{threshold:.1}).observe(s);show(3);var st=s.querySelector('.strip'),tm;var hh=st.querySelector('.sc.me');if(hh&&hh.dataset.i==='-1'){lock=Date.now();st.scrollLeft=hh.offsetLeft-20}st.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(function(){if(Date.now()-lock<900)return;var best=null,bd=1e9;st.querySelectorAll('.sc').forEach(function(c){var d=Math.abs(c.offsetLeft-20-st.scrollLeft);if(d<bd){bd=d;best=c}});if(best&&best.dataset.i!=='-1'){quiet=true;show(+best.dataset.i);quiet=false}},120)},{passive:true})})();</script><!--/storymap-->
 <section class="join" id="join" aria-labelledby="join-h">
   <div class="orb" id="orb" aria-hidden="true"><img class="me" src="../images/profile.webp" alt="" width="96" height="96"></div>
-  <h2 id="join-h">The South is <span>closer than you think.</span></h2>
-  <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
+  <h2 id="join-h">Want <span>your town next?</span></h2>
+  <p>Sign up and tell me your town. I'll send you its story when I dig into it, plus a heads-up when my books come out.</p>
   
+
+
 
 
 
@@ -637,8 +651,8 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="athens">
     <p hidden><label>Leave this empty <input name="bot-field"></label></p>
     <label for="jemail" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-    <input id="jemail" name="email" type="email" placeholder="Your email" autocomplete="email" required>
-    <button type="submit">Count me in</button>
+    <input id="jemail" name="email" type="email" placeholder="Your email" autocomplete="email" required><label for="jtown" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Your town</label><input id="jtown" name="town" type="text" placeholder="Your town" list="towns" autocomplete="address-level2"><datalist id="towns"><option value="Huntsville"><option value="Madison"><option value="Decatur"><option value="Athens"><option value="Florence"><option value="Muscle Shoals"><option value="Sheffield"><option value="Tuscumbia"><option value="Hartselle"><option value="Cullman"><option value="Scottsboro"><option value="Guntersville"><option value="Albertville"><option value="Arab"><option value="Boaz"><option value="Fort Payne"><option value="Harvest"><option value="Hazel Green"><option value="Meridianville"><option value="Monrovia"><option value="Toney"><option value="New Market"><option value="Owens Cross Roads"><option value="Hampton Cove"><option value="Gurley"><option value="New Hope"><option value="Triana"><option value="Moulton"><option value="Russellville"><option value="Rogersville"><option value="Killen"><option value="Priceville"><option value="Falkville"><option value="Ardmore"><option value="Elkmont"><option value="Birmingham"><option value="Hoover"><option value="Tuscaloosa"><option value="Montgomery"><option value="Auburn"><option value="Opelika"><option value="Mobile"><option value="Gadsden"><option value="Anniston"><option value="Dothan"><option value="Nashville"><option value="Franklin"><option value="Murfreesboro"><option value="Chattanooga"><option value="Knoxville"><option value="Memphis"><option value="Clarksville"><option value="Columbia"><option value="Fayetteville"><option value="Lawrenceburg"><option value="Pulaski"><option value="Winchester"><option value="Tullahoma"><option value="Shelbyville"><option value="Hendersonville"><option value="Johnson City"></datalist>
+    <button type="submit">Sign me up</button>
   </form>
   <p class="st" role="status"></p>
   <p class="fine2">No spam. I'll never sell your email.</p>
@@ -687,5 +701,33 @@ if(!rm)setInterval(function(){if(!document.hidden&&free().length>1)spawn()},2300
 })();
 </script>
 <script data-goatcounter="https://marvynmylk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<!--tsheet--><div class="tsheet" id="tsheet" role="dialog" aria-labelledby="tsh-h" hidden>
+<button class="x" type="button" aria-label="Close">×</button>
+<h3 id="tsh-h">Having fun? 👀</h3>
+<p>Tell me your town. I'll send you its story when I dig into it.</p>
+<div class="row"><input type="email" id="tsh-e" placeholder="Your email" autocomplete="email" aria-label="Email address">
+<input type="text" id="tsh-t" placeholder="Your town" list="towns" autocomplete="address-level2" aria-label="Your town">
+<button class="go" type="button">Sign me up</button></div><p class="st" role="status"></p></div><!--/tsheet-->
+<!--tsjs--><script>(function(){
+var K='mm_pages',ls=function(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+var f=document.querySelector('form.signup'),sh=document.getElementById('tsheet');if(!f||!sh)return;
+var gc=function(p){try{window.goatcounter&&window.goatcounter.count({path:p,title:p,event:true})}catch(e){}};
+f.addEventListener('submit',function(){ls('mm_signed','1');gc('signup-bottom')});
+function open(src){if(!sh.hidden&&sh.classList.contains('up'))return;sh.hidden=false;requestAnimationFrame(function(){sh.classList.add('up')});gc('sheet-shown-'+src)}
+function close(){sh.classList.remove('up');setTimeout(function(){sh.hidden=true},450);ls('mm_closed',String(Date.now()))}
+sh.querySelector('.x').addEventListener('click',close);
+document.querySelectorAll('[data-sheet]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open('link')})});
+sh.querySelector('.go').addEventListener('click',async function(){var e=document.getElementById('tsh-e'),t=document.getElementById('tsh-t'),st=sh.querySelector('.st'),b=this;
+if(!e.value||!e.checkValidity()){st.textContent='Add your email first.';e.focus();return}
+f.querySelector('[name=email]').value=e.value;var ft=f.querySelector('[name=town]');if(ft)ft.value=t.value;var sp=f.querySelector('[name=signup-spot]');if(sp&&sp.value.indexOf('sheet:')!==0)sp.value='sheet:'+sp.value;
+b.disabled=true;st.textContent='Adding you…';
+try{var r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;
+st.textContent=t.value?"You're in. "+t.value+" is on my list.":"You're in. Talk soon.";ls('mm_signed','1');gc('signup-sheet');setTimeout(function(){sh.classList.remove('up')},2200)}
+catch(x){st.textContent='Something went wrong. Please try again.'}b.disabled=false});
+var seen=[];try{seen=JSON.parse(ls(K)||'[]')}catch(x){}var here=location.pathname;if(seen.indexOf(here)<0){seen.push(here);ls(K,JSON.stringify(seen.slice(-50)))}
+var closed=+(ls('mm_closed')||0);if(ls('mm_signed')||Date.now()-closed<2592e6||seen.length<2)return;
+var done=false;function chk(){if(done)return;var y=window.scrollY+innerHeight,h=document.documentElement.scrollHeight;var j=document.getElementById('join');
+if(j&&j.getBoundingClientRect().top<innerHeight)return;if(y/h>.4){done=true;open('auto')}}
+addEventListener('scroll',chk,{passive:true});addEventListener('scroll',function(){var j=document.getElementById('join');if(j&&sh.classList.contains('up')&&j.getBoundingClientRect().top<innerHeight*.8)sh.classList.remove('up')},{passive:true});setTimeout(chk,12000)})();</script><!--/tsjs-->
 </body>
 </html>
