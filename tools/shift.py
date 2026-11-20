@@ -3,15 +3,18 @@ Each bar after the first gets a dashed mark where the red/blue split was on the 
 and an arrow from there to where it is now, labeled with the change in margin. Idempotent."""
 import re
 CSS = ('/*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}'
-       '.cbar .gh{position:absolute;top:-5px;bottom:-5px;width:0;border-left:2px dashed rgba(251,239,216,.8);z-index:2}'
-       '.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#fbefd8;border-radius:2px;z-index:3;transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}'
-       '.cbar .mv.rt{transform-origin:left}'
+       '.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}'
+       '.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}'
+       '.cbar .mv.rt{transform-origin:left;background:#ffd0d4}'
        '.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}'
-       '.cbar .mv.lf::before{left:-7px;border-right:7px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #fbefd8;border-right:0}'
-       '.rv.on .cbar .mv,.rv.in .cbar .mv{transform:scaleX(1)}'
-       '.cbar .ml{position:absolute;top:calc(100% + 5px);transform:translateX(-50%);white-space:nowrap;padding:1px 8px;border-radius:999px;font:800 11.5px/1.5 Karla,sans-serif;z-index:3}'
-       '.cbar .ml.lf{background:#2d6eff;color:#fff}.cbar .ml.rt{background:#e24854;color:#fff}'
-       '.chart.cty .cb.hasmv .cn{margin-top:24px}/*/shift*/')
+       '.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}'
+       '.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}'
+       '.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}'
+       '@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}'
+       '@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}'
+       '@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}'
+       '.cbar .ml{display:none}/*/shift*/')
+
 
 BAR = re.compile(r'<div class="cbar"><i class="r" style="width:([\d.]+)%"></i>(?:<i class="o" style="width:([\d.]+)%"></i>)?<i class="d" style="width:([\d.]+)%"></i>')
 
