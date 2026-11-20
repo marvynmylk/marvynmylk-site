@@ -320,12 +320,28 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 /*lkmap*/.lkmap{display:block;width:100%;height:130px;margin:0 0 14px;border-radius:12px;background:#17121f;border:1px solid rgba(226,72,84,.25)}.lkmap .co{fill:#221b30;stroke:#5a4c78;stroke-width:.45}.lkmap .ds{fill:rgba(226,72,84,.55);stroke:#ff8a94;stroke-width:.8}.lkban{display:flex;align-items:center;gap:8px;margin:14px -4px 0;padding:10px 12px;border-radius:10px;background:rgba(45,110,255,.12);border:1px solid rgba(143,176,255,.3);color:#cfdcff;font:700 14px/1.3 Karla,sans-serif;text-decoration:none}.lkban b{color:#8fb0ff}.lkmap text{font:700 4.6px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#17121f;stroke-width:1.4px}/*/lkmap*//*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}.cbar .mv.rt{transform-origin:left;background:#ffd0d4}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}.cbar .ml{display:none}/*/shift*//*town*/.join input[name=town]{width:100%;text-align:center;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
 .townnudge{text-align:center;margin:6px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
-.tsheet{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:440px;margin:0 auto;padding:18px 16px 14px;border-radius:20px;background:rgba(31,26,43,.97);border:1px solid rgba(232,163,195,.45);box-shadow:0 20px 50px rgba(0,0,0,.55);transform:translateY(130%);transition:transform .45s cubic-bezier(.3,1.3,.5,1);color:#fbefd8}
-.tsheet.up{transform:none}.tsheet h3{margin:0 30px 4px 0;font:600 20px/1.2 Fraunces,Georgia,serif}.tsheet p{margin:0 0 12px;font-size:14.5px;color:var(--muted)}
-.tsheet .x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:#fbefd8;font-size:22px;cursor:pointer}
-.tsheet .row{display:grid;grid-template-columns:1fr;gap:8px}.tsheet input{padding:13px 14px;border-radius:12px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 16px Karla,sans-serif}
-.tsheet button.go{padding:13px;border:0;border-radius:12px;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);color:#16121f;font:800 16px Karla,sans-serif;cursor:pointer}
-.tsheet .st{margin:8px 0 0;font-weight:700;color:#e8a3c3;min-height:0}.tsheet .st:empty{display:none}
+.tsheet{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:420px;margin:0 auto;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#241c34,#1a1526);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(232,163,195,.35);transform:translateY(120%);transition:transform .5s cubic-bezier(.3,1.25,.5,1);color:#fbefd8}
+.tsheet.up{transform:none}
+.tsheet .tmap{position:relative;height:104px;background:radial-gradient(120% 140% at 70% 10%,rgba(138,92,240,.35),transparent 60%),#1a1526}
+.tsheet .tmap svg{position:absolute;inset:0;width:100%;height:100%}
+.tsheet .tmap .c{fill:#2a2140;stroke:#4a3d66;stroke-width:.6}.tsheet .tmap .p{fill:#e8a3c3;opacity:.85}
+.tsheet .tmap .q{transform-box:fill-box;transform-origin:50% 100%;animation:tqb 1.8s ease-in-out infinite}
+.tsheet .tmap .ring{fill:none;stroke:#ffd60a;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:tqr 1.8s ease-out infinite}
+@keyframes tqb{50%{transform:translateY(-3px)}}@keyframes tqr{0%{opacity:.9;transform:scale(.4)}100%{opacity:0;transform:scale(2.2)}}
+.tsheet .tmap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(transparent,#241c34)}
+.tsheet .in{padding:2px 18px 16px}
+.tsheet h3{margin:0 34px 6px 0;font:600 22px/1.15 Fraunces,Georgia,serif}.tsheet h3 span{background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tsheet p{margin:0 0 12px;font-size:14.5px;line-height:1.45;color:#cfc6dc}
+.tsheet .x{position:absolute;top:10px;right:10px;z-index:2;width:34px;height:34px;border:0;border-radius:50%;background:rgba(22,18,31,.7);color:#fbefd8;font-size:20px;line-height:34px;cursor:pointer}
+.tsheet input{width:100%;box-sizing:border-box;padding:14px 15px;border-radius:14px;border:1px solid rgba(251,239,216,.22);background:#120e19;color:#fbefd8;font:600 17px Karla,sans-serif}
+.tsheet input:focus{outline:none;border-color:#e8a3c3;box-shadow:0 0 0 3px rgba(232,163,195,.2)}
+.tsheet .chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}.tsheet .chips button{padding:6px 11px;border-radius:999px;border:1px solid rgba(232,163,195,.4);background:rgba(232,163,195,.08);color:#f2d9e6;font:700 13px Karla,sans-serif;cursor:pointer}
+.tsheet button.go{width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);color:#16121f;font:800 16px Karla,sans-serif;cursor:pointer;margin-top:10px}
+.tsheet button.go:disabled{opacity:.6}
+.tsheet .fine{margin:8px 0 0;text-align:center;font-size:12.5px;color:#9d93ad}
+.tsheet .st{margin:8px 0 0;font-weight:700;color:#e8a3c3;text-align:center}.tsheet .st:empty{display:none}
+.tsheet .step[hidden]{display:none}
+.tsheet .done{text-align:center;padding:6px 0 4px}.tsheet .done b{display:block;font:600 22px/1.2 Fraunces,Georgia,serif;margin:6px 0 4px}
 @media (prefers-reduced-motion:reduce){.tsheet{transition:none}}/*/town*/
 
 /*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
@@ -410,13 +426,16 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>South Huntsville voted <span>for Doug Jones.</span></h1>
 <p class="lede">Across South Huntsville's seven polling places, <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> beat <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> 8,983 to 8,809. Two years earlier, <span class="cand r">Donald Trump</span> won the same precincts by 22 points. Here's your precinct, every race on your ballot, and who represents you.</p>
 <div class="hero-n"><span class="cnt" data-to="23">0</span><small>points</small></div>
-<p class="hero-c">toward Democrats in two years, R+21.6 to D+1.0</p><p class="townnudge"><a href="#join" data-sheet>Want your town next? Tell me →</a></p>
+<p class="hero-c">toward Democrats in two years, R+21.6 to D+1.0</p><p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p>
 
 <div class="chart cty rv" role="img" aria-label="South Huntsville. 2024 president: Trump 12,677, Harris 8,173. 2026 governor: Tuberville 8,809, Jones 8,983.">
 <div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump +4,504 votes</span></div>
@@ -519,6 +538,9 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
 
 
 
+
+
+
 <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="town-south-huntsville">
@@ -597,28 +619,28 @@ if(!rm)setInterval(function(){if(!document.hidden&&free().length>1)spawn()},2300
 })();
 </script>
 <script data-goatcounter="https://marvynmylk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<!--tsheet--><div class="tsheet" id="tsheet" role="dialog" aria-labelledby="tsh-h" hidden>
-<button class="x" type="button" aria-label="Close">×</button>
-<h3 id="tsh-h">Having fun? 👀</h3>
-<p>Tell me your town. I'll send you its story when I dig into it.</p>
-<div class="row"><input type="email" id="tsh-e" placeholder="Your email" autocomplete="email" aria-label="Email address">
-<input type="text" id="tsh-t" placeholder="Your town" list="towns" autocomplete="address-level2" aria-label="Your town">
-<button class="go" type="button">Sign me up</button></div><p class="st" role="status"></p></div><!--/tsheet-->
+<!--tsheet--><div class="tsheet" id="tsheet" role="dialog" aria-labelledby="tsh-h" hidden><button class="x" type="button" aria-label="Close">×</button><div class="tmap"><svg viewBox="115 8 300 80" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="c" d="M141.4,76.0L53.4,72.8L60.0,19.5L68.0,17.5L77.4,21.7L82.2,27.3L85.2,35.6L100.6,47.6L110.9,45.4L114.6,40.8L137.4,31.1L154.2,36.4L153.1,40.9L155.7,42.5L152.8,48.4L154.2,51.8L150.4,54.6L151.5,61.5L146.0,62.2L147.0,64.0L142.8,67.5L141.4,76.0Z"/><path class="c" d="M246.6,178.6L224.5,189.6L225.5,194.6L219.5,195.4L219.9,197.1L213.2,195.7L213.2,191.8L201.1,191.6L199.8,190.2L202.5,188.8L202.0,186.6L192.7,174.0L198.3,174.2L198.6,119.4L288.1,121.1L288.2,123.3L290.7,123.4L291.6,128.5L282.2,129.7L281.6,134.1L279.3,134.2L277.3,137.7L278.5,141.1L272.2,147.8L270.9,152.3L267.5,151.9L261.2,158.5L258.6,159.2L257.9,157.0L256.1,158.9L258.9,163.6L256.2,162.8L256.5,166.7L248.1,173.6L246.6,178.6Z"/><path class="c" d="M417.5,85.8L414.8,96.5L409.8,104.4L408.2,103.9L408.0,108.1L403.0,109.9L387.7,127.7L382.8,127.7L382.9,131.1L377.9,130.2L378.0,137.8L340.8,138.1L339.8,99.4L347.2,91.1L354.8,90.3L360.6,86.9L385.3,65.4L398.1,44.8L402.7,42.9L407.2,29.7L413.3,24.8L423.9,82.0L417.5,85.8Z"/><path class="c" d="M343.7,93.1L340.5,85.9L341.6,83.4L337.2,81.3L334.4,83.6L334.2,70.2L309.1,70.4L304.5,64.7L304.5,47.3L306.7,45.7L307.8,38.2L306.3,34.0L308.9,31.0L305.3,23.6L310.9,17.1L308.8,12.8L313.4,11.4L316.4,15.0L318.7,14.1L318.2,11.3L310.6,6.2L310.8,3.6L409.9,3.6L413.3,24.8L407.2,29.7L402.7,42.9L398.1,44.8L385.3,65.4L357.6,89.2L343.7,93.1Z"/><path class="c" d="M119.8,39.1L107.1,47.1L96.5,46.0L85.2,35.6L82.2,27.3L77.4,21.7L68.0,17.5L59.9,19.9L54.2,17.0L45.4,0.0L184.6,2.5L184.0,33.7L175.1,40.0L177.5,43.5L172.3,44.8L165.8,37.0L154.4,36.4L140.5,30.8L119.8,39.1Z"/><path class="c" d="M198.6,121.8L139.2,120.7L139.5,76.0L141.4,75.9L141.6,70.8L147.0,64.0L146.1,62.2L151.4,61.7L150.4,54.6L154.2,51.8L152.8,48.4L155.7,42.5L153.1,40.9L154.2,36.4L165.8,37.0L172.3,44.8L183.7,43.1L194.6,49.4L199.4,55.9L198.6,121.8Z"/><path class="c" d="M207.5,62.0L192.4,47.7L182.8,42.7L177.5,43.5L175.0,40.9L184.0,33.7L184.6,2.5L244.5,3.7L243.8,78.9L227.3,74.0L207.5,62.0Z"/><path class="c" d="M243.8,78.1L244.5,3.7L310.8,3.6L310.6,6.2L318.2,11.3L318.7,14.1L316.4,15.0L313.4,11.4L308.8,12.8L310.9,17.1L305.3,23.6L308.9,31.0L306.3,34.0L307.8,38.2L306.7,45.7L304.5,47.3L304.5,64.7L312.9,73.6L308.4,74.9L312.0,76.9L308.7,85.2L300.1,83.9L300.4,87.4L295.5,90.9L289.2,91.6L280.0,87.0L277.1,77.0L273.3,73.5L268.6,74.4L264.1,79.2L260.9,78.4L259.6,74.0L256.2,72.4L248.4,78.5L243.8,78.1Z"/><path class="c" d="M312.9,155.6L288.1,121.1L273.3,120.8L277.2,80.1L280.0,87.0L284.7,90.4L295.4,90.9L300.4,87.4L300.1,84.0L308.7,85.1L312.0,76.9L308.4,74.9L312.9,73.6L309.1,70.3L334.2,70.2L334.4,83.6L337.2,81.3L339.6,82.1L341.9,83.7L340.5,85.9L342.8,92.6L347.2,91.1L338.7,103.5L340.9,140.6L328.4,141.4L312.9,155.6Z"/><path class="c" d="M198.6,119.4L199.4,55.9L225.0,72.8L237.2,78.0L248.0,78.6L255.9,72.4L259.2,73.5L262.5,79.0L271.6,73.4L277.2,77.2L273.3,120.8L198.6,119.4Z"/><circle class="p" cx="249.7" cy="53.7" r="2.6"/><circle class="p" cx="274.3" cy="27.7" r="2.6"/><circle class="p" cx="255.0" cy="39.8" r="2.6"/><circle class="p" cx="218.3" cy="35.6" r="2.6"/><circle class="p" cx="275.3" cy="59.6" r="2.6"/><circle class="p" cx="288.0" cy="61.4" r="2.6"/><circle class="p" cx="216.8" cy="69.9" r="2.6"/><circle class="p" cx="243.7" cy="40.7" r="2.6"/><circle class="p" cx="262.0" cy="52.0" r="2.6"/><circle class="p" cx="278.5" cy="58.5" r="2.6"/><circle class="p" cx="215.9" cy="75.1" r="2.6"/><circle class="p" cx="273.5" cy="30.4" r="2.6"/><circle class="p" cx="272.4" cy="48.3" r="2.6"/><circle class="p" cx="119.3" cy="35.8" r="2.6"/><circle class="p" cx="120.8" cy="45.3" r="2.6"/><g transform="translate(349.9,58.8)"><circle class="ring" r="6"/><g class="q"><path d="M0,0 C-1.2,-2.6 -4.2,-4.6 -4.2,-8 A4.2,4.2 0 1 1 4.2,-8 C4.2,-4.6 1.2,-2.6 0,0Z" transform="scale(1.6)" fill="#ffd60a" stroke="#16121f" stroke-width=".5"/><text y="-11.5" text-anchor="middle" font-family="Karla,sans-serif" font-weight="800" font-size="8" fill="#16121f">?</text></g></g></svg></div><div class="in"><div class="step" data-s="1"><h3 id="tsh-h">Is your town <span>missing?</span></h3><p>Tell me a place in Alabama or Tennessee you want to see here. I'll dig into it.</p><input type="text" id="tsh-t" placeholder="Town or neighborhood" list="towns" autocomplete="address-level2" aria-label="Town or neighborhood"><div class="chips"><button type="button">Hartselle</button><button type="button">Guntersville</button><button type="button">Scottsboro</button><button type="button">Cullman</button><button type="button">Nashville</button></div><button class="go nx" type="button">Next →</button></div><div class="step" data-s="2" hidden><h3>Where should I <span>send it?</span></h3><p class="why">I'll email you when it's up, plus a heads-up when my books come out.</p><input type="email" id="tsh-e" placeholder="Your email" autocomplete="email" aria-label="Email address"><button class="go sb" type="button">Send it to me</button><p class="fine">No spam. I'll never sell your email.</p></div><div class="step done" data-s="3" hidden><div style="font-size:30px">💜</div><b class="dh">Got it.</b><p>I'll let you know when it's up.</p></div><p class="st" role="status"></p></div></div><!--/tsheet-->
 <!--tsjs--><script>(function(){
 var K='mm_pages',ls=function(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
 var f=document.querySelector('form.signup'),sh=document.getElementById('tsheet');if(!f||!sh)return;
 var gc=function(p){try{window.goatcounter&&window.goatcounter.count({path:p,title:p,event:true})}catch(e){}};
 f.addEventListener('submit',function(){ls('mm_signed','1');gc('signup-bottom')});
+var st=sh.querySelector('.st'),t=document.getElementById('tsh-t'),e=document.getElementById('tsh-e');
+function step(n){sh.querySelectorAll('.step').forEach(function(x){x.hidden=x.dataset.s!=n});st.textContent='';var i=sh.querySelector('.step[data-s="'+n+'"] input');if(i&&sh.classList.contains('up'))setTimeout(function(){i.focus()},50)}
 function open(src){if(!sh.hidden&&sh.classList.contains('up'))return;sh.hidden=false;requestAnimationFrame(function(){sh.classList.add('up')});gc('sheet-shown-'+src)}
-function close(){sh.classList.remove('up');setTimeout(function(){sh.hidden=true},450);ls('mm_closed',String(Date.now()))}
+function close(){sh.classList.remove('up');setTimeout(function(){sh.hidden=true},500);ls('mm_closed',String(Date.now()))}
 sh.querySelector('.x').addEventListener('click',close);
-document.querySelectorAll('[data-sheet]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open('link')})});
-sh.querySelector('.go').addEventListener('click',async function(){var e=document.getElementById('tsh-e'),t=document.getElementById('tsh-t'),st=sh.querySelector('.st'),b=this;
-if(!e.value||!e.checkValidity()){st.textContent='Add your email first.';e.focus();return}
+document.querySelectorAll('[data-sheet]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();open('link')})});
+sh.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){t.value=b.textContent;step(2)})});
+sh.querySelector('.nx').addEventListener('click',function(){if(!t.value.trim()){st.textContent='Type a town, or tap one above.';t.focus();return}step(2)});
+t.addEventListener('keydown',function(ev){if(ev.key=='Enter'){ev.preventDefault();sh.querySelector('.nx').click()}});
+e.addEventListener('keydown',function(ev){if(ev.key=='Enter'){ev.preventDefault();sh.querySelector('.sb').click()}});
+sh.querySelector('.sb').addEventListener('click',async function(){var b=this;
+if(!e.value||!e.checkValidity()){st.textContent='Add your email so I can send it.';e.focus();return}
 f.querySelector('[name=email]').value=e.value;var ft=f.querySelector('[name=town]');if(ft)ft.value=t.value;var sp=f.querySelector('[name=signup-spot]');if(sp&&sp.value.indexOf('sheet:')!==0)sp.value='sheet:'+sp.value;
-b.disabled=true;st.textContent='Adding you…';
+b.disabled=true;st.textContent='Sending…';
 try{var r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;
-st.textContent=t.value?"You're in. "+t.value+" is on my list.":"You're in. Talk soon.";ls('mm_signed','1');gc('signup-sheet');setTimeout(function(){sh.classList.remove('up')},2200)}
+sh.querySelector('.dh').textContent=t.value.trim()+' is on my list.';step(3);ls('mm_signed','1');gc('signup-sheet');setTimeout(function(){sh.classList.remove('up')},3200)}
 catch(x){st.textContent='Something went wrong. Please try again.'}b.disabled=false});
 var seen=[];try{seen=JSON.parse(ls(K)||'[]')}catch(x){}var here=location.pathname;if(seen.indexOf(here)<0){seen.push(here);ls(K,JSON.stringify(seen.slice(-50)))}
 var closed=+(ls('mm_closed')||0);if(ls('mm_signed')||Date.now()-closed<2592e6||seen.length<2)return;
