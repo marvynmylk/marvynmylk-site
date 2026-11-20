@@ -42,20 +42,23 @@ def color(html):
 FACES={'Doug Jones':'jones','Tommy Tuberville':'tuberville','Marilyn Lands':'lands','Allison Montgomery':'montgomery',
  'Phillip Rigsby':'rigsby','Jared Sluss':'sluss','Sam Givhan':'givhan','Andrew Sneed':'sneed','Dale Strong':'strong',
  'Janine Jordan':'jordan','Patrick Johnson':'johnson','Forrest Satterfield':'satterfield','Rex Reynolds':'reynolds','Aaron Thomas':'thomas',
- 'Tuberville':'tuberville','Sluss':'sluss','Givhan':'givhan','Sneed':'sneed','Rigsby':'rigsby','Satterfield':'satterfield'}
+ 'Tuberville':'tuberville','Sluss':'sluss','Givhan':'givhan','Sneed':'sneed','Rigsby':'rigsby','Satterfield':'satterfield',
+ 'Jones':'jones','Strong':'strong','Lands':'lands','Montgomery':'montgomery','Jordan':'jordan','Johnson':'johnson','Reynolds':'reynolds','Thomas':'thomas'}
 AVCSS='''/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
 .cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 '''
 def avatars(html, root):
     html=re.sub(r'<img class="cav[^>]*>','',html)
     html=re.sub(r'\n?/\*cav\*/.*?/\*/cav\*/\n?','',html,flags=re.S)
-    seen=set()
+    seen=set(); used=[False]
     def rep(m):
-        party,name=m.group(1),m.group(2)
+        if m.group(0).startswith('<h2'):
+            seen.clear(); return m.group(0)
+        party,name=m.group(2),m.group(3)
         key=FACES.get(name)
         if not key or key in seen: return m.group(0)
-        seen.add(key)
+        seen.add(key); used[0]=True
         return f'<img class="cav {party}" src="{root}images/people/{key}.webp" alt="" width="20" height="20" loading="lazy">'+m.group(0)
-    html=re.sub(r'<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>',rep,html)
-    if seen: html=html.replace('</style>',AVCSS+'</style>',1)
+    html=re.sub(r'<h2[\s>]|(<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>)',rep,html)
+    if used[0]: html=html.replace('</style>',AVCSS+'</style>',1)
     return html
