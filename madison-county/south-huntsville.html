@@ -270,6 +270,9 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -311,7 +314,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
-/*lkmap*/.lkmap{display:block;width:100%;height:130px;margin:0 0 14px;border-radius:12px;background:#17121f;border:1px solid rgba(226,72,84,.25)}.lkmap .co{fill:#221b30;stroke:#5a4c78;stroke-width:.45}.lkmap .ds{fill:rgba(226,72,84,.55);stroke:#ff8a94;stroke-width:.8}.lkban{display:flex;align-items:center;gap:8px;margin:14px -4px 0;padding:10px 12px;border-radius:10px;background:rgba(45,110,255,.12);border:1px solid rgba(143,176,255,.3);color:#cfdcff;font:700 14px/1.3 Karla,sans-serif;text-decoration:none}.lkban b{color:#8fb0ff}.lkmap text{font:700 4.6px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#17121f;stroke-width:1.4px}/*/lkmap*/
+/*lkmap*/.lkmap{display:block;width:100%;height:130px;margin:0 0 14px;border-radius:12px;background:#17121f;border:1px solid rgba(226,72,84,.25)}.lkmap .co{fill:#221b30;stroke:#5a4c78;stroke-width:.45}.lkmap .ds{fill:rgba(226,72,84,.55);stroke:#ff8a94;stroke-width:.8}.lkban{display:flex;align-items:center;gap:8px;margin:14px -4px 0;padding:10px 12px;border-radius:10px;background:rgba(45,110,255,.12);border:1px solid rgba(143,176,255,.3);color:#cfdcff;font:700 14px/1.3 Karla,sans-serif;text-decoration:none}.lkban b{color:#8fb0ff}.lkmap text{font:700 4.6px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#17121f;stroke-width:1.4px}/*/lkmap*//*shift*/.cbar .gh{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(251,239,216,.85);z-index:2}.cbar .mv{position:absolute;top:50%;height:4px;margin-top:-2px;background:#fbefd8;border-radius:2px;z-index:3;box-shadow:0 0 0 2px rgba(22,18,31,.55);transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}.cbar .mv.rt{transform-origin:left}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:7px solid transparent;margin-top:-7px}.cbar .mv.lf::before{left:-11px;border-right:9px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-11px;border-left:9px solid #fbefd8;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{transform:scaleX(1)}.cbar .ml{position:absolute;top:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;padding:3px 10px;border-radius:999px;font:800 13px Karla,sans-serif;z-index:3}.cbar .ml.lf{background:#2d6eff;color:#fff}.cbar .ml.rt{background:#e24854;color:#fff}.chart.cty .cb+.cb{margin-top:6px}.chart.cty .cb.hasmv .cn{margin-top:40px}/*/shift*/
 /*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
 .mnb.hide{transform:translateY(-70px);opacity:0}
 .mnb i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
@@ -386,6 +389,9 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -398,8 +404,8 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump +4,504 votes</span></div>
 <div class="cbar"><i class="r" style="width:60.8%"></i><i class="d" style="width:39.2%"></i><b></b></div>
 <div class="cn"><span class="r"><strong>12,677</strong> Trump</span><span class="d">Harris <strong>8,173</strong></span></div></div>
-<div class="cb"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones +174 votes</span></div>
-<div class="cbar"><i class="r" style="width:49.5%"></i><i class="d" style="width:50.5%"></i><b></b></div>
+<div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones +174 votes</span></div>
+<div class="cbar"><i class="r" style="width:49.5%"></i><i class="d" style="width:50.5%"></i><i class="gh" style="left:60.8%"></i><i class="mv lf" style="left:49.5%;width:11.3%"></i><span class="ml lf" style="left:55.1%">← 23 points left</span><b></b></div>
 <div class="cn"><span class="r"><strong>8,809</strong> Tuberville</span><span class="d">Jones <strong>8,983</strong></span></div></div>
 <p class="note">All 7 South Huntsville precincts combined.</p>
 </div>
@@ -483,6 +489,9 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
+
+
 
 
 

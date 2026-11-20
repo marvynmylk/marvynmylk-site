@@ -386,6 +386,9 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -427,7 +430,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
-
+/*shift*/.cbar .gh{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(251,239,216,.85);z-index:2}.cbar .mv{position:absolute;top:50%;height:4px;margin-top:-2px;background:#fbefd8;border-radius:2px;z-index:3;box-shadow:0 0 0 2px rgba(22,18,31,.55);transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}.cbar .mv.rt{transform-origin:left}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:7px solid transparent;margin-top:-7px}.cbar .mv.lf::before{left:-11px;border-right:9px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-11px;border-left:9px solid #fbefd8;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{transform:scaleX(1)}.cbar .ml{position:absolute;top:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;padding:3px 10px;border-radius:999px;font:800 13px Karla,sans-serif;z-index:3}.cbar .ml.lf{background:#2d6eff;color:#fff}.cbar .ml.rt{background:#e24854;color:#fff}.chart.cty .cb+.cb{margin-top:6px}.chart.cty .cb.hasmv .cn{margin-top:40px}/*/shift*/
 /*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
 .mnb.hide{transform:translateY(-70px);opacity:0}
 .mnb i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
@@ -519,6 +522,9 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
+
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -529,8 +535,8 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="hero-c">toward Democrats in two years, R+23.5 to D+5.1</p>
 <div class="chart cty rv"><div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump by 23.5 pts</span></div>
 <div class="cbar"><i class="r" style="width:61.8%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:38.2%"></i><b></b></div>
-<div class="cn"><span class="r"><strong>61.8%</strong> Trump</span><span class="d">Harris <strong>38.2%</strong></span></div></div><div class="cb"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones by 5.1 pts</span></div>
-<div class="cbar"><i class="r" style="width:47.4%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:52.6%"></i><b></b></div>
+<div class="cn"><span class="r"><strong>61.8%</strong> Trump</span><span class="d">Harris <strong>38.2%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones by 5.1 pts</span></div>
+<div class="cbar"><i class="r" style="width:47.4%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:52.6%"></i><i class="gh" style="left:61.8%"></i><i class="mv lf" style="left:47.4%;width:14.4%"></i><span class="ml lf" style="left:54.6%">← 29 points left</span><b></b></div>
 <div class="cn"><span class="r"><strong>47.4%</strong> Tuberville</span><span class="d">Jones <strong>52.6%</strong></span></div></div>
 <p class="note">The 16 Decatur precincts that voted in both years.</p></div>
 <div class="callout rv" style="margin:20px 0;padding:16px 18px;border-left:4px solid #e8a3c3;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b><span class="cand d">Jones</span> got more votes here than <span class="cand d">Harris</span> did.</b> In a midterm, with fewer people voting, <span class="cand d">Doug Jones</span> won 8,074 votes in these precincts. <span class="cand d">Kamala Harris</span> got 7,433 in 2024.</p></div>
@@ -592,6 +598,9 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
+
+
 
 
 

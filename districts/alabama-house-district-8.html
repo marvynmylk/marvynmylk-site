@@ -350,10 +350,6 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
-
-
-
-
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -395,7 +391,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc.cur{border-color:#e8a3c3;transform:translateY(-2px)}.smx .sc.me{border-color:#f3b37a}
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
-
+/*shift*/.cbar .gh{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(251,239,216,.85);z-index:2}.cbar .mv{position:absolute;top:50%;height:4px;margin-top:-2px;background:#fbefd8;border-radius:2px;z-index:3;box-shadow:0 0 0 2px rgba(22,18,31,.55);transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}.cbar .mv.rt{transform-origin:left}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:7px solid transparent;margin-top:-7px}.cbar .mv.lf::before{left:-11px;border-right:9px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-11px;border-left:9px solid #fbefd8;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{transform:scaleX(1)}.cbar .ml{position:absolute;top:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;padding:3px 10px;border-radius:999px;font:800 13px Karla,sans-serif;z-index:3}.cbar .ml.lf{background:#2d6eff;color:#fff}.cbar .ml.rt{background:#e24854;color:#fff}.chart.cty .cb+.cb{margin-top:6px}.chart.cty .cb.hasmv .cn{margin-top:40px}/*/shift*/
 /*chrome*/.mnb{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:60;display:flex;align-items:center;justify-content:center;width:42px;height:42px;padding:0;border-radius:50%;transition:transform .3s ease,opacity .3s;border:1px solid rgba(251,239,216,.2);background:rgba(22,18,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fbefd8;font:700 15px Karla,sans-serif;cursor:pointer}
 .mnb.hide{transform:translateY(-70px);opacity:0}
 .mnb i{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
@@ -467,8 +463,6 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
-
-
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -480,11 +474,14 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <h2>How far it moved</h2>
 <div class="hero-n rv"><span class="cnt" data-to="25">0</span><small>points</small></div>
 <p class="hero-c">toward Democrats from 2024 to 2026</p>
-<div class="steps3">
-<div class="st3 rv"><b class="y">2024 · President</b><div class="pbar"><div class="bh"><span>Inside House District 8</span><em class="rt">R+29</em></div><div class="bb"><i class="r" style="--w:64.7%"></i><i class="d" style="--w:35.3%"></i><b></b></div><div class="bn"><span>Trump 10,575</span><span>Harris 5,775</span></div></div></div>
-<div class="st3 rv"><b class="y">2026 · Governor</b><div class="pbar"><div class="bh"><span>Inside House District 8</span><em class="dt">D+1</em></div><div class="bb"><i class="r" style="--w:49.3%"></i><i class="d" style="--w:50.7%"></i><b></b></div><div class="bn"><span>Tuberville 6,118</span><span>Jones 6,302</span></div></div></div>
-<div class="st3 rv"><b class="y">2026 · State House</b><div class="pbar"><div class="bh"><span>House District 8, districtwide</span><em class="rt">R+5</em></div><div class="bb"><i class="r" style="--w:52.4%"></i><i class="d" style="--w:47.6%"></i><b></b></div><div class="bn"><span>Johnson 6,630</span><span>Jordan 6,028</span></div></div></div>
-</div>
+<div class="chart cty rv"><div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump by 29.4 pts</span></div>
+<div class="cbar"><i class="r" style="width:64.7%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:35.3%"></i><b></b></div>
+<div class="cn"><span class="r"><strong>64.7%</strong> Trump</span><span class="d">Harris <strong>35.3%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones by 1.5 pts</span></div>
+<div class="cbar"><i class="r" style="width:49.3%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:50.7%"></i><i class="gh" style="left:64.7%"></i><i class="mv lf" style="left:49.3%;width:15.4%"></i><span class="ml lf" style="left:57.0%">← 31 points left</span><b></b></div>
+<div class="cn"><span class="r"><strong>49.3%</strong> Tuberville</span><span class="d">Jones <strong>50.7%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · State House</span><span class="win r">Johnson by 4.8 pts</span></div>
+<div class="cbar"><i class="r" style="width:52.4%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:47.6%"></i><i class="gh" style="left:64.7%"></i><i class="mv lf" style="left:52.4%;width:12.3%"></i><span class="ml lf" style="left:58.5%">← 25 points left</span><b></b></div>
+<div class="cn"><span class="r"><strong>52.4%</strong> Johnson</span><span class="d">Jordan <strong>47.6%</strong></span></div></div>
+<p class="note">President and governor inside the district; State House districtwide.</p></div>
 <p><img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Jones</span> carried the district. Jordan ran 6 points behind him and came up 602 votes short.</p>
 
 <h2>Where Jordan won</h2>
@@ -538,8 +535,6 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
-
-
 
 <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
