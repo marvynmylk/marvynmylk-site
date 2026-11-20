@@ -282,5 +282,12 @@
   "title": "Jones won 6 districts where no Democrat ran",
   "blurb": "Republicans ran unopposed. Voters picked Jones anyway.",
   "img": "share-jones-locks.jpg"
+ },
+ {
+  "path": "shelby-county/pelham.html",
+  "kind": "state",
+  "title": "Pelham's polling place flipped",
+  "blurb": "Trump +22% in 2024. Jones +11% in 2026.",
+  "img": "share-town-pelham.jpg"
  }
 ]
