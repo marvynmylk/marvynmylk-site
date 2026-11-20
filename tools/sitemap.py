@@ -2,7 +2,7 @@
 import os, subprocess, datetime
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 files = sorted(set(subprocess.check_output(['git', 'ls-files', '*.html'], cwd=R).decode().split()) |
-               {os.path.relpath(os.path.join(d, f), R) for d, _, fs in os.walk(os.path.join(R, 'people')) for f in fs if f.endswith('.html')})
+               {os.path.relpath(os.path.join(d, f), R) for d, _, fs in os.walk(R) if '/.git' not in d and '/tools' not in d and '/node_modules' not in d for f in fs if f.endswith('.html')})
 today = datetime.date.today().isoformat()
 def loc(f):
     u = f[:-len('index.html')] if f.endswith('index.html') else f

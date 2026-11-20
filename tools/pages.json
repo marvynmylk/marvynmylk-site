@@ -144,6 +144,18 @@
   "img": "share-hd21.jpg"
  },
  {
+  "path": "districts/madison-county-commission-district-1.html",
+  "kind": "point",
+  "pin": [
+   283.0,
+   22.0
+  ],
+  "label": "Commission District 1",
+  "title": "Doug Jones carried County Commission District 1",
+  "blurb": "No Democrat ran for it in 2024. Up in 2028.",
+  "img": "share-cc1.jpg"
+ },
+ {
   "path": "articles/is-huntsville-turning-blue.html",
   "kind": "point",
   "pin": [

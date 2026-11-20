@@ -37,6 +37,7 @@ def apply(s, cur):
     def addban(m):
         k = re.search(r'State (House|Senate),? District (\d+)', m.group(0))
         key = k and f'{k.group(1).lower()}-{k.group(2)}'
+        if not key: return m.group(0)
         txt = ('<b>Doug Jones won this district.</b> No Democrat ran for it. It\'s one of 6 like that →' if key in WON
                else 'No Democrat ran here. In <b>6 districts</b> like this, voters picked Doug Jones anyway →')
         return m.group(0) + f'<a class="lkban" href="{href}"><span>{txt}</span></a>'
