@@ -48,7 +48,7 @@ AVCSS='''/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radi
 .cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 '''
 def avatars(html, root, cur=''):
-    own={'people/janine-jordan.html':'jordan','people/forrest-satterfield.html':'satterfield','people/marilyn-lands.html':'lands'}.get(cur)
+    own=next((FACES.get(n) for n,sl in PROFILES.items() if cur==f'people/{sl}.html' and n in FACES),None)
     html=re.sub(r'<img class="cav[^>]*>','',html)
     html=re.sub(r'\n?/\*cav\*/.*?/\*/cav\*/\n?','',html,flags=re.S)
     seen=set(); used=[False]
@@ -65,18 +65,24 @@ def avatars(html, root, cur=''):
     return html
 
 # Candidate names link to their profile page (people/<slug>.html), except on the profile itself.
-PROFILES={'Janine Jordan':'janine-jordan','Forrest Satterfield':'forrest-satterfield','Satterfield':'forrest-satterfield','Marilyn Lands':'marilyn-lands','Lands':'marilyn-lands'}
+PROFILES={'Janine Jordan':'janine-jordan','Forrest Satterfield':'forrest-satterfield','Satterfield':'forrest-satterfield','Marilyn Lands':'marilyn-lands','Lands':'marilyn-lands',
+ 'Doug Jones':'doug-jones','Jones':'doug-jones','Tommy Tuberville':'tommy-tuberville','Tuberville':'tommy-tuberville','Dale Strong':'dale-strong','Strong':'dale-strong',
+ 'Andrew Sneed':'andrew-sneed','Sneed':'andrew-sneed','Jared Sluss':'jared-sluss','Sluss':'jared-sluss','Sam Givhan':'sam-givhan','Givhan':'sam-givhan',
+ 'Allison Montgomery':'allison-montgomery','Montgomery':'allison-montgomery','Phillip Rigsby':'phillip-rigsby','Rigsby':'phillip-rigsby',
+ 'Patrick Johnson':'patrick-johnson','Rex Reynolds':'rex-reynolds','Aaron Thomas':'aaron-thomas'}
 LCSS='''/*pl*/a.pfl{text-decoration:none;color:inherit;font:inherit}a.pfl .cand{border-bottom:1.5px dotted currentColor}a.pfl:hover .cand{filter:brightness(1.2)}/*/pl*/
 '''
 def link(html, root, cur):
     html=re.sub(r'<a class="(?:pl|pfl)" href="[^"]*">((?:<img class="cav[^>]*>)?<span class="cand [dr]">[^<]*</span>)</a>',r'\1',html)
     html=re.sub(r'\n?/\*pl\*/.*?/\*/pl\*/\n?','',html,flags=re.S)
-    used=[False]
+    used=[False]; seen=set()
     def rep(m):
+        if m.group(0).startswith('<h2'):
+            seen.clear(); return m.group(0)
         slug=PROFILES.get(m.group(3))
-        if not slug or cur==f'people/{slug}.html': return m.group(0)
-        used[0]=True
+        if not slug or cur==f'people/{slug}.html' or slug in seen: return m.group(0)
+        seen.add(slug); used[0]=True
         return f'<a class="pfl" href="{root}people/{slug}.html">{m.group(0)}</a>'
-    html=re.sub(r'(<img class="cav[^>]*>)?<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>',rep,html)
+    html=re.sub(r'<h2[\s>]|(<img class="cav[^>]*>)?<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>',rep,html)
     if used[0]: html=html.replace('</style>',LCSS+'</style>',1)
     return html
