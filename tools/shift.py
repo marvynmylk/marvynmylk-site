@@ -2,15 +2,16 @@
 Each bar after the first gets a dashed mark where the red/blue split was on the FIRST bar,
 and an arrow from there to where it is now, labeled with the change in margin. Idempotent."""
 import re
-CSS = ('/*shift*/.cbar .gh{position:absolute;top:-9px;bottom:-9px;width:0;border-left:2px dashed rgba(251,239,216,.85);z-index:2}'
-       '.cbar .mv{position:absolute;top:50%;height:4px;margin-top:-2px;background:#fbefd8;border-radius:2px;z-index:3;box-shadow:0 0 0 2px rgba(22,18,31,.55);transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}'
+CSS = ('/*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}'
+       '.cbar .gh{position:absolute;top:-5px;bottom:-5px;width:0;border-left:2px dashed rgba(251,239,216,.8);z-index:2}'
+       '.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#fbefd8;border-radius:2px;z-index:3;transform-origin:right;transform:scaleX(0);transition:transform .9s .5s cubic-bezier(.3,.7,.3,1)}'
        '.cbar .mv.rt{transform-origin:left}'
-       '.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:7px solid transparent;margin-top:-7px}'
-       '.cbar .mv.lf::before{left:-11px;border-right:9px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-11px;border-left:9px solid #fbefd8;border-right:0}'
+       '.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}'
+       '.cbar .mv.lf::before{left:-7px;border-right:7px solid #fbefd8;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #fbefd8;border-right:0}'
        '.rv.on .cbar .mv,.rv.in .cbar .mv{transform:scaleX(1)}'
-       '.cbar .ml{position:absolute;top:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;padding:3px 10px;border-radius:999px;font:800 13px Karla,sans-serif;z-index:3}'
+       '.cbar .ml{position:absolute;top:calc(100% + 5px);transform:translateX(-50%);white-space:nowrap;padding:1px 8px;border-radius:999px;font:800 11.5px/1.5 Karla,sans-serif;z-index:3}'
        '.cbar .ml.lf{background:#2d6eff;color:#fff}.cbar .ml.rt{background:#e24854;color:#fff}'
-       '.chart.cty .cb+.cb{margin-top:6px}.chart.cty .cb.hasmv .cn{margin-top:40px}/*/shift*/')
+       '.chart.cty .cb.hasmv .cn{margin-top:24px}/*/shift*/')
 
 BAR = re.compile(r'<div class="cbar"><i class="r" style="width:([\d.]+)%"></i>(?:<i class="o" style="width:([\d.]+)%"></i>)?<i class="d" style="width:([\d.]+)%"></i>')
 
@@ -53,5 +54,5 @@ def apply(s):
         out.append(s[pos:m.end()]); out.append(block); pos = end
     out.append(s[pos:])
     s = ''.join(out)
-    if used: s = s.replace('</style>', CSS + '</style>', 1)
+    if used or 'class="chart cty' in s: s = s.replace('</style>', CSS + '</style>', 1)
     return s
