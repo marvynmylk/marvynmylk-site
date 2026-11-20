@@ -382,6 +382,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -465,6 +467,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -510,11 +514,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Decatur voted <span>for Doug Jones.</span></h1>
-<p class="lede">Across the 16 polling places that vote in Decatur, <span class="cand d">Doug Jones</span> beat <span class="cand r">Tommy Tuberville</span> 8,074 to 7,286. In 2024, <span class="cand r">Donald Trump</span> won the same polling places 12,012 to 7,433. 6 precincts flipped.</p>
+<p class="lede">Across the 16 polling places that vote in Decatur, <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> beat <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> 8,074 to 7,286. In 2024, <span class="cand r">Donald Trump</span> won the same polling places 12,012 to 7,433. 6 precincts flipped.</p>
 <div class="answer"><b class="k">Short answer</b><p>Decatur's precincts voted for <b>Doug Jones</b> over Tommy Tuberville 8,074 to 7,286 in 2026. In 2024 the same polling places voted for Donald Trump 12,012 to 7,433. All 16 moved toward Democrats.</p></div>
 <div class="hero-n rv"><span class="cnt" data-to="29">0</span><small>points</small></div>
 <p class="hero-c">toward Democrats in two years, R+23.5 to D+5.1</p>
@@ -532,10 +537,10 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="note">2026 governor's race. Polling-place votes only.</p></div>
 
 <h2>House District 8 came down to 602 votes</h2>
-<p>District 8 covers much of Decatur. Republican <span class="cand r">Patrick Johnson</span> beat Democrat <span class="cand d">Janine Jordan</span> 6,630 to 6,028, the closest State House race in North Alabama in 2026. In the Decatur precincts on this page, Jordan won 5,537 to 4,812.</p>
+<p>District 8 covers much of Decatur. Republican <img class="cav r" src="../images/people/johnson.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Patrick Johnson</span> beat Democrat <img class="cav d" src="../images/people/jordan.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Janine Jordan</span> 6,630 to 6,028, the closest State House race in North Alabama in 2026. In the Decatur precincts on this page, Jordan won 5,537 to 4,812.</p>
 
 <h2>Congress: Strong vs. Sneed</h2>
-<p><span class="cand d">Andrew Sneed</span> won 8 of Decatur's precincts against Rep. <span class="cand r">Dale Strong</span>. Across these precincts, <span class="cand d">Sneed</span> won 7,737 to 7,647, even as <span class="cand r">Strong</span> held the district. <a href="../articles/morgan-county-dale-strong-andrew-sneed-2026.html" style="color:#e8a3c3">See all of Morgan County →</a></p>
+<p><img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> won 8 of Decatur's precincts against Rep. <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span>. Across these precincts, <span class="cand d">Sneed</span> won 7,737 to 7,647, even as <span class="cand r">Strong</span> held the district. <a href="../articles/morgan-county-dale-strong-andrew-sneed-2026.html" style="color:#e8a3c3">See all of Morgan County →</a></p>
 
 <h2>Your neighbors who stayed home</h2>
 <div class="chart gap rv"><div class="gt"><i style="width:2.8%"></i></div>
@@ -583,6 +588,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 
 

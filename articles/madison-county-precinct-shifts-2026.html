@@ -380,6 +380,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -463,6 +465,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -528,11 +532,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Every precinct in Madison County <span>moved left</span></h1>
-<p class="lede">In 2024, <span class="cand r">Donald Trump</span> carried Madison County by 17,606 votes. In 2026, <span class="cand d">Doug Jones</span> carried it by 26,115. Of the 74 precincts I could compare, <b>all 74 moved toward Democrats</b>, and 26 flipped.</p>
+<p class="lede">In 2024, <span class="cand r">Donald Trump</span> carried Madison County by 17,606 votes. In 2026, <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> carried it by 26,115. Of the 74 precincts I could compare, <b>all 74 moved toward Democrats</b>, and 26 flipped.</p>
 
 <div class="chart cty" role="img" aria-label="Madison County. 2024 president: Trump 53.4%, Harris 44.4%. 2026 governor: Tuberville 41.7%, Jones 57.9%.">
 <div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump won by 9.0 pts</span></div>
@@ -613,6 +618,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 
 

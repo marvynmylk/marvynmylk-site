@@ -515,6 +515,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -598,6 +600,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -663,11 +667,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Alabama's 5th District was <span>closer than you think.</span></h1>
-<p class="lede">In 2024, nobody ran against Rep. <span class="cand r">Dale Strong</span>. In 2026, Democrat <span class="cand d">Andrew Sneed</span> did, and came within 17,075 votes while winning Madison County outright.</p>
+<p class="lede">In 2024, nobody ran against Rep. <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span>. In 2026, Democrat <img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> did, and came within 17,075 votes while winning Madison County outright.</p>
 <div class="answer"><b class="k">Short answer</b><p>Republican <b>Dale Strong</b> won Alabama's 5th Congressional District in 2026, 142,386 votes to 125,311 for Democrat Andrew Sneed, a margin of 17,075 votes (6.4 points).</p></div>
 <div class="faceoff rv"><div class="fc r"><img src="../images/people/strong.webp" alt="Dale Strong" width="92" height="92" loading="lazy"><b>Dale Strong</b><small>Republican, incumbent</small><span class="v">142,386</span><span class="won">Won</span></div><span class="vs">vs.</span><div class="fc d lose"><img src="../images/people/sneed.webp" alt="Andrew Sneed" width="92" height="92" loading="lazy"><b>Andrew Sneed</b><small>Democrat</small><span class="v">125,311</span></div></div>
 <div class="hero-n rv"><span class="cnt" data-to="17075">0</span><small>votes</small></div>
@@ -734,6 +739,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 
 

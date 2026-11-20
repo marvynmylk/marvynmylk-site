@@ -473,6 +473,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -556,6 +558,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -621,11 +625,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Alabama <span>almost</span> elected a Democratic governor</h1>
-<p class="lede">In 2020, <span class="cand r">Tommy Tuberville</span> beat <span class="cand d">Doug Jones</span> for U.S. Senate by 471,598 votes. In 2026, the same two men ran for governor, and <span class="cand r">Tuberville</span> won by 66,308. <b>Every county with posted results moved toward <span class="cand d">Jones</span>.</b> Here's where it happened, and what it would have taken.</p>
+<p class="lede">In 2020, <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> beat <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> for U.S. Senate by 471,598 votes. In 2026, the same two men ran for governor, and <span class="cand r">Tuberville</span> won by 66,308. <b>Every county with posted results moved toward <span class="cand d">Jones</span>.</b> Here's where it happened, and what it would have taken.</p>
 <div class="faceoff rv"><div class="fc r"><img src="../images/people/tuberville.webp" alt="Tommy Tuberville" width="92" height="92" loading="lazy"><b>Tommy Tuberville</b><small>Republican</small><span class="v">872,561</span><span class="won">Won</span></div><span class="vs">vs.</span><div class="fc d lose"><img src="../images/people/jones.webp" alt="Doug Jones" width="92" height="92" loading="lazy"><b>Doug Jones</b><small>Democrat</small><span class="v">806,253</span></div><p class="note" style="grid-column:1/-1;margin:6px 0 0">2026 governor, statewide. Unofficial results.</p></div>
 
 <div class="chart cty" role="img" aria-label="2020 Senate: Tuberville 60.1%, Jones 39.7%. 2026 governor: Tuberville 52.0%, Jones 48.0%.">
@@ -749,6 +754,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <p>This race is what my book, <i>The Purple South</i>, is about: why the South stays home, and what changes when we show up. It's coming soon.</p>
   <p>Get a heads-up when it's out, plus the next breakdown like this one.</p>
   
+
 
 
 

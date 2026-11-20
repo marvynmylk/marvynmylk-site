@@ -523,6 +523,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -606,6 +608,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -672,6 +676,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -693,7 +698,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p>Presidential races have stayed close to the same spot, Republican by about 8 or 9 points. The 2026 midterm broke hard the other way.</p>
 
 <h2>What changed in 2026</h2>
-<p class="big"><span class="cand d">Doug Jones</span> got <b>more votes in 2026</b> than <span class="cand d">Kamala Harris</span> did in 2024.</p>
+<p class="big"><img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> got <b>more votes in 2026</b> than <span class="cand d">Kamala Harris</span> did in 2024.</p>
 <div class="faceoff rv"><div class="fc r lose"><img src="../images/people/tuberville.webp" alt="Tommy Tuberville" width="92" height="92" loading="lazy"><b>Tommy Tuberville</b><small>Republican</small><span class="v">66,882</span></div><span class="vs">vs.</span><div class="fc d"><img src="../images/people/jones.webp" alt="Doug Jones" width="92" height="92" loading="lazy"><b>Doug Jones</b><small>Democrat</small><span class="v">92,997</span><span class="won">Won</span></div><p class="note" style="grid-column:1/-1;margin:6px 0 0">2026 governor, Madison County votes. Tuberville won statewide.</p></div>
 <div class="chart rv">
 <div class="vb"><div class="vh"><span class="rt">Republican</span><span>Trump → Tuberville</span></div><div class="vt"><i class="g r" style="width:100%"></i><i class="s r" style="width:63.4%"></i></div><div class="vf"><span>2026: <strong>66,882</strong></span><span>2024: 105,430</span></div></div>
@@ -713,7 +718,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <button class="act" type="button" id="shr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.4.1-.6s0-.4-.1-.6L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .4.1.6L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9S19.6 16 18 16z"/></svg><span><strong>Share</strong><small id="shrm">Send it to someone who thinks Alabama is a lost cause.</small></span></button>
 </div>
 <h2>Questions people ask</h2>
-<div class="faq"><details><summary>Is Huntsville a liberal city?</summary><p>Huntsville sits in Madison County, which voted for Democrat <span class="cand d">Doug Jones</span> for governor in 2026 by about 16 points and for Republican <span class="cand r">Donald Trump</span> for president in 2024 by about 9 points. It&#x27;s one of Alabama&#x27;s most politically competitive areas.</p></details><details><summary>Did Madison County vote Democrat in 2026?</summary><p>Yes. <span class="cand d">Doug Jones</span> won Madison County 92,997 to 66,882 in the governor&#x27;s race, and <span class="cand d">Everett Wess</span> won it 87,854 to 71,817 in the U.S. Senate race, according to unofficial results.</p></details><details><summary>Why did Madison County swing so much?</summary><p>Republican turnout fell much more than Democratic turnout. <span class="cand r">Tuberville</span> got about 38,500 fewer votes in the county than <span class="cand r">Trump</span> did in 2024, while <span class="cand d">Jones</span> got about 5,200 more than <span class="cand d">Harris</span>.</p></details><details><summary>Is Alabama turning blue?</summary><p>Not statewide yet. Republicans won every 2026 statewide race, though the governor&#x27;s race was decided by about 4 points, the closest since 2002.</p></details><details><summary>How many people in Madison County didn&#x27;t vote in 2026?</summary><p>About 175,800 of the county&#x27;s 337,273 registered voters didn&#x27;t cast a ballot in 2026.</p></details></div>
+<div class="faq"><details><summary>Is Huntsville a liberal city?</summary><p>Huntsville sits in Madison County, which voted for Democrat <span class="cand d">Doug Jones</span> for governor in 2026 by about 16 points and for Republican <span class="cand r">Donald Trump</span> for president in 2024 by about 9 points. It&#x27;s one of Alabama&#x27;s most politically competitive areas.</p></details><details><summary>Did Madison County vote Democrat in 2026?</summary><p>Yes. <span class="cand d">Doug Jones</span> won Madison County 92,997 to 66,882 in the governor&#x27;s race, and <span class="cand d">Everett Wess</span> won it 87,854 to 71,817 in the U.S. Senate race, according to unofficial results.</p></details><details><summary>Why did Madison County swing so much?</summary><p>Republican turnout fell much more than Democratic turnout. <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tuberville</span> got about 38,500 fewer votes in the county than <span class="cand r">Trump</span> did in 2024, while <span class="cand d">Jones</span> got about 5,200 more than <span class="cand d">Harris</span>.</p></details><details><summary>Is Alabama turning blue?</summary><p>Not statewide yet. Republicans won every 2026 statewide race, though the governor&#x27;s race was decided by about 4 points, the closest since 2002.</p></details><details><summary>How many people in Madison County didn&#x27;t vote in 2026?</summary><p>About 175,800 of the county&#x27;s 337,273 registered voters didn&#x27;t cast a ballot in 2026.</p></details></div>
 <!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
 <p class="sub2">Tap a pin to find its story, or swipe through all 24.</p>
@@ -747,6 +752,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 
 

@@ -50,6 +50,7 @@ s=open(p).read()
 s=re.sub(r'\n?/\*cand\*/.*?/\*/cand\*/\n?','',s,flags=re.S)
 s=s.replace('</style>',candcolor.CSS+'</style>',1)
 s=candcolor.color(s)
+s=candcolor.avatars(s,root)
 open(p,'w').write(s)
 # 6. footer
 subprocess.run([sys.executable,T+'/footer.py',p,'#read-h' if landing else '../'],check=True)

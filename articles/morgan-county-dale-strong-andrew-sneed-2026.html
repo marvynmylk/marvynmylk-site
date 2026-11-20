@@ -391,6 +391,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -474,6 +476,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -522,11 +526,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Morgan County <span>moved toward Sneed.</span></h1>
-<p class="lede">Republican Rep. <span class="cand r">Dale Strong</span> carried Morgan County, home to Decatur and Hartselle, in Alabama's 5th Congressional District race. But Democrat <span class="cand d">Andrew Sneed</span> won 8 precincts, and every comparable precinct in the county moved left from 2024.</p>
+<p class="lede">Republican Rep. <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span> carried Morgan County, home to Decatur and Hartselle, in Alabama's 5th Congressional District race. But Democrat <img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> won 8 precincts, and every comparable precinct in the county moved left from 2024.</p>
 <div class="answer"><b class="k">Short answer</b><p>In Morgan County, <b>Dale Strong</b> beat Andrew Sneed 24,216 votes to 12,726 in 2026, about 66% to 34%. Strong won the 5th District overall by 17,075 votes.</p></div>
 <div class="faceoff rv"><div class="fc r"><img src="../images/people/strong.webp" alt="Dale Strong" width="92" height="92" loading="lazy"><b>Dale Strong</b><small>Republican, incumbent</small><span class="v">24,216</span><span class="won">Won</span></div><span class="vs">vs.</span><div class="fc d lose"><img src="../images/people/sneed.webp" alt="Andrew Sneed" width="92" height="92" loading="lazy"><b>Andrew Sneed</b><small>Democrat</small><span class="v">12,726</span></div><p class="note" style="grid-column:1/-1;margin:6px 0 0">Morgan County votes, U.S. House District 5. Unofficial results.</p></div>
 <div class="stat rv"><div><b class="r20">R+53</b><small>2024 president</small></div><span class="ar">→</span><div><b class="r26">R+31</b><small>2026 U.S. House</small></div></div>
@@ -534,7 +539,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 <h2>Every precinct moved left</h2>
 <p class="big">All <b>39 of 39</b> comparable precincts moved toward Democrats.</p>
-<p>Comparing the 2024 presidential race with the 2026 governor's race, precinct by precinct. 6 precincts flipped from <span class="cand r">Trump</span> to <span class="cand d">Doug Jones</span>: Macedonia C.P. Church, Westmeade Baptist, Fort Decatur Rec Center, Decatur Utilities, First Baptist Austinville and American Legion Post 15.</p>
+<p>Comparing the 2024 presidential race with the 2026 governor's race, precinct by precinct. 6 precincts flipped from <span class="cand r">Trump</span> to <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span>: Macedonia C.P. Church, Westmeade Baptist, Fort Decatur Rec Center, Decatur Utilities, First Baptist Austinville and American Legion Post 15.</p>
 
 <h2>Where Sneed won</h2>
 <p><span class="cand d">Sneed</span> carried 8 precincts, mostly in Decatur. <span class="cand r">Strong's</span> biggest margins came from rural precincts like Oden Ridge, Massey and Lebanon.</p>
@@ -594,6 +599,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 
 

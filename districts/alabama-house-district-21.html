@@ -350,6 +350,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -433,6 +435,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -460,11 +464,12 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEventListener('click',function(){set(false)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});var ly=scrollY;addEventListener('scroll',function(){var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y},{passive:true})})();</script><!--/menu-->
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Forrest Satterfield came within <span>654 votes.</span></h1>
-<p class="lede"><span class="cand r">Donald Trump</span> won Alabama House District 21 by 20% in 2024. Two years later, Democrat <span class="cand d">Forrest Satterfield</span> lost it by 3%. On the same ballot, the district voted for <span class="cand d">Doug Jones</span>.</p>
+<p class="lede"><span class="cand r">Donald Trump</span> won Alabama House District 21 by 20% in 2024. Two years later, Democrat <img class="cav d" src="../images/people/satterfield.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Forrest Satterfield</span> lost it by 3%. On the same ballot, the district voted for <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span>.</p>
 <div class="answer"><b class="k">Short answer</b><p>Republican <b>Rex Reynolds</b> won Alabama House District 21 in 2026, beating Democrat Forrest Satterfield 12,508 to 11,854, a margin of 654 votes, according to unofficial results.</p></div>
 <div class="faceoff rv"><div class="fc r"><img src="../images/people/reynolds.webp" alt="Rex Reynolds" width="92" height="92" loading="lazy"><b>Rex Reynolds</b><small>Republican</small><span class="v">12,508</span><span class="won">Won</span></div><span class="vs">vs.</span><div class="fc d lose"><img src="../images/people/satterfield.webp" alt="Forrest Satterfield" width="92" height="92" loading="lazy"><b>Forrest Satterfield</b><small>Democrat</small><span class="v">11,854</span></div><p class="note" style="grid-column:1/-1;margin:6px 0 0">House District 21, districtwide. Unofficial results.</p></div>
 
@@ -495,7 +500,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <button class="act" type="button" id="shr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.4.1-.6s0-.4-.1-.6L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .4.1.6L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9S19.6 16 18 16z"/></svg><span><strong>Share</strong><small id="shrm">Send it to someone in North Huntsville.</small></span></button>
 </div>
 <h2>Questions people ask</h2>
-<div class="faq"><details><summary>Who won Alabama House District 21 in 2026?</summary><p>Republican <span class="cand r">Rex Reynolds</span> beat Democrat <span class="cand d">Forrest Satterfield</span> 12,508 to 11,854, a margin of 654 votes, according to unofficial results.</p></details><details><summary>How did House District 21 vote for governor in 2026?</summary><p>Based on polling-place results, Democrat <span class="cand d">Doug Jones</span> carried House District 21 over <span class="cand r">Tommy Tuberville</span>, about 12,700 to 10,502.</p></details><details><summary>How much did House District 21 move from 2024 to 2026?</summary><p><span class="cand r">Donald Trump</span> won the district by about 20% in 2024. In 2026 the Republican won the House seat by 2.7%, a shift of about 18 points toward Democrats.</p></details><details><summary>Where is Alabama House District 21?</summary><p>House District 21 is in Madison County, covering parts of north Huntsville and Meridianville.</p></details><details><summary>When is the next House District 21 election?</summary><p>Alabama House members serve four-year terms, so the next regular election is in 2030.</p></details></div>
+<div class="faq"><details><summary>Who won Alabama House District 21 in 2026?</summary><p>Republican <img class="cav r" src="../images/people/reynolds.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Rex Reynolds</span> beat Democrat <span class="cand d">Forrest Satterfield</span> 12,508 to 11,854, a margin of 654 votes, according to unofficial results.</p></details><details><summary>How did House District 21 vote for governor in 2026?</summary><p>Based on polling-place results, Democrat <span class="cand d">Doug Jones</span> carried House District 21 over <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span>, about 12,700 to 10,502.</p></details><details><summary>How much did House District 21 move from 2024 to 2026?</summary><p><span class="cand r">Donald Trump</span> won the district by about 20% in 2024. In 2026 the Republican won the House seat by 2.7%, a shift of about 18 points toward Democrats.</p></details><details><summary>Where is Alabama House District 21?</summary><p>House District 21 is in Madison County, covering parts of north Huntsville and Meridianville.</p></details><details><summary>When is the next House District 21 election?</summary><p>Alabama House members serve four-year terms, so the next regular election is in 2030.</p></details></div>
 <!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
 <p class="sub2">Tap a pin to find its story, or swipe through all 24.</p>
@@ -529,6 +534,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="alabama-house-district-21">

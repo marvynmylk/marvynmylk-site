@@ -266,6 +266,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
+
+
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -349,6 +351,8 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .bks small{display:block;font-size:12.5px;color:#e8a3c3;font-weight:700;margin-top:2px}/*/bks*/
 /*cand*/.cand{font-weight:700;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
+/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
+.cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -377,11 +381,12 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
 <h1>Madison <span>flipped.</span></h1>
-<p class="lede">In 2024, Madison's precincts voted for <span class="cand r">Donald Trump</span> by about 1,400 votes. In 2026, they went for <span class="cand d">Doug Jones</span> by about 3,500. Here's your precinct, every race on your ballot, and who represents you in the State House.</p>
+<p class="lede">In 2024, Madison's precincts voted for <span class="cand r">Donald Trump</span> by about 1,400 votes. In 2026, they went for <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> by about 3,500. Here's your precinct, every race on your ballot, and who represents you in the State House.</p>
 <div class="hero-n"><span class="cnt" data-to="25">0</span><small>points</small></div>
 <p class="hero-c">toward Democrats in two years, R+6.7 to D+18.2</p>
 
@@ -474,6 +479,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">The South is <span>closer than you think.</span></h2>
   <p>I'm Marvyn. I live in North Alabama and track the races and numbers that show it. Get the next story, plus a heads-up when my books come out.</p>
   
+
 
 <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
