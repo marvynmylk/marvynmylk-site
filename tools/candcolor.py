@@ -47,7 +47,8 @@ FACES={'Doug Jones':'jones','Tommy Tuberville':'tuberville','Marilyn Lands':'lan
 AVCSS='''/*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
 .cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
 '''
-def avatars(html, root):
+def avatars(html, root, cur=''):
+    own={'people/janine-jordan.html':'jordan','people/forrest-satterfield.html':'satterfield','people/marilyn-lands.html':'lands'}.get(cur)
     html=re.sub(r'<img class="cav[^>]*>','',html)
     html=re.sub(r'\n?/\*cav\*/.*?/\*/cav\*/\n?','',html,flags=re.S)
     seen=set(); used=[False]
@@ -56,9 +57,26 @@ def avatars(html, root):
             seen.clear(); return m.group(0)
         party,name=m.group(2),m.group(3)
         key=FACES.get(name)
-        if not key or key in seen: return m.group(0)
+        if not key or key in seen or key==own: return m.group(0)
         seen.add(key); used[0]=True
         return f'<img class="cav {party}" src="{root}images/people/{key}.webp" alt="" width="20" height="20" loading="lazy">'+m.group(0)
     html=re.sub(r'<h2[\s>]|(<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>)',rep,html)
     if used[0]: html=html.replace('</style>',AVCSS+'</style>',1)
+    return html
+
+# Candidate names link to their profile page (people/<slug>.html), except on the profile itself.
+PROFILES={'Janine Jordan':'janine-jordan','Forrest Satterfield':'forrest-satterfield','Satterfield':'forrest-satterfield','Marilyn Lands':'marilyn-lands','Lands':'marilyn-lands'}
+LCSS='''/*pl*/a.pl{text-decoration:none;color:inherit}a.pl .cand{background-size:100% 100%;border-bottom:1.5px dotted currentColor}a.pl:hover .cand{filter:brightness(1.2)}/*/pl*/
+'''
+def link(html, root, cur):
+    html=re.sub(r'<a class="pl" href="[^"]*">((?:<img class="cav[^>]*>)?<span class="cand [dr]">[^<]*</span>)</a>',r'\1',html)
+    html=re.sub(r'\n?/\*pl\*/.*?/\*/pl\*/\n?','',html,flags=re.S)
+    used=[False]
+    def rep(m):
+        slug=PROFILES.get(m.group(3))
+        if not slug or cur==f'people/{slug}.html': return m.group(0)
+        used[0]=True
+        return f'<a class="pl" href="{root}people/{slug}.html">{m.group(0)}</a>'
+    html=re.sub(r'(<img class="cav[^>]*>)?<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>',rep,html)
+    if used[0]: html=html.replace('</style>',LCSS+'</style>',1)
     return html
