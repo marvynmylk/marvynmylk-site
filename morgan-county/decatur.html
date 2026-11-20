@@ -392,7 +392,6 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 
 
 
-
 /*smx*/.smx{margin:36px 0 0}
 .smx h2{margin:0 0 4px}.smx .sub2{margin:0 0 12px;color:var(--muted);font-size:14.5px}
 .smx .sub{margin:0 0 14px;color:var(--muted);font-size:15px}
@@ -435,7 +434,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 /*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}.cbar .mv.rt{transform-origin:left;background:#ffd0d4}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}.cbar .ml{display:none}/*/shift*//*town*/.join input[name=town]{width:100%;text-align:center;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
-.townnudge{text-align:center;margin:6px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
+.townnudge{text-align:center;margin:28px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
 .tsheet{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:420px;margin:0 auto;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#241c34,#1a1526);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(232,163,195,.35);transform:translateY(120%);transition:transform .5s cubic-bezier(.3,1.25,.5,1);color:#fbefd8}
 .tsheet.up{transform:none}
 .tsheet .tmap{position:relative;height:104px;background:radial-gradient(120% 140% at 70% 10%,rgba(138,92,240,.35),transparent 60%),#1a1526}
@@ -503,7 +502,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .cand.d{background-image:linear-gradient(90deg,#6f9bff,#b9ccff)}.cand.r{background-image:linear-gradient(90deg,#ff5a68,#ffb0a8)}/*/cand*/
 /*cav*/.cav{display:inline-block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;vertical-align:-.28em;margin:0 .28em 0 .05em;border:1.5px solid}
 .cav.d{border-color:#6f9bff}.cav.r{border-color:#ff5a68}/*/cav*/
-/*pl*/a.pl{text-decoration:none;color:inherit}a.pl .cand{background-size:100% 100%;border-bottom:1.5px dotted currentColor}a.pl:hover .cand{filter:brightness(1.2)}/*/pl*/
+/*pl*/a.pfl{text-decoration:none;color:inherit;font:inherit}a.pfl .cand{border-bottom:1.5px dotted currentColor}a.pfl:hover .cand{filter:brightness(1.2)}/*/pl*/
 
 /*foot*/.sitefoot{margin-top:40px;padding:30px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
 .sitefoot .wm{display:block;width:min(210px,58vw);height:auto;margin:0 auto 12px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
@@ -564,6 +563,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -571,7 +571,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="lede">Across the 16 polling places that vote in Decatur, <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> beat <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> 8,074 to 7,286. In 2024, <span class="cand r">Donald Trump</span> won the same polling places 12,012 to 7,433. 6 precincts flipped.</p>
 <div class="answer"><b class="k">Short answer</b><p>Decatur's precincts voted for <b>Doug Jones</b> over Tommy Tuberville 8,074 to 7,286 in 2026. In 2024 the same polling places voted for Donald Trump 12,012 to 7,433. All 16 moved toward Democrats.</p></div>
 <div class="hero-n rv"><span class="cnt" data-to="29">0</span><small>points</small></div>
-<p class="hero-c">toward Democrats in two years, R+23.5 to D+5.1</p><p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p>
+<p class="hero-c">toward Democrats in two years, R+23.5 to D+5.1</p>
 <div class="chart cty rv"><div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump by 23.5 pts</span></div>
 <div class="cbar"><i class="r" style="width:61.8%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:38.2%"></i><b></b></div>
 <div class="cn"><span class="r"><strong>61.8%</strong> Trump</span><span class="d">Harris <strong>38.2%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones by 5.1 pts</span></div>
@@ -586,7 +586,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="note">2026 governor's race. Polling-place votes only.</p></div>
 
 <h2>House District 8 came down to 602 votes</h2>
-<p>District 8 covers much of Decatur. Republican <img class="cav r" src="../images/people/johnson.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Patrick Johnson</span> beat Democrat <a class="pl" href="../people/janine-jordan.html"><img class="cav d" src="../images/people/jordan.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Janine Jordan</span></a> 6,630 to 6,028, the closest State House race in North Alabama in 2026. In the Decatur precincts on this page, Jordan won 5,537 to 4,812.</p>
+<p>District 8 covers much of Decatur. Republican <img class="cav r" src="../images/people/johnson.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Patrick Johnson</span> beat Democrat <a class="pfl" href="../people/janine-jordan.html"><img class="cav d" src="../images/people/jordan.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Janine Jordan</span></a> 6,630 to 6,028, the closest State House race in North Alabama in 2026. In the Decatur precincts on this page, Jordan won 5,537 to 4,812.</p>
 
 <h2>Congress: Strong vs. Sneed</h2>
 <p><img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> won 8 of Decatur's precincts against Rep. <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span>. Across these precincts, <span class="cand d">Sneed</span> won 7,737 to 7,647, even as <span class="cand r">Strong</span> held the district. <a href="../articles/morgan-county-dale-strong-andrew-sneed-2026.html" style="color:#e8a3c3">See all of Morgan County →</a></p>
@@ -596,14 +596,14 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <div class="gl"><span><strong>602</strong><br>House District 8 margin</span><span style="text-align:right"><strong>21,317</strong><br>registered, didn't vote</span></div></div>
 <p>21,317 registered voters in these Decatur precincts skipped 2026. District 8 came down to 602.</p>
 
-<h2>What you can do</h2>
+<p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p><h2>What you can do</h2>
 <div class="acts">
 <a class="act" href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Check your voter registration</strong><small>Takes a minute. Do it before every election.</small></span></a>
 <a class="act" href="../guides/how-to-vote-in-alabama.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span><strong>How to vote</strong><small>ID, absentee and polling hours.</small></span></a>
 <button class="act" type="button" id="shr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.4.1-.6s0-.4-.1-.6L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .4.1.6L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9S19.6 16 18 16z"/></svg><span><strong>Share</strong><small id="shrm">Send it to someone in Decatur.</small></span></button>
 </div>
 <h2>Questions people ask</h2>
-<div class="faq"><details><summary>How did Decatur, Alabama vote in 2026?</summary><p>Decatur&#x27;s precincts voted for Democrat <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> over Republican <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> for governor, 8,074 to 7,286, according to unofficial results. In 2024, <span class="cand r">Donald Trump</span> won the same polling places by 24 points.</p></details><details><summary>Did any Decatur precincts flip?</summary><p>Yes. 6 Decatur precincts went from <span class="cand r">Trump</span> in 2024 to <span class="cand d">Jones</span> in 2026: First Baptist Austinville, American Legion Post 15, Decatur Utilities, Fort Decatur Rec Center, Macedonia C.P. Church and Westmeade Baptist.</p></details><details><summary>Who won Alabama House District 8?</summary><p>Republican <img class="cav r" src="../images/people/johnson.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Patrick Johnson</span> beat Democrat <a class="pl" href="../people/janine-jordan.html"><img class="cav d" src="../images/people/jordan.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Janine Jordan</span></a> 6,630 to 6,028, a margin of 602 votes, according to unofficial results.</p></details><details><summary>Who represents Decatur in Congress?</summary><p>Decatur is in Alabama&#x27;s 5th Congressional District, represented by Republican <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span>, who beat Democrat <img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> in 2026.</p></details><details><summary>How many people in Decatur didn&#x27;t vote in 2026?</summary><p>About 21,317 registered voters in Decatur&#x27;s precincts didn&#x27;t cast a ballot in 2026.</p></details></div>
+<div class="faq"><details><summary>How did Decatur, Alabama vote in 2026?</summary><p>Decatur&#x27;s precincts voted for Democrat <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> over Republican <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> for governor, 8,074 to 7,286, according to unofficial results. In 2024, <span class="cand r">Donald Trump</span> won the same polling places by 24 points.</p></details><details><summary>Did any Decatur precincts flip?</summary><p>Yes. 6 Decatur precincts went from <span class="cand r">Trump</span> in 2024 to <span class="cand d">Jones</span> in 2026: First Baptist Austinville, American Legion Post 15, Decatur Utilities, Fort Decatur Rec Center, Macedonia C.P. Church and Westmeade Baptist.</p></details><details><summary>Who won Alabama House District 8?</summary><p>Republican <img class="cav r" src="../images/people/johnson.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Patrick Johnson</span> beat Democrat <a class="pfl" href="../people/janine-jordan.html"><img class="cav d" src="../images/people/jordan.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Janine Jordan</span></a> 6,630 to 6,028, a margin of 602 votes, according to unofficial results.</p></details><details><summary>Who represents Decatur in Congress?</summary><p>Decatur is in Alabama&#x27;s 5th Congressional District, represented by Republican <img class="cav r" src="../images/people/strong.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Dale Strong</span>, who beat Democrat <img class="cav d" src="../images/people/sneed.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Andrew Sneed</span> in 2026.</p></details><details><summary>How many people in Decatur didn&#x27;t vote in 2026?</summary><p>About 21,317 registered voters in Decatur&#x27;s precincts didn&#x27;t cast a ballot in 2026.</p></details></div>
 <!--storymap--><section class="smx" id="smx" aria-labelledby="smx-h">
 <h2 id="smx-h">Explore North Alabama</h2>
 <p class="sub2">Tap a pin to find its story, or swipe through all 24.</p>
@@ -637,6 +637,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">Want <span>your town next?</span></h2>
   <p>Sign up and tell me your town. I'll send you its story when I dig into it, plus a heads-up when my books come out.</p>
   
+
 
 
 

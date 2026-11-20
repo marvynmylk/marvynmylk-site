@@ -13,7 +13,7 @@ TOWNS = ['Huntsville', 'Madison', 'Decatur', 'Athens', 'Florence', 'Muscle Shoal
          'Nashville', 'Franklin', 'Murfreesboro', 'Chattanooga', 'Knoxville', 'Memphis', 'Clarksville', 'Columbia',
          'Fayetteville', 'Lawrenceburg', 'Pulaski', 'Winchester', 'Tullahoma', 'Shelbyville', 'Hendersonville', 'Johnson City']
 CSS = '''/*town*/.join input[name=town]{width:100%;text-align:center;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
-.townnudge{text-align:center;margin:6px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
+.townnudge{text-align:center;margin:28px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
 .tsheet{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:420px;margin:0 auto;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#241c34,#1a1526);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(232,163,195,.35);transform:translateY(120%);transition:transform .5s cubic-bezier(.3,1.25,.5,1);color:#fbefd8}
 .tsheet.up{transform:none}
 .tsheet .tmap{position:relative;height:104px;background:radial-gradient(120% 140% at 70% 10%,rgba(138,92,240,.35),transparent 60%),#1a1526}
@@ -107,7 +107,7 @@ def apply(s, landing):
         s = re.sub(r'<h2 id="join-h">.*?</h2>', '<h2 id="join-h">Want <span>your town next?</span></h2>', s, count=1, flags=re.S)
         s = re.sub(r'(<h2 id="join-h">.*?</h2>\s*)<p>.*?</p>', r"\1<p>Sign up and tell me your town. I'll send you its story when I dig into it, plus a heads-up when my books come out.</p>", s, count=1, flags=re.S)
         # one quiet link under the big number
-        s = re.sub(r'(<p class="hero-c">.*?</p>)', r'\1<p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p>', s, count=1, flags=re.S)
+        s = re.sub(r'(<h2>What you can do</h2>)', r'<p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p>\1', s, count=1)
     s = s.replace('</style>', CSS + '</style>', 1)
     s = s.replace('</body>', SHEET + JS + '</body>', 1)
     return s

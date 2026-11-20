@@ -66,17 +66,17 @@ def avatars(html, root, cur=''):
 
 # Candidate names link to their profile page (people/<slug>.html), except on the profile itself.
 PROFILES={'Janine Jordan':'janine-jordan','Forrest Satterfield':'forrest-satterfield','Satterfield':'forrest-satterfield','Marilyn Lands':'marilyn-lands','Lands':'marilyn-lands'}
-LCSS='''/*pl*/a.pl{text-decoration:none;color:inherit}a.pl .cand{background-size:100% 100%;border-bottom:1.5px dotted currentColor}a.pl:hover .cand{filter:brightness(1.2)}/*/pl*/
+LCSS='''/*pl*/a.pfl{text-decoration:none;color:inherit;font:inherit}a.pfl .cand{border-bottom:1.5px dotted currentColor}a.pfl:hover .cand{filter:brightness(1.2)}/*/pl*/
 '''
 def link(html, root, cur):
-    html=re.sub(r'<a class="pl" href="[^"]*">((?:<img class="cav[^>]*>)?<span class="cand [dr]">[^<]*</span>)</a>',r'\1',html)
+    html=re.sub(r'<a class="(?:pl|pfl)" href="[^"]*">((?:<img class="cav[^>]*>)?<span class="cand [dr]">[^<]*</span>)</a>',r'\1',html)
     html=re.sub(r'\n?/\*pl\*/.*?/\*/pl\*/\n?','',html,flags=re.S)
     used=[False]
     def rep(m):
         slug=PROFILES.get(m.group(3))
         if not slug or cur==f'people/{slug}.html': return m.group(0)
         used[0]=True
-        return f'<a class="pl" href="{root}people/{slug}.html">{m.group(0)}</a>'
+        return f'<a class="pfl" href="{root}people/{slug}.html">{m.group(0)}</a>'
     html=re.sub(r'(<img class="cav[^>]*>)?<span class="cand (d|r)">([^<]+?)(?:\'s)?</span>',rep,html)
     if used[0]: html=html.replace('</style>',LCSS+'</style>',1)
     return html

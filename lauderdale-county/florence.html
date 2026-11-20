@@ -407,7 +407,7 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .smx .sc small{display:block;margin:4px 2px 0;font:700 11.5px Karla,sans-serif;color:#e8a3c3}
 @media (prefers-reduced-motion:reduce){.smx .pin{opacity:1;transform:none;transition:none}.smx .here{animation:none}}/*/smx*/
 /*lkmap*/.lkmap{display:block;width:100%;height:130px;margin:0 0 14px;border-radius:12px;background:#17121f;border:1px solid rgba(226,72,84,.25)}.lkmap .co{fill:#221b30;stroke:#5a4c78;stroke-width:.45}.lkmap .ds{fill:rgba(226,72,84,.55);stroke:#ff8a94;stroke-width:.8}.lkban{display:flex;align-items:center;gap:8px;margin:14px -4px 0;padding:10px 12px;border-radius:10px;background:rgba(45,110,255,.12);border:1px solid rgba(143,176,255,.3);color:#cfdcff;font:700 14px/1.3 Karla,sans-serif;text-decoration:none}.lkban b{color:#8fb0ff}.lkmap text{font:700 4.6px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#17121f;stroke-width:1.4px}/*/lkmap*//*shift*/.chart.cty{padding:18px 16px}.chart.cty .cb{margin:0 0 18px}.chart.cty .ct2{margin-bottom:6px}.chart.cty .win{font-size:12.5px;padding:3px 9px}.chart.cty .race{font-size:13px}.chart.cty .cn{font-size:13.5px;margin-top:6px}.chart.cty .cn strong{font-size:17px}.chart.cty .cbar{height:26px}.cbar .gh{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed rgba(207,224,255,.5);z-index:2;opacity:0}.cbar .mv{position:absolute;top:50%;height:3px;margin-top:-1.5px;background:#cfe0ff;border-radius:2px;z-index:3;opacity:0;transform-origin:right;transform:scaleX(0);filter:drop-shadow(0 0 4px rgba(143,176,255,.9))}.cbar .mv.rt{transform-origin:left;background:#ffd0d4}.cbar .mv::before{content:"";position:absolute;top:50%;width:0;height:0;border:5px solid transparent;margin-top:-5px}.cbar .mv.lf::before{left:-7px;border-right:7px solid #cfe0ff;border-left:0}.cbar .mv.rt::before{right:-7px;border-left:7px solid #ffd0d4;border-right:0}.rv.on .cbar .mv,.rv.in .cbar .mv{animation:mvA 3.4s .4s ease-out forwards}.rv.on .cbar .gh,.rv.in .cbar .gh{animation:mvG 3.4s .4s ease-out forwards}@keyframes mvA{0%{opacity:0;transform:scaleX(0)}30%{opacity:1;transform:scaleX(1)}70%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}@keyframes mvG{0%{opacity:0}20%{opacity:1}70%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.rv.on .cbar .mv,.rv.in .cbar .mv{animation:none}.cbar .gh{opacity:.35}}.cbar .ml{display:none}/*/shift*//*town*/.join input[name=town]{width:100%;text-align:center;padding:15px 16px;border-radius:14px;border:1px solid rgba(251,239,216,.25);background:#16121f;color:#fbefd8;font:500 17px Karla,sans-serif}
-.townnudge{text-align:center;margin:6px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
+.townnudge{text-align:center;margin:28px 0 0}.townnudge a{color:#e8a3c3;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px dashed rgba(232,163,195,.5)}
 .tsheet{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:420px;margin:0 auto;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#241c34,#1a1526);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(232,163,195,.35);transform:translateY(120%);transition:transform .5s cubic-bezier(.3,1.25,.5,1);color:#fbefd8}
 .tsheet.up{transform:none}
 .tsheet .tmap{position:relative;height:104px;background:radial-gradient(120% 140% at 70% 10%,rgba(138,92,240,.35),transparent 60%),#1a1526}
@@ -520,6 +520,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 
 
 
+
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -527,7 +528,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p class="lede">Across the 14 polling places that vote in Florence, <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> beat <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tommy Tuberville</span> 5,463 to 4,269. In 2024, <span class="cand r">Donald Trump</span> won the same polling places by 18%. 8 of them flipped.</p>
 <div class="answer"><b class="k">Short answer</b><p>Florence's polling places voted for <b>Doug Jones</b> over Tommy Tuberville 5,463 to 4,269 in 2026. In 2024 they voted for Donald Trump 7,283 to 5,045. All 14 moved toward Democrats.</p></div>
 <div class="hero-n rv"><span class="cnt" data-to="30">0</span><small>points</small></div>
-<p class="hero-c">toward Democrats in two years, R+18.2 to D+12.3</p><p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p>
+<p class="hero-c">toward Democrats in two years, R+18.2 to D+12.3</p>
 <div class="chart cty rv"><div class="cb"><div class="ct2"><span class="race">2024 · President</span><span class="win r">Trump by 18.2 pts</span></div>
 <div class="cbar"><i class="r" style="width:59.1%"></i><i class="o" style="width:0.0%"></i><i class="d" style="width:40.9%"></i><b></b></div>
 <div class="cn"><span class="r"><strong>59.1%</strong> Trump</span><span class="d">Harris <strong>40.9%</strong></span></div></div><div class="cb hasmv"><div class="ct2"><span class="race">2026 · Governor</span><span class="win d">Jones by 12.3 pts</span></div>
@@ -549,7 +550,7 @@ b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEvent
 <p>A city that just voted for <img class="cav d" src="../images/people/jones.webp" alt="" width="20" height="20" loading="lazy"><span class="cand d">Doug Jones</span> had no Democrat to vote for in three of its four legislative races.</p>
 <div class="callout rv" style="margin:20px 0;padding:16px 18px;border-left:4px solid #8fb0ff;background:var(--ink-2);border-radius:0 14px 14px 0"><p style="margin:0"><b><span class="cand d">Doug Jones</span> won State House District 3, and no Democrat ran for it.</b> Districtwide, more voters picked <span class="cand d">Jones</span> than <img class="cav r" src="../images/people/tuberville.webp" alt="" width="20" height="20" loading="lazy"><span class="cand r">Tuberville</span>, but <span class="cand r">Kerry Underwood</span> had no opponent. It's one of six Alabama districts where that happened. <a href="../articles/jones-won-no-democrat-ran-alabama-2026.html" style="color:#8fb0ff;font-weight:700">See all six →</a></p></div>
 
-<h2>What you can do</h2>
+<p class="townnudge"><a href="#join" data-sheet>Is your town missing? Tell me →</a></p><h2>What you can do</h2>
 <div class="acts">
 <a class="act" href="https://myinfo.alabamavotes.gov/VoterView" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><span><strong>Check your voter registration</strong><small>Takes a minute. Do it before every election.</small></span></a>
 <a class="act" href="../guides/how-to-vote-in-alabama.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg><span><strong>How to vote</strong><small>ID, absentee and polling hours.</small></span></a>
@@ -590,6 +591,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <h2 id="join-h">Want <span>your town next?</span></h2>
   <p>Sign up and tell me your town. I'll send you its story when I dig into it, plus a heads-up when my books come out.</p>
   
+
 
 
 
