@@ -7,12 +7,13 @@ CSS = ('/*lkmap*/.lkmap{display:block;width:100%;height:130px;margin:0 0 14px;bo
        '.lkmap text{font:700 4.6px Karla,sans-serif;fill:#fbefd8;paint-order:stroke;stroke:#17121f;stroke-width:1.4px}/*/lkmap*/')
 PIN = 'M0,0 C-1.2,-2.6 -4.2,-4.6 -4.2,-8 A4.2,4.2 0 1 1 4.2,-8 C4.2,-4.6 1.2,-2.6 0,0Z'
 
-def svg(key, town):
+def svg(key, town, cur=None):
     m = D['maps'][key]
     out = (f'<svg class="lkmap" viewBox="0 0 {m["w"]} {m["h"]}" preserveAspectRatio="xMidYMid meet" role="img" '
            f'aria-label="Map of {key.replace("-", " district ")}"><path class="co" d="{m["co"]}"/><path class="ds" d="{m["d"]}"/>')
     if town:
         name, lon, lat = town
+        lon, lat = D.get('pinfix', {}).get(cur, {}).get(key, [lon, lat])
         x = (lon - m['minx']) * D['K'] * m['sc']; y = (m['maxy'] - lat) * m['sc']
         out += (f'<g transform="translate({x:.1f},{y:.1f}) scale(.9)"><path d="{PIN}" fill="#ffd60a" stroke="#17121f" stroke-width=".6"/>'
                 f'<circle cy="-8" r="1.5" fill="#17121f"/></g><text x="{x + 5:.1f}" y="{y - 3:.1f}">{name}</text>')
@@ -28,7 +29,7 @@ def apply(s, cur):
         k = re.search(r'State (House|Senate),? District (\d+)', h)
         key = k and f'{k.group(1).lower()}-{k.group(2)}'
         if not key or key not in D['maps']: return mt.group(0)
-        return mt.group(1) + svg(key, town) + mt.group(2)
+        return mt.group(1) + svg(key, town, cur) + mt.group(2)
     s2 = re.sub(r'(<div class="dc rv lock[^"]*">)(<h3>[^<]*</h3>)', rep, s)
     root = '../' * cur.count('/')
     WON = {'house-3', 'house-44', 'house-46', 'house-73', 'house-79', 'house-104'}
