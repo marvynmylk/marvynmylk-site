@@ -289,5 +289,56 @@
   "title": "Pelham's polling place flipped",
   "blurb": "Trump +22% in 2024. Jones +11% in 2026.",
   "img": "share-town-pelham.jpg"
+ },
+ {
+  "path": "etowah-county/gadsden.html",
+  "kind": "point",
+  "pin": [
+   354.1,
+   174.6
+  ],
+  "label": "Gadsden",
+  "title": "Gadsden voted for Doug Jones",
+  "blurb": "Trump +21% in 2024. Jones +9% in 2026.",
+  "img": "share-town-gadsden.jpg"
+ },
+ {
+  "path": "marshall-county/guntersville.html",
+  "kind": "point",
+  "pin": [
+   313.5,
+   113.7
+  ],
+  "label": "Guntersville",
+  "title": "Guntersville swung 24 points left",
+  "blurb": "Jones got more votes than Harris did.",
+  "img": "share-town-guntersville.jpg"
+ },
+ {
+  "path": "jackson-county/scottsboro.html",
+  "kind": "point",
+  "pin": [
+   350.2,
+   58.2
+  ],
+  "label": "Scottsboro",
+  "title": "Scottsboro swung 29 points left",
+  "blurb": "Jones got more votes than Harris did.",
+  "img": "share-town-scottsboro.jpg"
+ },
+ {
+  "path": "limestone-county/limestone-county-2026.html",
+  "kind": "area",
+  "counties": [
+   "Limestone"
+  ],
+  "pin": [
+   196.0,
+   20.0
+  ],
+  "label": "Limestone County",
+  "title": "Limestone County swung 29 points left",
+  "blurb": "A bigger move than Madison County.",
+  "img": "share-limestone.jpg"
  }
 ]

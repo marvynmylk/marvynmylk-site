@@ -44,10 +44,10 @@ def _map():
     B = json.load(open(os.path.join(T, 'storymap_base.json'))); P = json.load(open(os.path.join(T, 'pages.json')))
     c = ''.join(f'<path class="c" d="{x["d"]}"/>' for x in B['counties'])
     p = ''.join(f'<circle class="p" cx="{x["pin"][0]}" cy="{x["pin"][1]}" r="2.6"/>' for x in P if x.get('pin') and x['kind'] == 'point')
-    q = ('<g transform="translate(349.9,58.8)"><circle class="ring" r="6"/><g class="q"><path d="M0,0 C-1.2,-2.6 -4.2,-4.6 -4.2,-8 A4.2,4.2 0 1 1 4.2,-8 C4.2,-4.6 1.2,-2.6 0,0Z" transform="scale(1.6)" fill="#ffd60a" stroke="#16121f" stroke-width=".5"/>'
+    q = ('<g transform="translate(385,40)"><circle class="ring" r="6"/><g class="q"><path d="M0,0 C-1.2,-2.6 -4.2,-4.6 -4.2,-8 A4.2,4.2 0 1 1 4.2,-8 C4.2,-4.6 1.2,-2.6 0,0Z" transform="scale(1.6)" fill="#ffd60a" stroke="#16121f" stroke-width=".5"/>'
          '<text y="-11.5" text-anchor="middle" font-family="Karla,sans-serif" font-weight="800" font-size="8" fill="#16121f">?</text></g></g>')
     return f'<svg viewBox="115 8 300 80" preserveAspectRatio="xMidYMid slice" aria-hidden="true">{c}{p}{q}</svg>'
-SUGG = ['Hartselle', 'Guntersville', 'Scottsboro', 'Cullman', 'Nashville']
+SUGG = ['Hartselle', 'Albertville', 'Fort Payne', 'Cullman', 'Nashville']
 SHEET = ('<!--tsheet--><div class="tsheet" id="tsheet" role="dialog" aria-labelledby="tsh-h" hidden>'
  '<button class="x" type="button" aria-label="Close">×</button><div class="tmap">' + _map() + '</div><div class="in">'
  '<div class="step" data-s="1"><h3 id="tsh-h">Is your town <span>missing?</span></h3>'
