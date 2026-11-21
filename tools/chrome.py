@@ -38,10 +38,11 @@ CSS='''
 @media (prefers-reduced-motion:reduce){.lk svg{animation:none}}
 /*/chrome*/
 '''
-def menu(root):
+def menu(root, cur=''):
+    import stories
     items=''.join(f'<a class="it" href="{root}{u}" style="transition-delay:{60+i*50}ms"><b>{t}</b><small>{d}</small></a>' for i,(t,u,d) in enumerate(MENU))
     return f'''<!--menu--><button class="mnb" type="button" aria-label="Open menu" aria-expanded="false"><i></i></button>
-<nav class="mnv" aria-label="Main menu" hidden><button class="x" type="button" aria-label="Close menu">×</button><a class="home" href="{root or './'}"><img src="{root}images/profile.webp" alt="">Marvyn Mylk</a>{items}</nav>
+<nav class="mnv" aria-label="Main menu" hidden><button class="x" type="button" aria-label="Close menu">×</button><a class="home" href="{root or './'}"><img src="{root}images/profile.webp" alt="">Marvyn Mylk</a>{items}{stories.menu_list(root,cur)}</nav>{stories.MENU_JS}
 <script>(function(){{var b=document.querySelector('.mnb'),n=document.querySelector('.mnv');function set(o){{if(o)n.hidden=false;requestAnimationFrame(function(){{n.classList.toggle('open',o)}});b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':'';if(!o)setTimeout(function(){{if(!n.classList.contains('open'))n.hidden=true}},260)}}
 b.addEventListener('click',function(){{set(true)}});n.querySelector('.x').addEventListener('click',function(){{set(false)}});n.addEventListener('click',function(e){{if(e.target.closest('a'))set(false)}});document.addEventListener('keydown',function(e){{if(e.key==='Escape')set(false)}});var ly=scrollY;addEventListener('scroll',function(){{var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y}},{{passive:true}})}})();</script><!--/menu-->
 '''

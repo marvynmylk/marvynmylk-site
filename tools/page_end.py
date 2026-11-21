@@ -31,14 +31,17 @@ s=lockmap.apply(s,cur)
 s=shift.apply(s)
 s=townsign.apply(s,landing)
 blk=storymap.block(cur,root,home=(cur=='index.html'))
+import stories as _st
+_i=blk.rfind('</section>'); blk=blk[:_i]+_st.near_block(cur,root)+blk[_i:]
 if landing: blk='<!--storymap--><div class="wrap narrow">'+blk.replace('<!--storymap-->','',1).replace('<!--/storymap-->','',1)+'</div><!--/storymap-->\n'
 if 'data-hub="1"' not in s:
     i=s.index('<section class="join"'); s=s[:i]+blk+s[i:]
 # 4. menu + FAQ styles
 s=re.sub(r'\n?/\*chrome\*/.*?/\*/chrome\*/','',s,flags=re.S)
-s=s.replace('</style>',chrome.CSS+'</style>',1)
+import stories
+s=s.replace('</style>',chrome.CSS.replace('/*/chrome*/',stories.MENU_CSS+stories.CSS+'/*/chrome*/')+'</style>',1)
 s=re.sub(r'<!--menu-->.*?<!--/menu-->\n?','',s,flags=re.S)
-s=s.replace('<body>','<body>\n'+chrome.menu(root),1)
+s=s.replace('<body>','<body>\n'+chrome.menu(root,cur),1)
 open(p,'w').write(s)
 # 4b. book strip above the email box
 s=open(p).read()
