@@ -220,6 +220,12 @@ th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-size:13
 .join .st:empty,.pitch .st:empty{display:none}
 .join .fine2,.pitch .fine2{margin:14px auto 0}
 
+.sitefoot{margin-top:56px;padding:44px max(20px,env(safe-area-inset-left,0px)) 40px;text-align:center;background:#1f1a2b;border-top:1px solid rgba(251,239,216,.14)}
+.sitefoot .wm{display:block;width:min(300px,78vw);height:auto;margin:0 auto 20px;overflow:visible;filter:drop-shadow(0 0 18px rgba(232,163,195,.35))}
+.sitefoot .sl{margin:0 auto;max-width:26ch;font:600 21px/1.35 "Fraunces",Georgia,serif;color:#fbefd8}
+.sitefoot .sl b{font-weight:600;background:linear-gradient(90deg,#c9a7e8,#e8a3c3 55%,#f3b37a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sitefoot .vm{display:inline-block;margin-top:18px;font:700 16px Karla,sans-serif;color:#fbefd8;text-decoration:underline;text-decoration-color:#e8a3c3;text-decoration-thickness:2px;text-underline-offset:5px}
+.sitefoot small{display:block;margin-top:16px;font:12.5px Karla,sans-serif;color:#7d7489}
 .sitefoot .smap{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;max-width:600px;margin:30px auto 0;padding-top:24px;border-top:1px solid rgba(251,239,216,.1);text-align:left}
 .sitefoot .smap h3{margin:0 0 8px;font:600 14px "Fraunces",Georgia,serif;color:#fbefd8}
 .sitefoot .smap ul{list-style:none;margin:0;padding:0}
@@ -497,9 +503,6 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-alls
 <script>(function(){var b=document.querySelector('.mnb'),n=document.querySelector('.mnv');function set(o){if(o)n.hidden=false;requestAnimationFrame(function(){n.classList.toggle('open',o)});b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':'';if(!o)setTimeout(function(){if(!n.classList.contains('open'))n.hidden=true},260)}
 b.addEventListener('click',function(){set(true)});n.querySelector('.x').addEventListener('click',function(){set(false)});n.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});var ly=scrollY;addEventListener('scroll',function(){var y=scrollY;b.classList.toggle('hide',y>ly&&y>120);ly=y},{passive:true})})();</script><!--/menu-->
 
-
-
-
 <main>
 <a class="home" href="../"><img src="../images/profile.webp" alt="">Marvyn Mylk</a>
 <article>
@@ -581,10 +584,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
   <div class="orb" id="orb" aria-hidden="true"><img class="me" src="../images/profile.webp" alt="" width="96" height="96"></div>
   <h2 id="join-h">Want <span>your town next?</span></h2>
   <p>Sign up and tell me your town. I'll send you its story when I dig into it, plus a heads-up when my books come out.</p>
-  
-
-
-<!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
+  <!--bks--><a class="bks" href="../about/"><span class="cv2"><img src="../images/purple-south-cover.jpg" alt="The Purple South" width="38" height="57" loading="lazy"><img src="../images/monster-on-tv-cover.jpg" alt="The Monster on TV" width="38" height="57" loading="lazy"></span><span><b>The Purple South &amp; The Monster on TV</b><small>Two new books, coming soon. Be the first to know.</small></span></a><!--/bks-->
 <form class="signup" name="book-news" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="book-news"><input type="hidden" name="signup-spot" value="limestone-county-2026">
     <p hidden><label>Leave this empty <input name="bot-field"></label></p>
