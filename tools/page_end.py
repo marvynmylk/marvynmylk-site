@@ -58,6 +58,9 @@ s=candcolor.color(s)
 s=candcolor.avatars(s,root,os.path.relpath(os.path.abspath(p),os.path.dirname(T)).replace(os.sep,'/'))
 s=candcolor.link(s,root,os.path.relpath(os.path.abspath(p),os.path.dirname(T)).replace(os.sep,'/'))
 open(p,'w').write(s)
+# 5b. counters show their real numbers
+import cntfix
+s=open(p).read(); open(p,'w').write(cntfix.apply(s))
 # 6. footer
 subprocess.run([sys.executable,T+'/footer.py',p,'#read-h' if landing else '../'],check=True)
 print('page end ok',p)
