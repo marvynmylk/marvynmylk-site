@@ -340,5 +340,20 @@
   "title": "Limestone County swung 29 points left",
   "blurb": "A bigger move than Madison County.",
   "img": "share-limestone.jpg"
+ },
+ {
+  "path": "jackson-county/jackson-county-2026.html",
+  "kind": "area",
+  "counties": [
+   "Jackson"
+  ],
+  "pin": [
+   372.0,
+   30.0
+  ],
+  "label": "Jackson County",
+  "title": "Jackson County swung 25 points left",
+  "blurb": "Every polling place moved left.",
+  "img": "share-jackson.jpg"
  }
 ]
