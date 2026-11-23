@@ -355,5 +355,19 @@
   "title": "Jackson County swung 25 points left",
   "blurb": "Every polling place moved left.",
   "img": "share-jackson.jpg"
+ },
+ {
+  "path": "articles/universal-healthcare-small-business.html",
+  "kind": "state",
+  "title": "Healthcare that isn't tied to your job",
+  "blurb": "The small business case for universal healthcare.",
+  "img": "share-uhc.jpg"
+ },
+ {
+  "path": "articles/alabama-universal-healthcare-small-business.html",
+  "kind": "state",
+  "title": "Alabama small businesses carry the health bill",
+  "blurb": "Fewer than a third can offer coverage.",
+  "img": "share-uhc-al.jpg"
  }
 ]
