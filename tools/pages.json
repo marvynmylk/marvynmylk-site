@@ -369,5 +369,19 @@
   "title": "Alabama small businesses carry the health bill",
   "blurb": "Fewer than a third can offer coverage.",
   "img": "share-uhc-al.jpg"
+ },
+ {
+  "path": "articles/tennessee-governor-2026-blackburn-green.html",
+  "kind": "state",
+  "title": "Tennessee came within 54,183 votes",
+  "blurb": "Lee won by 32%. Blackburn by 2.6%.",
+  "img": "share-tn-governor.jpg"
+ },
+ {
+  "path": "districts/tennessee-senate-district-31.html",
+  "kind": "state",
+  "title": "Tennessee Senate District 31",
+  "blurb": "Won by 2,770. Now open.",
+  "img": "share-tn-sd31.jpg"
  }
 ]
