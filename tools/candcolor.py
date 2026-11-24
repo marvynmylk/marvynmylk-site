@@ -39,7 +39,7 @@ def color(html):
     return html[:a]+''.join(out)+html[b:]
 
 # Small face next to a candidate's name, first mention per page, so readers learn who's who.
-FACES={'Nell Brown':'brown','Doug Jones':'jones','Tommy Tuberville':'tuberville','Marilyn Lands':'lands','Allison Montgomery':'montgomery',
+FACES={'Jerri Green':'green','Marsha Blackburn':'blackburn','Blackburn':'blackburn','Nell Brown':'brown','Doug Jones':'jones','Tommy Tuberville':'tuberville','Marilyn Lands':'lands','Allison Montgomery':'montgomery',
  'Phillip Rigsby':'rigsby','Jared Sluss':'sluss','Sam Givhan':'givhan','Andrew Sneed':'sneed','Dale Strong':'strong',
  'Janine Jordan':'jordan','Patrick Johnson':'johnson','Forrest Satterfield':'satterfield','Rex Reynolds':'reynolds','Aaron Thomas':'thomas',
  'Tuberville':'tuberville','Sluss':'sluss','Givhan':'givhan','Sneed':'sneed','Rigsby':'rigsby','Satterfield':'satterfield',
