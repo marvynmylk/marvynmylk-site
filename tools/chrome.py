@@ -1,6 +1,7 @@
 """Site-wide menu and FAQ styling, injected by page_end.py."""
 MENU=[("Explore Alabama politics","explore/","The hub: maps, stories and news"),
       ("Books & author","about/","Meet Marvyn and his books"),
+      ("A Better Argument","articles/","The blog: every article, one channel at a time"),
       ("How to vote in Alabama","guides/how-to-vote-in-alabama.html","ID, absentee and polling hours"),
       ("How close was your race?","play/how-close-alabama-2026.html","Every 2026 legislative race"),
       ("For media","about/#media","Interviews, data and photos")]
