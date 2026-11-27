@@ -383,5 +383,19 @@
   "title": "Tennessee Senate District 31",
   "blurb": "Won by 2,770. Now open.",
   "img": "share-tn-sd31.jpg"
+ },
+ {
+  "path": "articles/is-alabama-turning-blue.html",
+  "kind": "state",
+  "title": "Is Alabama turning blue?",
+  "blurb": "Trump by 30% in 2024. Tuberville by 4% in 2026.",
+  "img": "share-alabama-blue.jpg"
+ },
+ {
+  "path": "articles/holidays-family-votes-differently.html",
+  "kind": "state",
+  "title": "The holidays when your family votes differently",
+  "blurb": "What to say at dinner.",
+  "img": "share-holidays.jpg"
  }
 ]
