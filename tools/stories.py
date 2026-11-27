@@ -67,7 +67,7 @@ def menu_list(root, cur):
     for g, name in GROUPS:
         xs = [x for x in ALL if x['g'] == g]
         xs.sort(key=lambda x: (x['o'] < 0, -x['o'], x['t'])) if g != 'people' else xs.sort(key=lambda x: x['t'].split()[-1])
-        li = ''.join(f'<a href="{root}{x["path"]}"{" aria-current=page" if x["path"] == cur else ""} data-k="{html.escape((x["t"] + " " + x["k"] + " " + x["path"]).lower())}">{html.escape(x["t"])}</a>' for x in xs)
+        li = ''.join(f'<a href="{root}{x["path"]}"{" aria-current=page" if x["path"] == cur else ""} data-k="{html.escape((x["t"] + " " + x["k"] + " " + x["path"]).lower())}"><img src="{root}images/{x["img"]}" alt="" loading="lazy" width="1200" height="630"><span>{html.escape(x["t"])}</span></a>' for x in xs)
         secs += f'<div class="msg"><h4>{name} <span>{len(xs)}</span></h4><div class="ml">{li}</div></div>'
     return (f'<div class="mst" id="allstories"><h3>All {len(ALL)} stories</h3>'
             f'<input type="search" class="mss" placeholder="Search a town, district or name" aria-label="Search stories" autocomplete="off">'
@@ -78,8 +78,11 @@ MENU_CSS = '''.mnv{overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mss{width:100%;box-sizing:border-box;padding:13px 15px;border-radius:14px;border:1px solid rgba(251,239,216,.2);background:#1f1a2b;color:#fbefd8;font:16px Karla,sans-serif}
 .mss:focus{outline:none;border-color:#e8a3c3}
 .msg{margin:18px 0 0}.msg h4{margin:0 0 8px;font:700 13px Karla,sans-serif;letter-spacing:.02em;color:#e8a3c3}.msg h4 span{color:#8f86a0;font-weight:500}
-.ml{display:flex;flex-wrap:wrap;gap:7px}.ml a{padding:8px 12px;border-radius:999px;background:#1f1a2b;border:1px solid rgba(251,239,216,.12);color:#fbefd8;text-decoration:none;font:600 14px/1.25 Karla,sans-serif}
-.ml a[aria-current]{border-color:#f3b37a}.ml a.hide,.msg.hide{display:none}
+.ml{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:0 22px 6px;scroll-padding:0 22px;scrollbar-width:none}.ml::-webkit-scrollbar{display:none}
+.ml a{flex:0 0 62%;max-width:240px;scroll-snap-align:start;color:#fbefd8;text-decoration:none;font:600 14px/1.25 Karla,sans-serif}
+.ml a img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:12px;border:1px solid rgba(251,239,216,.12);background:#1f1a2b}
+.ml a span{display:block;margin-top:7px}
+.ml a[aria-current] img{border:2px solid #f3b37a}.ml a.hide,.msg.hide{display:none}
 .mse{margin:16px 0 0;color:#bdb4c7}.mse a{color:#e8a3c3}'''
 
 MENU_JS = '''<script>(function(){var n=document.querySelector('.mnv'),q=n&&n.querySelector('.mss');if(!q)return;
